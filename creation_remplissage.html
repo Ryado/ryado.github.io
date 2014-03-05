@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="fr">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ESCPI - EI2 - BDD</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+-->
+</style>
+</head>
+
+<body bgcolor="#CCCCFF">
+
+<p><b>
+<img border="0" src="ESCPI_pour_web.jpg" align="right" width="82" height="138"></b></p>
+<p><b>ESCPI - AnnÃ©e universitaire 213/2014</b></p>
+<p dir="ltr"><b>Cours de Bases de DonnÃ©es</b></p>
+<p dir="ltr"><b>TP 1 - MySQL - CrÃ©ation et remplisage de la base</b></p>
+<hr>
+<p dir="ltr">CREATE TABLE `enseignant` (<br>
+&nbsp; `Numens` int(4) NOT NULL auto_increment,<br>
+&nbsp; `Nomens` varchar(20) NOT NULL,<br>
+&nbsp; `Grade` varchar(3) NOT NULL,<br>
+&nbsp; `Ancien` int(11) NOT NULL,<br>
+&nbsp; PRIMARY KEY&nbsp; (`Numens`)<br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;<br>
+<br>
+CREATE TABLE `etudiant` (<br>
+&nbsp; `Numetu` int(4) NOT NULL auto_increment,<br>
+&nbsp; `Nometu` varchar(20) NOT NULL,<br>
+&nbsp; `Dtnaiss` datetime default NULL,<br>
+&nbsp; `Cdsexe` varchar(1) NOT NULL,<br>
+&nbsp; PRIMARY KEY&nbsp; (`Numetu`)<br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;<br>
+<br>
+CREATE TABLE `matiere` (<br>
+&nbsp; `Numat` int(4) NOT NULL auto_increment,<br>
+&nbsp; `Nomat` varchar(20) NOT NULL,<br>
+&nbsp; `Coeff` int(3) NOT NULL,<br>
+&nbsp; `Numens` int(4) NOT NULL,<br>
+&nbsp; PRIMARY KEY&nbsp; (`Numat`)<br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;<br>
+<br>
+<br>
+CREATE TABLE `notes` (<br>
+&nbsp; `Numetu` int(4) NOT NULL,<br>
+&nbsp; `Numat` int(4) NOT NULL,<br>
+&nbsp; `Note` float default NULL,<br>
+&nbsp; PRIMARY KEY&nbsp; (`Numetu`,`Numat`)<br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;<br>
+<br>
+<br>
+CREATE TABLE `sexe` (<br>
+&nbsp; `Cdsexe` varchar(1) NOT NULL,<br>
+&nbsp; `Lbsexe` varchar(5) NOT NULL,<br>
+&nbsp; PRIMARY KEY&nbsp; (`Cdsexe`)<br>
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+INSERT INTO `enseignant` VALUES (10, 'Bertrand, Pierre', 'ASS', 2);<br>
+INSERT INTO `enseignant` VALUES (11, 'Dupond, Auguste', 'MCF', 3);<br>
+INSERT INTO `enseignant` VALUES (15, 'Simon, Etienne', 'ASS', 5);<br>
+INSERT INTO `enseignant` VALUES (12, 'Aubois, Jean', 'MCF', 5);<br>
+INSERT INTO `enseignant` VALUES (13, 'Boyer, Julie', 'ASS', 2);<br>
+INSERT INTO `enseignant` VALUES (14, 'Vincent, Paul', 'PR', 4);<br>
+&nbsp;<br>
+INSERT INTO `etudiant` VALUES (1, 'Dupont, Charles', '1981-03-18', 'H');<br>
+INSERT INTO `etudiant` VALUES (2, 'Dubois, Jules', '1982-11-02', 'H');<br>
+INSERT INTO `etudiant` VALUES (3, 'Favier, Isabelle', '1979-02-02', 'F');<br>
+INSERT INTO `etudiant` VALUES (4, 'Gros, Sophie', '1980-06-21', 'F');<br>
+INSERT INTO `etudiant` VALUES (5, 'Henri, Pierre', NULL, 'H');<br>
+INSERT INTO `etudiant` VALUES (6, 'Humbert, Odile', '1980-03-19', 'F');<br>
+INSERT INTO `etudiant` VALUES (7, 'Laurent, Max', '1982-08-10', 'H');<br>
+INSERT INTO `etudiant` VALUES (8, 'Martin, Julie', '1980-04-25', 'F');<br>
+INSERT INTO `etudiant` VALUES (9, 'Paris, Jeanne', '1981-01-03', 'F');<br>
+INSERT INTO `etudiant` VALUES (10, 'Robert, Guy', '1978-09-25', 'H');<br>
+INSERT INTO `etudiant` VALUES (11, 'Romain, Georges', '1977-06-21', 'H');<br>
+&nbsp;<br>
+INSERT INTO `matiere` VALUES (1, 'Mathématiques', 3, 11);<br>
+INSERT INTO `matiere` VALUES (2, 'Informatique', 2, 13);<br>
+INSERT INTO `matiere` VALUES (3, 'Sociologie', 2, 10);<br>
+INSERT INTO `matiere` VALUES (4, 'Histoire', 1, 15);<br>
+INSERT INTO `matiere` VALUES (5, 'Géographie', 1, 15);<br>
+&nbsp;<br>
+INSERT INTO `notes` VALUES (1, 1, 10.50);<br>
+INSERT INTO `notes` VALUES (1, 2, 9.00);<br>
+INSERT INTO `notes` VALUES (1, 3, 12.50);<br>
+INSERT INTO `notes` VALUES (1, 4, 13.00);<br>
+INSERT INTO `notes` VALUES (1, 5, 7.00);<br>
+INSERT INTO `notes` VALUES (2, 1, 11.00);<br>
+INSERT INTO `notes` VALUES (2, 2, 14.50);<br>
+INSERT INTO `notes` VALUES (2, 3, 8.50);<br>
+INSERT INTO `notes` VALUES (2, 4, 10.00);<br>
+INSERT INTO `notes` VALUES (2, 5, 13.00);<br>
+INSERT INTO `notes` VALUES (3, 1, 14.00);<br>
+INSERT INTO `notes` VALUES (3, 2, 9.00);<br>
+INSERT INTO `notes` VALUES (3, 3, 5.00);<br>
+INSERT INTO `notes` VALUES (3, 4, 7.50);<br>
+INSERT INTO `notes` VALUES (3, 5, 12.00);<br>
+INSERT INTO `notes` VALUES (4, 1, 11.50);<br>
+INSERT INTO `notes` VALUES (4, 2, 10.00);<br>
+INSERT INTO `notes` VALUES (4, 4, 13.00);<br>
+INSERT INTO `notes` VALUES (4, 5, 10.00);<br>
+INSERT INTO `notes` VALUES (5, 1, 7.00);<br>
+INSERT INTO `notes` VALUES (5, 2, 13.00);<br>
+INSERT INTO `notes` VALUES (5, 3, 10.00);<br>
+INSERT INTO `notes` VALUES (5, 4, 16.00);<br>
+INSERT INTO `notes` VALUES (5, 5, 6.00);<br>
+INSERT INTO `notes` VALUES (6, 2, 13.00);<br>
+INSERT INTO `notes` VALUES (6, 3, 10.00);<br>
+INSERT INTO `notes` VALUES (6, 4, 11.00);<br>
+INSERT INTO `notes` VALUES (7, 1, 12.50);<br>
+INSERT INTO `notes` VALUES (7, 2, 11.50);<br>
+INSERT INTO `notes` VALUES (7, 3, 9.00);<br>
+INSERT INTO `notes` VALUES (7, 4, 8.00);<br>
+INSERT INTO `notes` VALUES (7, 5, NULL);<br>
+INSERT INTO `notes` VALUES (8, 1, 15.00);<br>
+INSERT INTO `notes` VALUES (8, 2, 16.00);<br>
+INSERT INTO `notes` VALUES (8, 3, 12.00);<br>
+INSERT INTO `notes` VALUES (8, 4, 13.00);<br>
+INSERT INTO `notes` VALUES (8, 5, 10.00);<br>
+INSERT INTO `notes` VALUES (9, 1, 8.00);<br>
+INSERT INTO `notes` VALUES (9, 2, 12.00);<br>
+INSERT INTO `notes` VALUES (9, 4, 8.00);<br>
+INSERT INTO `notes` VALUES (10, 1, NULL);<br>
+INSERT INTO `notes` VALUES (10, 2, 16.00);<br>
+INSERT INTO `notes` VALUES (10, 3, 11.50);<br>
+INSERT INTO `notes` VALUES (10, 4, 9.00);<br>
+INSERT INTO `notes` VALUES (10, 5, 9.00);<br>
+&nbsp;<br>
+&nbsp;<br>
+INSERT INTO `sexe` VALUES ('F', 'Femme');<br>
+INSERT INTO `sexe` VALUES ('H', 'Homme');<br>
+<br>
+&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<p dir="ltr">&nbsp;</p>
+<hr>
+
+</body>
+
+</html>

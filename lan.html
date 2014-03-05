@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+.progress-meter .background {
+  fill: #ccc;
+}
+
+.progress-meter .foreground {
+  fill: #06D4EC;
+}
+
+.progress-meter text {
+  color: #555;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.wrapper{
+    overflow:hidden; /*make sure the wrapper has no dimension*/
+    margin-bottom:10px;
+}
+
+.item{
+    float:left; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size:18px;
+    color:#555;
+    width:200px;
+    height:150px;
+    margin:10px;
+}
+
+</style>
+<body>
+<div id="l1" class="item">
+English (TOEIC Score)
+</div>
+<div id="l2" class="item">
+French (Native tonge)
+</div>
+<div id="l3" class="item">
+Arabic (Native tongue)
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+var width = 200,
+    height = 150,
+    twoPi = 2 * Math.PI,
+    progress = 0,
+    progress2 = 0,
+    progress3 = 0,
+    total = 990, 
+    score = 970,
+    duration = 3000,
+    formatPercent = d3.format(".0%");
+
+var arc = d3.svg.arc()
+    .startAngle(0)
+    .innerRadius(45)
+    .outerRadius(60);
+
+var svg = d3.select("#l1").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var meter = svg.append("g")
+    .attr("class", "progress-meter");
+
+meter.append("path")
+    .attr("class", "background")
+    .attr("d", arc.endAngle(twoPi));
+
+var foreground = meter.append("path")
+    .attr("class", "foreground");
+
+var text = meter.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em");
+
+var i = d3.interpolate(0, score / total);
+d3.transition().duration(duration).tween("progress", function() {
+        return function(t) {
+          progress = i(t);
+          foreground.attr("d", arc.endAngle(twoPi * progress));
+          text.text(~~(progress*total)+"/" +total);
+        };
+      });
+
+      
+      
+      
+var arc2 = d3.svg.arc()
+    .startAngle(0)
+    .innerRadius(45)
+    .outerRadius(60);
+      
+var svg2 = d3.select("#l2").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    
+var meter2 = svg2.append("g")
+    .attr("class", "progress-meter");
+    
+meter2.append("path")
+    .attr("class", "background")
+    .attr("d", arc2.endAngle(twoPi));    
+
+var foreground2 = meter2.append("path")
+    .attr("class", "foreground");
+
+var text2 = meter2.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em").text("N/A");
+
+var i2 = d3.interpolate(0, 1);
+
+d3.transition().duration(duration/2).delay(duration+1).tween("progress2", function() {
+        return function(t) {
+          progress2 = i2(t);
+          foreground2.attr("d", arc2.endAngle(twoPi * progress2));
+        };
+      });
+      
+            
+var arc3 = d3.svg.arc()
+    .startAngle(0)
+    .innerRadius(45)
+    .outerRadius(60);
+      
+var svg3 = d3.select("#l3").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+  .append("g")
+    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    
+var meter3 = svg3.append("g")
+    .attr("class", "progress-meter");
+    
+meter3.append("path")
+    .attr("class", "background")
+    .attr("d", arc3.endAngle(twoPi));    
+
+var foreground3 = meter3.append("path")
+    .attr("class", "foreground");
+
+var text3 = meter3.append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.35em").text("N/A");
+
+
+d3.transition().duration(duration/2).delay(duration*1.5+1).tween("progress3", function() {
+        return function(t) {
+          progress3 = i2(t);
+          foreground3.attr("d", arc3.endAngle(twoPi * progress3));
+        };
+      });
+</script>
+
+</body>
