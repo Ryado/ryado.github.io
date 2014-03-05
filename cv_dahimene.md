@@ -26,7 +26,7 @@ Professional Experience
 * User interface design using C# and WPF and database interaction - 24 hours.
 
 ####[2011–2014] Co-Founder & CEO, Jib.li, *Paris*.
-* Innovative social shipments platform (www.jib.li).
+* Innovative social shipments platform (http://www.jib.li).
 * Featured in various publications (Le Monde, BBC, Smartplanet, JDN, etc.).
 
 ####[2009–2014] Founder & CEO, Think IT, *Algiers*.
