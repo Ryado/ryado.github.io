@@ -2,8 +2,8 @@
       var map = new Datamap({
         scope: 'world',
         element: document.getElementById('container1'),
-        projection: 'mercator',
-        
+        projection: 'equirectangular',
+
         fills: {
           defaultFill: '#b1b1b1',
           gt50: '#06D4EC'
@@ -43,3 +43,5 @@ _gaq.push(['_trackPageview']);
   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
+
+

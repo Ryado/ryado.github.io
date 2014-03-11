@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+#mytitle {
+  position: absolute;
+  top: 280px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-align: center;
+  width: 960px;
+}
+
+</style>
+<head>
+      <!-- Bootstrap core CSS -->
+      <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <script src="./js/jquery-1.11.0.min.js"></script>
+      <script src="./bootstrap/js/bootstrap.min.js"></script>
+      <script src="./js/d3.v3.js"></script>
+      <script src="./js/queue.v1.min.js"></script>
+      <script src="./js/topojson.js"></script>
+</head>
+
+<h1 id="mytitle"><h1>
+<body></body>
+
+ <script>
+
+            var width = 960,
+              height = 500;
+
+            var projection = d3.geo.orthographic()
+              .scale(248)
+              .clipAngle(90);
+
+            var canvas = d3.select("body").append("canvas")
+              .attr("width", width)
+              .attr("height", height);
+
+            var c = canvas.node().getContext("2d");
+
+            var path = d3.geo.path()
+              .projection(projection)
+              .context(c);
+
+            var title = d3.select("#mytitle");
+
+            queue()
+              .defer(d3.json, "./js/world-110m.json")
+              .defer(d3.tsv, "./js/world-country-names.tsv")
+              .await(ready);
+
+            function ready(error, world, names) {
+            var globe = {type: "Sphere"},
+                land = topojson.feature(world, world.objects.land),
+                countries = topojson.feature(world, world.objects.countries).features,
+                borders = topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }),
+                i = -1,
+                n = countries.length;
+
+            countries = countries.filter(function(d) {
+              return names.some(function(n) {
+                if (d.id == n.id) return d.name = n.name;
+              });
+            }).sort(function(a, b) {
+              return a.name.localeCompare(b.name);
+            });
+
+            (function transition() {
+              d3.transition()
+                  .duration(1250)
+                  .each("start", function() {
+                    title.text(countries[i = (i + 1) % n].name);
+                  })
+                  .tween("rotate", function() {
+                    var p = d3.geo.centroid(countries[i]),
+                        r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+                    return function(t) {
+                      projection.rotate(r(t));
+                      c.clearRect(0, 0, width, height);
+                      c.fillStyle = "#bbb", c.beginPath(), path(land), c.fill();
+                      c.fillStyle = "#06D4EC", c.beginPath(), path(countries[i]), c.fill();
+                      c.strokeStyle = "#fff", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();
+                      c.strokeStyle = "#000", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
+                    };
+                  })
+                .transition()
+                  .each("end", transition);
+            })();
+            }
+
+            $('#btn_play').click(function() {
+                queue()
+              .defer(d3.json, "./js/world-110m.json")
+              .defer(d3.tsv, "./js/world-country-names.tsv")
+              .await(ready);
+            });
+
+            </script>
+
+
+<footer>
+<h5> Powered by d3js, based on mike bostock's orthographic projection <a href="http://bl.ocks.org/mbostock/4183330">http://bl.ocks.org/mbostock/4183330</a></h5>
+</footer>
