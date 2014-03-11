@@ -251,3 +251,15 @@ table tr td
     margin:10px;
 }
 
+#mytitle {
+  position: absolute;
+  top: 280px;
+  font-size: 35px;
+  text-align: center;
+  width: 960px;
+}
+
+#myModal .modal-dialog
+{
+  width: 960px;/* your width */
+}
