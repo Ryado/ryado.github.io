@@ -1,6 +1,6 @@
 Ryadh Dahimene
 ==============
-> Challenges Addict.
+> Data enthusiast & Challenges addict.
 
 37, Rue de la Duée  
 75020 Paris   
@@ -21,7 +21,7 @@ Professional Experience
 
 ####[2011–2014] Co-Founder & CEO, Jib.li, *Paris*.
 * Innovative social shipments platform (http://www.jib.li).
-* Featured in various publications ([Smartplanet] (http://www.smartplanet.com/blog/the-big-story/bypassing-traditional-shipping-methods-through-travelers-good-will/), [Le Monde](http://www.lemonde.fr/sciences/article/2013/01/24/partagez-vos-bagages-grace-au-covalisage_1822297_1650684.html), [JDN](http://www.journaldunet.com/web-tech/start-up/ryadh-dahimene-ryadh-dahimene-jib-li.shtml), BBC etc.).
+* Featured in various publications ([Smartplanet](http://www.smartplanet.com/blog/the-big-story/bypassing-traditional-shipping-methods-through-travelers-good-will/), [Le Monde](http://www.lemonde.fr/sciences/article/2013/01/24/partagez-vos-bagages-grace-au-covalisage_1822297_1650684.html), [JDN](http://www.journaldunet.com/web-tech/start-up/ryadh-dahimene-ryadh-dahimene-jib-li.shtml), BBC, etc.).
 * Launched the "JBox" NFC connected box (http://youtu.be/Se93jYm-fC4)
 
 ####[2011–2012] Teaching assistant, École Supérieure d’Ingénieurs Léonard de Vinci (ESILV), *La Défense, Paris.*
@@ -76,24 +76,16 @@ environment (WWWBAS).
 
 Languages
 ---------
-[English] Full professional proficiency (TOEIC Score: 970)
+**[English]** Full professional proficiency (TOEIC Score: 970)
 
-[French] Bilingual (Exam. DALF)
+**[French]** Bilingual (Exam. DALF)
 
-[Arabic] Bilingual
+**[Arabic]** Bilingual
 
-[Italian] Beginner
+**[Italian]** Beginner
 
 Skills and Technologies
 -----------------------
-
-* JAVA, C#, C
-* Intensive text processing with JAVA and large scale graph datasets processing
-* MySQL, Oracle, SQL Server
-* Graph and data visualization with Gephi, d3js, Tulip
-* Mapreduce paradigm
-* Machine learning with Weka, Meka
-* LATEX, HTML, PHP, Javascript, ASP.NET, Silverlight and different CMS
 
 * Research experience in social network data filtering and recommender systems
 * Extensive programming experience with JAVA and C#
@@ -109,17 +101,17 @@ Skills and Technologies
 Miscellaneous
 -------------
 
-[2013] Finalist at the Orange NFC Awards, Paris
+**[2013]** Finalist at the Orange NFC Awards, Paris
 
-[2013] Invited speaker at the ALGERIA 2.0 conference
+**[2013]** Invited speaker at the ALGERIA 2.0 conference
 
-[2012] External reviewer for DEXA'12 (*International Conference on Database and Expert Systems Applications*) and BDA'12 (*Bases de Données Avancées*)
+**[2012]** External reviewer for DEXA'12 (*International Conference on Database and Expert Systems Applications*) and BDA'12 (*Bases de Données Avancées*)
 
-[2012] Invited speaker at TedX Annaba conference
+**[2012]** Invited speaker at TedX Annaba conference
 
-[2009] Runner-up winner at the Microsoft worldwide "Code7" contest
+**[2009]** Runner-up winner at the Microsoft worldwide "Code7" contest
 
-[2009] Finalist at the Microsoft “Imagine Cup” 2009 contest, Cairo
+**[2009]** Finalist at the Microsoft “Imagine Cup” 2009 contest, Cairo
 
 Interests
 ---------
