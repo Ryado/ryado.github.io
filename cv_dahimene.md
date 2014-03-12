@@ -15,19 +15,17 @@ email: dahimene.ryadh@gmail.com
 Professional Experience
 -----------------------
 
-####[2013–2014] Attaché Temporaire d’Enseignement et de Recherche (ATER), Conservatoire National des Arts et Métiers (CNAM), *Paris*.
+####[2013–2014] Lecturer and Research Assistant (ATER), Conservatoire National des Arts et Métiers (CNAM), *Paris*.
 
-*  Databases 101, Lecture/Tutorial/Practical Work - 96 hours.
-
-####[2013] Teaching assistant, Conservatoire National des Arts et Métiers (CNAM), *Paris*.
-* Practical Work using Oracle DBMS (NFA008) - 12 hours.
-
-####[2011–2012] Teaching assistant, École Supérieure d’Ingénieurs Léonard de Vinci (ESILV), *La Défense, Paris.*
-* User interface design using C# and WPF and database interaction - 24 hours.
+*  Databases 101, Lecture/Tutorial/Practical Work 
 
 ####[2011–2014] Co-Founder & CEO, Jib.li, *Paris*.
 * Innovative social shipments platform (http://www.jib.li).
-* Featured in various publications (Le Monde, BBC, Smartplanet, JDN, etc.).
+* Featured in various publications ([Smartplanet] (http://www.smartplanet.com/blog/the-big-story/bypassing-traditional-shipping-methods-through-travelers-good-will/), [Le Monde](http://www.lemonde.fr/sciences/article/2013/01/24/partagez-vos-bagages-grace-au-covalisage_1822297_1650684.html), [JDN](http://www.journaldunet.com/web-tech/start-up/ryadh-dahimene-ryadh-dahimene-jib-li.shtml), BBC etc.).
+* Launched the "JBox" NFC connected box (http://youtu.be/Se93jYm-fC4)
+
+####[2011–2012] Teaching assistant, École Supérieure d’Ingénieurs Léonard de Vinci (ESILV), *La Défense, Paris.*
+* User interface design using C#/WPF and database interaction
 
 ####[2009–2014] Founder & CEO, Think IT, *Algiers*.
 * Launched around innovative projects (http://www.i-think-it.com).
@@ -38,7 +36,6 @@ Professional Experience
 
 ####[2008–2010] Developer, EducaSuisse, *Genève*.
 * Development and integration of e-learning solutions.
-* Development of web portals for to educational institutions.
 
 ####[2008] Developer, Cogitar, *Algiers*.
 * Development of a management application using interoperability with Microsoft Office 2007 suite.
@@ -51,7 +48,6 @@ Professional Experience
 Server databases)
 
 ####[2006–2007] Freelance developer.
-* Design and implementation of several web sites.
 
 Education
 ---------
@@ -59,7 +55,8 @@ Education
 ####[2010–2014] PhD, Conservatoire National des Arts et Métiers (CNAM), *Paris*.
 * Excellence scholarship provided by French-Algerian collaboration project
 * Working on data management issues with a focus on social networks
-* Efficient and real time filtering on Web 2.0 data
+* Efficient and real time filtering on microblogging data
+* Clever and efficient recommendation on large social graphs
 
 ####[2008–2010] Master, University of Science and Technology Houari Boumediene (USTHB), *Algiers*.
 * Final year project grade of 17/20, A-level.
@@ -71,7 +68,6 @@ Education
 environment (WWWBAS).
 
 ####[2008] CCNA1, *Algiers*.
-* Cisco Certified Network Associate (CCNA) Academic training.
 
 ####[2006] Diplôme approfondi en langue française (DALF), *Algiers
 
@@ -80,11 +76,13 @@ environment (WWWBAS).
 
 Languages
 ---------
-[French] Bilingual (Exam. DALF)
-
 [English] Full professional proficiency (TOEIC Score: 970)
 
+[French] Bilingual (Exam. DALF)
+
 [Arabic] Bilingual
+
+[Italian] Beginner
 
 Skills and Technologies
 -----------------------
@@ -97,12 +95,25 @@ Skills and Technologies
 * Machine learning with Weka, Meka
 * LATEX, HTML, PHP, Javascript, ASP.NET, Silverlight and different CMS
 
+* Research experience in social network data filtering and recommender systems
+* Extensive programming experience with JAVA and C#
+* Good knowledge of UNIX/Linux, C programming
+* Intensive text processing with JAVA and large scale graph datasets processing
+* MySQL, Oracle, SQL Server
+* Graph and data visualization with Gephi, d3js, Tulip
+* Mapreduce paradigm for distributed data processing
+* Machine learning with Weka, Meka
+* \LaTeX, HTML/CSS, PHP, Javascript, Jquery, Silverlight, GIT/SVN
+
+
 Miscellaneous
 -------------
 
-[2012] External reviewer for DEXA'12 (*International Conference on Database and Expert Systems Applications*) and BDA'12 (*Bases de Données Avancées*)
+[2013] Finalist at the Orange NFC Awards, Paris
 
 [2013] Invited speaker at the ALGERIA 2.0 conference
+
+[2012] External reviewer for DEXA'12 (*International Conference on Database and Expert Systems Applications*) and BDA'12 (*Bases de Données Avancées*)
 
 [2012] Invited speaker at TedX Annaba conference
 
