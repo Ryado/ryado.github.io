@@ -25,7 +25,7 @@
 	USA: {fillKey: 'gt50' },
 	CHE: {fillKey: 'gt50' },
 	CZE: {fillKey: 'gt50' },
-	GER: {fillKey: 'gt50' },
+	DEU: {fillKey: 'gt50' },
 	
        }
       }) 
