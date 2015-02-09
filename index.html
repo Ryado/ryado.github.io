@@ -1,185 +1,291 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <html>
-<!-- 
+<head>
+  <!-- 
 Copyright Mohamed Ryadh DAHIMENE, 2014
-Uses jquey, d3js, acccordian.pack.js, datamaps
+Uses jquey, d3js, acccordian.pack.js, datamaps, keen.io
 Contains code adapted from examples belonging to http://bost.ocks.org/mike/, http://datamaps.github.io/.
 -->
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="ryadh,dahimene,data,science,research,visualization,developement,java,cv,resume,social networks,information retrieval,databases,microblogging,d3js, hadoop, mapreduce" >
   <meta name="author" content="Ryadh Dahimene" >
-  <title>Ryadh DAHIMENE</title>
-  <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
+  <title>Ryadh DAHIMENE | Data Scientist</title>
+  <link rel="stylesheet" href="assets/lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/keen-dashboards.css">
+  <style>
+.progress-meter .background {
+  fill: #ccc;
+}
 
+.progress-meter .foreground {
+  fill: #06D4EC;
+}
 
+.progress-meter text {
+  color: #555;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.wrapper{
+    overflow:hidden; /*make sure the wrapper has no dimension*/
+    margin-bottom:10px;
+}
+
+.item{
+    float:right; 
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size:18px;
+    color:#555;
+    width:200px;
+    height:150px;
+    margin:10px;
+}
+
+</style>
 </head>
+<body class="application">
+ 
+    <h1 align="right" style="color:#444; margin-right: 65px; font-size:70px;"> Ryadh Dahimene <span  style="color:#999;"> | Data and stuf </span></h1>
 
-<body onload="new Accordian('basic-accordian',5,'header_highlight');" style="background-color:#FCFCFC;">
-  
-  <!-- ================================================================================= -->
-  <div align="right" id="logo"><h1>Ryadh Dahimene</h1></div>
-  <br/>
+  <div class="container-fluid">
 
- <!-- ================================================================================= -->
-  <div id="basic-accordian" >
-    <div id="test-header" class="accordion_headings header_highlight">Home</div>
-    <div id="test-content">
-      <div class="accordion_child">
-        <h2>Welcome to my home page !</h2>
+    <div class="row">
+      <div id="about"  style="display:none;"class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> About me </b>
+          </div>
+          <div class="chart-stage">
+            <h4>Welcome to my home page !</h4>
 
-  <span class="right"><img src="style/me.jpg" width="200px" alt="Profile pic" /></span>
-  
-  <p>I'm a research and teaching assisant at <a href="http://www.cnam.fr" target=”_blank”>Le CNAM</a> (Conservatoire National des Arts et Métiers) in Paris. Member of the <a href="http://cedric.cnam.fr/vertigo/" target=”_blank”>Vertigo</a> and <a href="http://cedric.cnam.fr/isid/" target=”_blank”>ISID</a> teams, which are databases/IS dedicated teams, component of the <a href="http://cedric.cnam.fr" target=”_blank”> CEDRIC</a> laboratory.</p>
-  <br>
-  My Curriculum Vitae:
-  <br>
-  <a href="cv.html">HTML</a> <br>
-  <a href="cv_dahimene.pdf">PDF</a> <br>
-  <a href="cv_dahimene.md">Markdown</a>
-  
-   <br><br><br>
-  My <a href="these_ryadh_dahimene.pdf">PhD thesis</a>.
-  
-      </div>
-  </div>
+            <span class="right"><img src="style/me.jpg" width="200px" alt="Profile pic" /></span>
 
-<!-- ================================================================================= 
+            <p>I'm a research and teaching assisant at <a href="http://www.cnam.fr" target=”_blank”>Le CNAM</a> (Conservatoire National des Arts et Métiers) in Paris. Member of the <a href="http://cedric.cnam.fr/vertigo/" target=”_blank”>Vertigo</a> and <a href="http://cedric.cnam.fr/isid/" target=”_blank”>ISID</a> teams, which are databases/IS dedicated teams, component of the <a href="http://cedric.cnam.fr" target=”_blank”> CEDRIC</a> laboratory.
+            <br><br>
 
-    <div id="test2-header" class="accordion_headings">Research interests</div>
-    <div id="test2-content">
-      <div class="accordion_child">
-        <p>My work is focused mainly on:</p>
-        <ul>
-          <li>Information retrieval from web 2.0 data streams</li>
-          <li>Indexing and querying on-line social Networks, especially micro-blogging systems</li>
-	  <li>Efficient and real time filtering on social data</li>
-	  <li>Recommender systems for on-line social networks<li>
-        </ul>
+
+            I hold a PhD Degree in Computer Science and <br> I'm specialized in social networks data management issues as well as recommender systems.
+
+            If you have some massive datasets, let me know
+            </p>
+            <br>
+            <b> Skills: </b>
+            <ul>
+              <li> Strong programming experience with JAVA and C# .NET </li>
+              <li> Proficient in Linux CLI, C programming </li>
+              <li> Strong experience in data filtering, recommender systems and large scale data processing</li>
+              <li> MySQL, Oracle, MS SQL Server, Tomcat Server</li>
+              <li> Data visualization with d3js, Gephi, Tulip</li>
+              <li> Mapreduce paradigm with Hadoop, Machine learning (WEKA)</li>
+              <li> \LATEX, HTML/CSS, PHP, Javascript, Jquery, GIT/SVN, Networking (CCNA1)</li>
+            </ul> 
+
+          </div>
+          <div class="chart-notes">
+            <p align="right" class="text-muted"> &copy; Ryadh DAHIMENE | Paris, <script>document.write(new Date().getFullYear())</script> </p>
+          </div>
         </div>
-    </div>
-
-================================================================================= -->
-
-    <div id="test3-header" class="accordion_headings">Publications</div>
-    <div id="test3-content">
-      <div class="accordion_child">
-        <ul>
-	  <li>[DCD14] Ryadh Dahimene, Camélia Constantin and Cédric du Mouza.RecLand: A Recommender System for Social Networks. In International Conference on Conference on Information and Knowledge Management, November 2014, pp.2063-2065, Shanghai, China </li>
-          <li>[DMS12] Ryadh Dahimene, Cédric du Mouza, Michel Scholl. Efficient Filtering in Micro-blogging Systems: We Won't Get Flooded Again. Intl. IEEE Conf. on Scientific and Statistical Databases (SSDBM'12), 2012.</li>
-	  <li>[DM13] Ryadh Dahimene, Cédric du Mouza. MicroFilter: Real Time Filtering Of Microblogging Content. 3rd Workshop on Making Sense of MicroPosts/World Wide Web Conference (WWW'13), 2013.</li>
-	  <li>[DM13b] Ryadh Dahimene, Cédric du Mouza - MicroFilter: Scalable Real-Time Filtering Of Micro-blogging Content, BDA'13, Base de Données Avancées, Octobre 2013, pp.1--5, Nantes, France.</li>
-        </ul>
-        </div>
-    </div>
-  
-<!-- ================================================================================= -->
-
-    <div id="test4-header" class="accordion_headings">Pages</div>
-    <div id="test4-content">
-      <div class="accordion_child">
-        <table style="width:100%; border-spacing:0;">
-    	 <tr><td>Twitter</td><td><a href="https://twitter.com/ryadhdotnet" target="_blank">https://twitter.com/ryadhdotnet</a></td></tr>
-         <tr><td>LinkedIn</td><td><a href="http://fr.linkedin.com/in/ryadh" target="_blank"> http://fr.linkedin.com/in/ryadh </a></td></tr>
-         <tr><td>Facebook</td><td><a href="#" target="_blank">I'm no longer a facebook user.</a></td></tr>
-   	 <tr><td>Google Plus</td><td><a href="https://plus.google.com/107710141119473134700" target="_blank">https://plus.google.com/107710141119473134700</a></td></tr>
-         <tr><td>Cedric</td><td><a href="http://cedric.cnam.fr/index.php/labo/membre/view?id=293" target="_blank">http://cedric.cnam.fr/index.php/labo/membre/view?id=293</a></td></tr>
-        </table>
       </div>
-    </div>
-  
-<!-- ================================================================================= -->   
+      <div class="col-sm-9">
+        <div class="row">
 
-    <div id="test5-header" class="accordion_headings">Countries I've visited</div>
-    <div id="test5-content">
-      <div class="accordion_child">
-          <div id="container1" style="position: relative; width: 100%; max-height: 450px; height:450px">
+      <div id="publi"  style="display:none;" class="col-sm-8">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> Publications</b>
+          </div>
+          <div class="chart-stage">
+            <div id="grid-1-1">
+             <ul>
+              <li>[DCD14] Ryadh Dahimene, Camélia Constantin and Cédric du Mouza.RecLand: A Recommender System for Social Networks. In International Conference on Conference on Information and Knowledge Management, November 2014, pp.2063-2065, Shanghai, China </li>
+              <li>[DMS12] Ryadh Dahimene, Cédric du Mouza, Michel Scholl. Efficient Filtering in Micro-blogging Systems: We Won't Get Flooded Again. Intl. IEEE Conf. on Scientific and Statistical Databases (SSDBM'12), 2012.</li>
+              <li>[DM13] Ryadh Dahimene, Cédric du Mouza. MicroFilter: Real Time Filtering Of Microblogging Content. 3rd Workshop on Making Sense of MicroPosts/World Wide Web Conference (WWW'13), 2013.</li>
+              <li>[DM13b] Ryadh Dahimene, Cédric du Mouza - MicroFilter: Scalable Real-Time Filtering Of Micro-blogging Content, BDA'13, Base de Données Avancées, Octobre 2013, pp.1--5, Nantes, France.</li>
+            </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contact"  style="display:none;" class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> Contact me </b>
+          </div>
+          <div class="chart-stage">
+
+            <p>
+              Conservatoire National des Arts et Métiers <br>
+              Case courrier: 2D4P10 <br>
+              292 rue Saint Martin 75141 <br>
+              Paris Cedex 03, France
+            </p>
+            <ul>
+              <li>Phone: +33(0)665243118</li>
+              <li>Email: <a href="mailto:ryadh.dahimene@cnam.fr">ryadh.dahimene@cnam.fr</a></li>
+              <li>Gmail: dahimene.ryadh [at] gmail [dot] com (I check this email address more often)</li>
+            </ul>       
+
+          </div>
+          
+        </div>
+      </div>
+    
+
+        </div>
+        <div class="row">
+
+       
+
+        <div id="cv"  style="display:none;" class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> My Curriculum Vitae </b>
+          </div>
+          <div class="chart-stage">
+            <p>
+            My CV is available for download in different formats: <br></br>
+            <ul>
+            <li> <a href="cv.html">HTML</a> <br> </li>
+            <li> <a href="cv_dahimene.pdf">PDF</a> <br> </li>
+            <li> <a href="cv_dahimene.md">Markdown</a> </li>
+            </ul>
+
+           <br><br>
+
+           as well as my <a href="these_ryadh_dahimene.pdf">PhD thesis</a>. <br>
+          </p>
+
+          </div>
+        
+        </div>
+        </div>
+        
+         <div id="web"  style="display:none;" class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> On the web </b>
+          </div>
+          <div class="chart-stage">
+            You can find me on the web at different places: <br><br>
+           <ul>
+           <li> <a href="https://twitter.com/ryadhdotnet" target="_blank">@ryadhdotnet</a> </li>
+           <li> <a href="http://fr.linkedin.com/in/ryadh" target="_blank">LinkedIn</a> </li>
+           <li> <a href="http://en.wikipedia.org/wiki/Criticism_of_Facebook" target="_blank">I'm no longer a facebook user.</a> </li>
+           <li> <a href="https://plus.google.com/107710141119473134700" target="_blank">Google+</a> </li>
+           <li> <a href="http://cedric.cnam.fr/index.php/labo/membre/view?id=293" target="_blank">My lab</a> </li>
+           </ul>
+
+          </div>
+          <br>
+        </div>
+        </div>
+
+        <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <b> Countries I've visited (<a href="geo.html">Animated version</a>) </b>
+             
+          </div>
+          <div class="chart-stage">
+            
+            <div id="container1" style="position: relative; width: 100%; max-height: 250px; height:250px">
 
             <!-- Container for the map -->
 
           </div>
-      </div>
-      <p align="right">
-       Data visualization realised with <a href="http://datamaps.github.io/">datamaps</a> and <a href="http://www.d3js.org">d3js</a> <br>
-       <a href="geo.html"> Animated version </a>
-       </p>
-   </div>
 
-<!-- ================================================================================= -->
-     <div id="test6-header" class="accordion_headings"  >Languages
-     <button id="mydiv" style="height:31px; width:31px; margin-top:-5px;  border:0; background: url(style/reload.png) no-repeat; cursor:pointer; float:right;"  onClick="myfunction()">
+           
 
-     </button>
-     </div>
-     <div id="test6-content">
-      <div class="accordion_child">
-      <iframe id="fra" src="lan.html" width="800" height="300" frameBorder="0">Browser not compatible.</iframe> 
-      <p align="right">
-       Data visualization realised with <a href="http://www.d3js.org">d3js</a>, inspired by <a href="http://bl.ocks.org/mbostock/3750941">Progress Events</a>
-      </p>
- 
+
+          </div>
+          <div class="chart-notes">
+             <p align="right">
+             Data visualization realised with <a href="http://datamaps.github.io/">datamaps</a> and <a href="http://www.d3js.org">d3js</a>
+
+           </p>
+          </div>
+        </div>
+        </div>
+      
+
+        
+        </div>
+
+        <div class="row">
+          <div id="en"  style="display:none;"  class="col-sm-3">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+              <b> English (TOEIC Score) </b>
+              </div>
+              <div class="chart-stage">
+                
+                <div id="l1" class="item">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="fr"  style="display:none;" class="col-sm-3">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                <b> French (Native tongue) </b>
+              </div>
+              <div class="chart-stage">
+                <div id="l2" class="item">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="ar"  style="display:none;" class="col-sm-3">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                <b> Arabic (Native tongue) </b>
+              </div>
+              <div class="chart-stage">
+                <div id="l3" class="item">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="it"  style="display:none;" class="col-sm-3">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                <b> Italian (beginner) </b>
+              </div>
+              <div class="chart-stage">
+                <div id="l4" class="item">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
-<!-- ================================================================================= -->
-
-    <div id="test7-header" class="accordion_headings">Teaching</div>
-    <div id="test7-content">
-      <div class="accordion_child">
-        <h2>Databases 101 - [INA137] (in french)</h2>
-        <ul>
-         <li>Cours 01 - <a href="./cours/intro.pdf">Introduction aux SGBD</a></li>
-         <li>Cours 02 - <a href="./cours/rela.pdf">Le modèle relationnel</a></li>
-         <li>Cours 03 - <a href="./cours/sql.pdf">Le Langage SQL</a> (<a href="./cours/memosql.pdf">aide mémoire</a>)</li>
-         <li>Cours 04 - <a href="./cours/ea.pdf">Le modèle Entités-Associations</a></>   
-         <li>TP - <a href="creation_remplissage.html">Cliquez ici</a></li>
-         <li>Projet "CnamBook" - <a href="./cours/projetBDD2013.pdf">Cliquez ici</a></li>
-       </ul>       
-
-       <p align="right">
-       (Support de cours de Georges Gardarin et Eric Soutif)
-      </p>
-
-
-      </div>
-    </div>
-
-<!-- ================================================================================= -->
-   
-    <div id="test8-header" class="accordion_headings">Contact me</div>
-    <div id="test8-content">
-      <div class="accordion_child">
-        <h2>Mohamed Ryadh DAHIMENE</h2>
-  <p>
-        Conservatoire National des Arts et Métiers <br>
-        Case courrier: 2D4P10 <br>
-        292 rue Saint Martin 75141 <br>
-        Paris Cedex 03 <br>
-        France
-  </p>
-        <ul>
-          <li>Phone: +33(0)665243118</li>
-          <li>Email: <a href="mailto:ryadh.dahimene@cnam.fr">ryadh.dahimene@cnam.fr</a></li>
-          <li>Gmail: dahimene.ryadh [at] gmail [dot] com (I check this email address more often)</li>
-        </ul>       
-      </div>
-    </div>
- </div>
-
-<!-- ================================================================================= -->
-  <div id="footer">
-    <p>Ryadh DAHIMENE | Paris, <script>document.write(new Date().getFullYear())</script> </p>
   </div>
 
-<!-- ================================================================================= -->
-<!-- Javascript -->
-  <script type="text/javascript" src="style/accordian.pack.js"></script>
+
+    
+
+  </div>
+
+  <script src="assets/lib/jquery/dist/jquery.min.js"></script>
+  <script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="assets/lib/holderjs/holder.js"></script>
+  <script>
+    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+  </script>
+
+  <script src="assets/lib/keen-js/dist/keen.min.js"></script>
+  <script src="assets/js/meta.js"></script>
   <script src="js/d3.v3.js"></script>
   <script src="js/topojson.js"></script>
   <script src="js/datamaps.world.min.js"></script>  
   <script type="text/javascript" src="js/code.js"></script>
-<!-- ================================================================================= -->
 
 </body>
 </html>
