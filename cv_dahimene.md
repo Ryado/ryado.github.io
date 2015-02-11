@@ -78,7 +78,7 @@ environment (WWWBAS).
 
 Languages
 ---------
-**[English]** Full professional proficiency (TOEIC Score: 970)
+**[English]** Full professional proficiency (TOEIC Score: 970/990)
 
 **[French]** Bilingual (Exam. DALF)
 
@@ -95,8 +95,7 @@ Skills and Technologies
 * Intensive text processing with JAVA and large scale graph datasets processing
 * MySQL, Oracle, MS SQL Server, Tomcat
 * Graph and data visualization with Gephi, d3js, Tulip
-*  Mapreduce paradigm with Hadoop, Machine learning (WEKA)
-* Machine learning with Weka, Meka
+* Mapreduce paradigm with Hadoop, Machine learning (WEKA)
 * \LaTeX, HTML/CSS, PHP, Javascript, Jquery, Silverlight, GIT/SVN
 
 
@@ -142,6 +141,7 @@ In *3rd Workshop on Making Sense of MicroPosts/World Wide Web Conference (WWW’
 633–634, 2013.
 * **Ryadh Dahimene** and Cédric du Mouza. Microfilter: Scalable real-time filtering of micro-blogging
 content. *In Base de Données Avancées (BDA’13)*, pages 633–634, 2013.
+
 * **Ryadh Dahimene**, Cédric du Mouza, and Michel Scholl. Efficient filtering in micro-blogging
 systems: We won’t get flooded again. In *Intl. IEEE Conf. on Scientific and Statistical Databases
 (SSDBM’12)*, pages 168–176, 2012.
