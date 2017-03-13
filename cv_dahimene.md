@@ -1,6 +1,6 @@
 Ryadh Dahimene
 ==============
-> Data enthusiast & Challenges addict.
+> Data enthusiast & Challenges addict, fascinated by Data in all its forms. Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various sectors including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide groups like Auchan Group, Invivo Group, CDiscount, Harmonie Mutuelle etc.
 
 155 A, Rue Pelleport  
 75020 Paris   
@@ -10,6 +10,7 @@ phone: +33 6 65 24 31 18
 email: dahimene.ryadh@gmail.com   
 [website](http://www.ryadh.net)   
 [linkedin](http://www.linkedin.com/in/ryadh)   
+[twitter](https://twitter.com/ryadhdotnet)   
 29 years old
 
 Professional Experience
@@ -117,10 +118,12 @@ Languages
 Skills and Technologies
 -----------------------
 
+* Big Data: Hadoop, Spark (MLlib, SQL), Hive, Impala
+* Cloud: Amazon Web Services, MS Azure, Outscale
+* Python, Scala
 * Strong experience in social network data filtering and recommender systems
-* Strong programming experience with JAVA and C# .NET
-* Proficient in UNIX/Linux CLI, C programming
-* Intensive text processing with JAVA and large scale graph datasets processing
+* Strong programming experience with JAVA 
+* UNIX/Linux
 * MySQL, Oracle, MS SQL Server, Tomcat
 * Graph and data visualization with Gephi, d3js, Tulip
 * Mapreduce paradigm with Hadoop, Machine learning (WEKA)
@@ -146,9 +149,7 @@ Miscellaneous
 
 Interests
 ---------
-####Interests 
-* Management and entrepreneurship
-* I was a Microsoft Student Partner for my university
+
 
 ####Hobbies 
 * Music, former solo guitarist in a band, Oud (arabic luth) player
@@ -157,10 +158,22 @@ Interests
 
 ####Travel 
 * Italy, Brazil, USA, Spain, Egypt, Tunisia, Morocco, Sweden, Switzerland, Dubai, Czech republic,
-Greece, Germany
+Greece, Germany, Belgium, Netherlands
 
-Publications
-------------
+
+Academic Publications
+---------------------
+
+* Camélia Constantin, **Ryadh Dahimene**, Cédric du Mouza, Quentin Grossetti:
+Recommandation contextuelle d'utilisateurs pour les plateformes de micro-blogging. Ingénierie des Systèmes d'Information 21(3): 93-118 (2016)
+
+* Camélia Constantin, **Ryadh Dahimene**, Quentin Grossetti, Cédric du Mouza:
+Finding Users of Interest in Micro-blogging Systems. International Conference on Extending Database Technology (EDBT) 2016: 5-16
+
+* **Ryadh Dahimene**, Cédric du Mouza:
+Filtering Structures for Microblogging Content. International Journal of Intelligent Information Technologies, Volume 11(1): 30-51 (2015)
+
+
 * **Ryadh Dahimene**, Camélia Constantin and Cédric du Mouza.RecLand: A Recommender System for Social Networks.
 In International Conference on Conference on Information and Knowledge Management, November 2014, pp.2063-2065, Shanghai, China
 
