@@ -18,26 +18,26 @@ Professional Experience
 ####[2015–Nowadays] Big Data & Data Insights Manager, Ysance, *Paris*.
 
 
-# Data Architecture
+##### Data Architecture
 * Big Data Architecture & design for various clients in retail, insurance, banking, luxury
 * Deployment and Administration of a Hadoop Clusters
 * Data Project Management, Managing heterogeneous teams
 
 
-# Data Science
+##### Data Science
 * Algorithmics, recommender systems in production
 * Machine learning at scale
 
-# Strategy & Business development
+##### Strategy & Business development
 * Design of Ysance data centric methodology "Data Chain of Value" [link](http://www.bigdataparis.com/ysance_fev.html?utm_content=41860521&utm_medium=social&utm_source=twitter)
 * Interviewing of 50+ profiles to expand big data and data science teams, 15+ hired
 * Partnerships with editors including big data vendors like HortonWorks, MapR etc.
 
-# Communication
+##### Communication
 * Organizer of the Paris Data Meetup [link](https://www.meetup.com/Data-Meetup/)
 * Speaker at various events including Big Data Paris 2017 (http://www.bigdataparis.com), Data Related Meetups
 
-# Teaching
+##### Teaching
 * Teaching at various schools in Paris including [EISTI](https://eisti.fr/en) school (distributed systems) and [EPITA](http://www.epita.fr/international/) (Hadoop essentials, Spark for data science)
 
 
