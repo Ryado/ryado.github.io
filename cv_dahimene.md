@@ -1,6 +1,7 @@
 Ryadh Dahimene, Ph.D
 ====================
-> Data enthusiast & Challenges addict, fascinated by Data in all its forms. Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various sectors including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide groups like Auchan Group, Invivo Group, CDiscount, Harmonie Mutuelle etc.
+> Data enthusiast & Challenges addict, fascinated by Data in all its forms. 
+Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide groups like Auchan Group, Invivo Group, CDiscount, Harmonie Mutuelle etc.
 
 155 A, Rue Pelleport  
 75020 Paris   
@@ -16,23 +17,17 @@ email: dahimene.ryadh@gmail.com
 Professional Experience
 -----------------------
 
-####[2015–Nowadays] Big Data & Data Insights Manager, Ysance, *Paris*.
+####[2015–Nowadays] Big Data & Data Insights Manager, Ysance (consulting services), *Paris*.
 
 
-##### Data Architecture
-* Big Data Architecture & design for various clients in retail, insurance, banking, luxury
-* Deployment and Administration of a Hadoop Clusters
-* Data Project Management, Managing heterogeneous teams
 
-
-##### Data Science
-* Algorithmics, recommender systems in production
-* Machine learning at scale
 
 ##### Strategy & Business development
 * Design of Ysance data centric methodology "Data Chain of Value" [link](http://www.bigdataparis.com/ysance_fev.html?utm_content=41860521&utm_medium=social&utm_source=twitter)
 * Interviewing of 50+ profiles to expand big data and data science teams, 15+ hired
 * Partnerships with editors including big data vendors like HortonWorks, MapR etc.
+* Pre-sales around data centric platforms / distributed systems
+* Response to RFPs / RFIs for data centric applications including datalakes, customer data hubs, 360° customer vision tools for major corporations
 
 ##### Communication
 * Organizer of the Paris Data Meetup [link](https://www.meetup.com/Data-Meetup/)
@@ -41,6 +36,15 @@ Professional Experience
 ##### Teaching
 * Teaching at various schools in Paris including [EISTI](https://eisti.fr/en) school (distributed systems) and [EPITA](http://www.epita.fr/international/) (Hadoop essentials, Spark for data science)
 
+##### Data Architecture
+* Big Data Architecture & design for various domains including retail, insurance, banking, luxury
+* Deployment and Administration of complex distributed systems, Hadoop based clusters
+* Project Management, Managing heterogeneous teams
+
+
+##### Data Science
+* Algorithmics, recommender systems in production environments
+* Machine learning at scale
 
 
 
@@ -52,17 +56,15 @@ Professional Experience
 * Mining of massive datasets crawled from on-line social networks
 
 ####[2011–2014] Co-Founder & CEO, Jib.li, *Paris*.
-* Innovative social shipments platform (http://www.jib.li).
+* Seed-funded innovative social shipments platform (http://www.jib.li).
 * Featured in various publications ([Smartplanet](http://www.smartplanet.com/blog/the-big-story/bypassing-traditional-shipping-methods-through-travelers-good-will/), [Le Monde](http://www.lemonde.fr/sciences/article/2013/01/24/partagez-vos-bagages-grace-au-covalisage_1822297_1650684.html), [JDN](http://www.journaldunet.com/web-tech/start-up/ryadh-dahimene-ryadh-dahimene-jib-li.shtml), BBC, etc.).
 
 ####[2011–2012] Teaching assistant, École Supérieure d’Ingénieurs Léonard de Vinci (ESILV), *La Défense, Paris.*
 * User interface design using C#/WPF and database interaction
 
 ####[2009–2014] Founder & CEO, Think IT, *Algiers*.
-* Launched around innovative projects (http://www.i-think-it.com).
-* Ranked amoung the best Mediterranean start-ups by MedVentures, Marseille, 2010
-(http://goo.gl/t1ZY09).
-* Attended to the 2010 Microsoft Worldwide Partner Conference, Washington DC.
+* Software consultancy ranked amoung the best Mediterranean start-ups by MedVentures, Marseille, 2010
+* Invited to the 2010 Microsoft Worldwide Partner Conference, Washington DC.
 * Attended to the 2011, 2012 LeWeb Conference, Paris.
 
 ####[2008–2010] Developer, EducaSuisse, *Genève*.
@@ -80,6 +82,8 @@ Server databases)
 
 ####[2006–2007] Freelance developer.
 
+
+
 Education
 ---------
 
@@ -87,7 +91,8 @@ Education
 * Excellence scholarship provided by French-Algerian collaboration project
 * Data management issues with a focus on social networks
 * Efficient and real time filtering on microblogging data
-* Clever and efficient recommendation on large social graphs
+* Clever and efficient recommendation on large social graphs (see publications section)
+
 
 ####[2008–2010] Master, University of Science and Technology Houari Boumediene (USTHB), *Algiers*.
 * Final year project grade of 17/20, A-level.
@@ -118,22 +123,22 @@ Languages
 Skills and Technologies
 -----------------------
 
-* Big Data: Hadoop, Spark (MLlib, SQL), Hive, Impala
+* Big Data: Hadoop, Spark (Core, MLlib, SparkSQL), Hive, Impala
 * Cloud: Amazon Web Services, MS Azure, Outscale
-* Python, Scala
-* Strong experience in social network data filtering and recommender systems
-* Strong programming experience with JAVA 
+* Java, Python, Scala
+* Strong experience in social network data filtering and recommender systems 
 * UNIX/Linux
-* MySQL, Oracle, MS SQL Server, Tomcat
+* MySQL, Oracle, MS SQL Server
 * Graph and data visualization with Gephi, d3js, Tulip
-* Mapreduce paradigm with Hadoop, Machine learning (WEKA)
-* \LaTeX, HTML/CSS, PHP, Javascript, Jquery, Silverlight, GIT/SVN
-
+* Hadoop, Machine learning (WEKA), NLP, Dataïku
+* \LaTeX, Web developpment, GIT/SVN
 
 
 
 Miscellaneous
 -------------
+
+**[2015]** Runner-up winner at "Ma thèse en 180 secondes" contest
 
 **[2013]** Finalist at the Orange NFC Awards, Paris
 
@@ -147,18 +152,20 @@ Miscellaneous
 
 **[2009]** Finalist at the Microsoft “Imagine Cup” 2009 contest, Cairo
 
+
+
 Interests
 ---------
 
 
 ####Hobbies 
-* Music, former solo guitarist in a band, Oud (arabic luth) player
+* Guitar and Oud (arabic luth) player
 * Calligraphy
 
 
 ####Travel 
 * Italy, Brazil, USA, Spain, Egypt, Tunisia, Morocco, Sweden, Switzerland, Dubai, Czech republic,
-Greece, Germany, Belgium, Netherlands
+Greece, Germany, Belgium, Netherlands, 
 
 
 Academic Publications
@@ -172,7 +179,6 @@ Finding Users of Interest in Micro-blogging Systems. International Conference on
 
 * **Ryadh Dahimene**, Cédric du Mouza:
 Filtering Structures for Microblogging Content. International Journal of Intelligent Information Technologies, Volume 11(1): 30-51 (2015)
-
 
 * **Ryadh Dahimene**, Camélia Constantin and Cédric du Mouza.RecLand: A Recommender System for Social Networks.
 In International Conference on Conference on Information and Knowledge Management, November 2014, pp.2063-2065, Shanghai, China
