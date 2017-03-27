@@ -165,7 +165,7 @@ Interests
 
 ####Travel 
 * Italy, Brazil, USA, Spain, Egypt, Tunisia, Morocco, Sweden, Switzerland, Dubai, Czech republic,
-Greece, Germany, Belgium, Netherlands, 
+Greece, Germany, Belgium, Netherlands
 
 
 Academic Publications
