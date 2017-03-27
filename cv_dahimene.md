@@ -17,7 +17,7 @@ email: dahimene.ryadh@gmail.com
 Professional Experience
 -----------------------
 
-####[2015–Nowadays] Big Data & Data Insights Manager, Ysance (consulting services), *Paris*.
+####[2015–Nowadays] Big Data & Data Insights Manager, Ysance (consulting services, 150+ employees), *Paris*.
 
 
 
