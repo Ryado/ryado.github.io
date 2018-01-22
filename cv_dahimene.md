@@ -1,21 +1,40 @@
-Ryadh Dahimene, Ph.D
-====================
+Ryadh Dahimene, Ph.D, Consulting Architect @Elastic
+===================================================
+
 > Data enthusiast & Challenges addict, fascinated by Data in all its forms. 
 Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide groups like Auchan Group, Invivo Group, CDiscount, Harmonie Mutuelle etc.
 
-155 A, Rue Pelleport  
-75020 Paris   
-France
+London, UK
 
-phone: +33 6 65 24 31 18   
+phone: +44 7429 983 590
 email: dahimene.ryadh@gmail.com   
 [website](http://www.ryadh.net)   
 [linkedin](http://www.linkedin.com/in/ryadh)   
 [twitter](https://twitter.com/ryadhdotnet)   
-29 years old
+30 years old
 
 Professional Experience
 -----------------------
+
+####[2017–Nowadays] Consulting Architect, Elastic.co, *London/Distributed*.
+
+
+
+
+##### Part of the Elastic professional services team
+
+* Deliver Elastic solutions to drive customer business value from the Elastic stack
+* Solution design, development, and integration on Elastic products and APIs, platform architecture, and capacity planning in mission-critical environments
+* Teaching Elastic education courses
+* Requirements gathering, architectural design, integrating with other enterprise technologies, and documenting solutions
+* Data modeling, query development and optimization, cluster tuning and scaling with a focus on fast search and analytics at scale
+* Technology workshops that include hands-on mentoring, whiteboarding, and solution development
+* Solving customers’ most challenging data problems
+* Working  with the Elastic engineering, product management, and support teams to identify feature enhancements, extensions, and product defects
+* Engaging with the Elastic Sales team to scope opportunities while assessing technical risks, questions, or concerns
+* Mentoring Elastic team members on new technology and solutions
+
+
 
 ####[2015–Nowadays] Big Data & Data Insights Manager, Ysance (consulting services, 150+ employees), *Paris*.
 
