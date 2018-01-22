@@ -21,7 +21,7 @@ Professional Experience
 
 
 
-##### Part of the Elastic professional services team
+##### Member of the Elastic professional services team
 
 * Deliver Elastic solutions to drive customer business value from the Elastic stack
 * Solution design, development, and integration on Elastic products and APIs, platform architecture, and capacity planning in mission-critical environments
