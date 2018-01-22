@@ -6,7 +6,6 @@ Ryadh is a skilled professional with a strong academic/technical background as w
 
 London, UK
 
-phone: +44 7429 983 590
 email: dahimene.ryadh@gmail.com   
 [website](http://www.ryadh.net)   
 [linkedin](http://www.linkedin.com/in/ryadh)   
