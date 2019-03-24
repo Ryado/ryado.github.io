@@ -8,7 +8,7 @@
 #baseurl: "blog"
 
 # If you are building a GitHub project page then use these settings:
-url: "hhttp://www.ryadh.net"
+url: "http://www.ryadh.net"
 baseurl: "/blog"
 
 # Of course don't forget to change the username and projectname to YOUR username and project
