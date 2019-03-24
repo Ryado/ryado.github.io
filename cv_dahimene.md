@@ -2,7 +2,7 @@ Ryadh Dahimene, Ph.D
 ====================
 
 > Data enthusiast & Challenges addict, fascinated by Data in all its forms. 
-Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide groups like Auchan Group, Invivo Group, CDiscount, Harmonie Mutuelle etc.
+Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide companies.
 
 London, UK
 
@@ -10,7 +10,7 @@ email: dahimene.ryadh@gmail.com
 [website](http://www.ryadh.net)   
 [linkedin](http://www.linkedin.com/in/ryadh)   
 [twitter](https://twitter.com/ryadhdotnet)   
-30 years old
+31 years old
 
 Professional Experience
 -----------------------

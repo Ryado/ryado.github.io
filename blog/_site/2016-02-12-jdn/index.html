@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Comment le Big Data entre dans l'ère du temps réel</title>
+
+  <meta name="author" content="Ryadh Dahimene" />
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Ryadh's blog - a personal blog" href="blog/feed.xml" />
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="blog/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="blog/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="blog/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Comment le Big Data entre dans l'ère du temps réel" />
+  
+
+   
+  <meta property="og:description" content="Banques, distributeurs, e-commerçants… De plus en plus d’acteurs intègrent la composante temps réel dans les projets de Big Data. Si des briques open source comme Spark, Storm ou Flink sont arrivées à maturité, il reste des défis à relever. Le Big Data gagne en vitesse pour devenir le “fast data”....">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://0.0.0.0:4000/2016-02-12-jdn/" />
+  <link rel="canonical" href="http://0.0.0.0:4000/2016-02-12-jdn/" />
+  
+
+  
+  <meta property="og:image" content="http://0.0.0.0:4000/img/ryadh_square.jpg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Comment le Big Data entre dans l'ère du temps réel" />
+  
+
+  
+  <meta name="twitter:description" content="Banques, distributeurs, e-commerçants… De plus en plus d’acteurs intègrent la composante temps réel dans les projets de Big Data. Si des briques open source comme Spark, Storm ou Flink sont arrivées à maturité, il reste des défis à relever. Le Big Data gagne en vitesse pour devenir le “fast data”....">
+  
+
+  
+  <meta name="twitter:image" content="http://0.0.0.0:4000/img/ryadh_square.jpg" />
+  
+
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://0.0.0.0:4000">Ryadh's blog</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="blog/aboutme">About Me</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="http://www.ryadh.net">Author's home</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://0.0.0.0:4000">
+	      <img class="avatar-img" src="blog/img/realtime.jpg" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Comment le Big Data entre dans l'ère du temps réel</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on February 12, 2016</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p>Banques, distributeurs, e-commerçants… De plus en plus d’acteurs intègrent la composante temps réel dans les projets de Big Data. Si des briques open source comme Spark, Storm ou Flink sont arrivées à maturité, il reste des défis à relever.</p>
+
+<p>Le Big Data gagne en vitesse pour devenir le “fast data”. Alors que nombre d’entreprises ne font qu’envisager l’apport du traitement de données en volume, d’autres associent en plus à cette vision une composante temps réel. Les salles de marché des institutions financières font déjà depuis plus d’une trentaine d’années de l’enrichissement de donnée en temps réel en passant par des développements spécifiques.</p>
+
+<p>Si des éditeurs comme Tibco promettent depuis quelques années de faire du décisionnel temps réel, l’arrivée à maturité de frameworks open source comme Spark, Storm ou Flink démocratise les usages et ouvre le champ des possibles.</p>
+
+<h2 id="big-data-temps-réel--des-projets-tous-azimuts">Big Data temps réel : des projets tous azimuts</h2>
+
+<p>Big Data &amp; data insights manager chez Ysance, Ryadh Dahimene voit les projets associant Big Data et temps réel se multiplier. “Dans le secteur de la grande distribution, nous avons travaillé sur la prédiction en temps réel des risques de rupture de stock en analysant les tickets de caisse. L’effet sur le chiffre d’affaires est immédiatement quantifiable”, constate l’expert.</p>
+
+<p>Les banques exploitent, elles, leur masse de données pour lutter contre la fraude et le blanchiment d’argent. Dans l’e-commerce, le Big Data temps réel permet par exemple de personnaliser un site web en capturant toutes les interactions d’un internaute afin de dégager rapidement son profil. “Ce que font très bien Amazon ou Criteo qui jouent sur cette temporalité pour faire des recommandations de produits dans l’instant”, poursuit Ryadh Dahimene.</p>
+
+<p>Un assureur sera, lui, intéressé par les informations météo et les données en matière d’accidentologie. Ysance a, ainsi, monté une application de démonstration en utilisant les données des courses des taxis de New-York, livrées en open data, et des informations de recensement d’accidents. Objectif : identifier les lieux les plus accidentogènes et leur impact sur le business des “Yellow Cabs”. En France, Velib’ (JCDecaux) libère ses données en temps réel (les disponibilités de ses stations par exemple) via une API proposée à des applications tierces.</p>
+
+<h2 id="mixer-mode-batch-et-streaming">Mixer mode batch et streaming</h2>
+
+<p>Pour Mathias Herberts, CTO et cofondateur de la start-up Cityzen Data (une société spécialisée dans le Big Data et l’IoT), il faut s’entendre sur la notion de temps réel. “Pour le trading haute fréquence, c’est de l’ordre de la nano seconde. Pour un département marketing habitué à avoir un reporting à J+7, le temps réel cela peut être à J+1”, analyse le consultant.</p>
+
+<p>Intégrer la composante temps réel nécessite toutefois de relever un certain nombre de défis. Il faut tout d’abord s’assurer de la disponibilité des données. Si les données émises par les objets connectés intègrent nativement la composante temps (via la notion de séries temporelles ou time series), leur stockage et leur indexation immédiats nécessitent un cadre particulier. “Pour faire face au flux permanent émis par les objets connectés, il faut mettre en œuvre une architecture à même de collecter et consolider les données et dimensionner les clusters qui absorberont cette volumétrie”, estime Ryadh Dahimene.</p>
+
+<p>Une fois les données fédérées et disponibles, il faut s’accorder sur leur mode de traitement. “Le Big Data temps réel peut sembler simple à premier vue”, avance Mathias Herberts. “Il s’agit de gérer des flux de données. Mais un lot de données fraîches peut aussi venir enrichir des informations historisées. Cela complexifie l’algorithmie. Il faut gérer à la fois l’instantanéité et le passé. Et ce, en limitant l’empreinte mémoire, et en ne conservant pas forcément l’exhaustivité des données”, souligne cet ancien de Google.</p>
+
+<h2 id="storm--une-solution-mâture-basée-sur-la-notion-de-topologie">Storm : une solution mâture basée sur la notion de topologie</h2>
+<p>Le temps réel n’exclut donc pas le batch. Il est possible de mixer les deux modes, traitement par lot et streaming. Ce que d’aucuns appellent “architecture lambda”. Flink ou Apache Beam, sur lequel Google investit beaucoup pour son offre DataFlow, ont cette approche mixte. Par défaut, ces frameworks gèrent des flux, considérant qu’un batch, ce n’est qu’un flux qui s’arrête. “A la différence de Spark qui a, dans un premier temps, géré uniquement des batchs, puis a fait entrer le traitement des flux au chausse pied”, note Mathias Herberts. Sortie en juillet dernier, la version 2.0 de Spark a toutefois rectifié le tir.</p>
+
+<p>Storm trouve davantage grâce aux  yeux de Mathias Herberts. Cette autre solution open source soutenue par la fondation Apache repose sur le principe de topologie. Elle se présente sous la forme d’un graphe. Les nœuds racines de ce graphe émettent un stream (un flux de logs par exemple) qui va déclencher l’exécution d’un ou plusieurs composants appartenant à une même topologie. “Cela permet d’aller à plus bas niveau et de configurer la plateforme plus finement”, estime Mathias Herberts.</p>
+
+<h2 id="kafka-et-spark-le-couple-incontournable">Kafka et Spark, le couple incontournable</h2>
+
+<p>Si Ryadh Dahimene reconnaît la maturité de Storm, il voit dans les projets qu’il est amené à étudier la place incontournable qu’occupe le couple associant Kafka et Spark. “Kafka collecte les données et les agrège dans des flux sous une forme consommable, puis Spark pourra prendre en charge le traitement. Avec deux sous-ensembles que sont Spark Streaming et Spark MLlib (API machine learning), il devient possible de pousser la porte du prédictif en temps réel”, insiste le manager Big Data d’Ysance.</p>
+
+<p>A ses yeux, Flink fait figure de challenger. “Ce framework apparaît comme nouveau alors qu’il existait avant le boom de Spark sous le nom de Stratosphere. Il était développé par des chercheurs de l’université de TU Berlin”, rappelle-t-il. “Flink n’a pas la maturité de Spark qui fédère une grosse communauté. Il reste néanmoins un framework prometteur qui porte une vision européenne de la question.” La société allemande Data Artisans qui industrialise des services pour Flink a, par exemple, Zalando comme client.</p>
+
+<p>Pour les entreprises n’ayant pas les compétences ou les ressources ad hoc, se pose la question de recourir aux fournisseurs de cloud pour déployer une architecture Big Data temps réel. Amazon Web Services, Microsoft Azure ou Google Cloud Plaform proposent tous des services managés de Big Data intégrant la dimension temps réel en s’appuyant sur les frameworks open source évoqués plus haut. Des offres qui permettent de tester un “use case” sans avoir à investir dans une infrastructure dédiée.</p>
+
+<p>Xavier Biseul (La Rédaction)
+JDN</p>
+
+<p class="box-note"><strong>Note:</strong>  Repris ici, cet article est originellement paru sur: <a href="https://www.journaldunet.com/solutions/dsi/1189126-comment-le-big-data-entre-dans-l-ere-du-temps-reel/">https://www.journaldunet.com/solutions/dsi/1189126-comment-le-big-data-entre-dans-l-ere-du-temps-reel/</a></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="blog/tags#data">data</a>
+          
+            <a href="blog/tags#press">press</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=Comment+le+Big+Data+entre+dans+l%27%C3%A8re+du+temps+r%C3%A9el+http://0.0.0.0:4000/2016-02-12-jdn/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/2016-02-12-jdn/"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="blog/2015-06-21-jibli/" data-toggle="tooltip" data-placement="top" title="Jibli co-suitcasing">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="blog/2016-03-23-elwatan/" data-toggle="tooltip" data-placement="top" title="Comment canaliser le tsunami de données massives">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="blog/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="mailto:dahimene.ryadh@gmail.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Email me</span>
+              </a>
+            </li><li><a href="https://github.com/ryado" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://twitter.com/ryadhdotnet" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/ryadh" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Ryadh Dahimene
+      &nbsp;&bull;&nbsp;
+      2019
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="https://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="blog/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="blog/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="blog/js/main.js"></script>
+    
+  
+
+
+  
+  </body>
+</html>

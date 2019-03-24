@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Beautiful Jekyll | MIT license | Copyright Dean Attali 2016 -->
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+  <title>Comment canaliser le tsunami de données massives</title>
+
+  <meta name="author" content="Ryadh Dahimene" />
+
+  
+
+  <link rel="alternate" type="application/rss+xml" title="Ryadh's blog - a personal blog" href="blog/feed.xml" />
+
+  
+
+  
+
+  
+
+
+  
+    
+      
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" />
+
+
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="blog/css/bootstrap.min.css" />
+    
+      <link rel="stylesheet" href="blog/css/bootstrap-social.css" />
+    
+      <link rel="stylesheet" href="blog/css/main.css" />
+    
+  
+
+  
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+    
+  
+
+  
+
+  
+
+  
+
+    <!-- Facebook OpenGraph tags -->
+  
+
+  
+  <meta property="og:title" content="Comment canaliser le tsunami de données massives" />
+  
+
+   
+  <meta property="og:description" content="La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique. Inopportunément, l’Algérie — à l’instar d’autres pays technologiquement sous-développés du continent africain — reste en marge de cette mutation digitale. À l’ère de l’économie digitalisée, la performance...">
+  
+
+
+  <meta property="og:type" content="website" />
+
+  
+  <meta property="og:url" content="http://0.0.0.0:4000/2016-03-23-elwatan/" />
+  <link rel="canonical" href="http://0.0.0.0:4000/2016-03-23-elwatan/" />
+  
+
+  
+  <meta property="og:image" content="http://0.0.0.0:4000/img/ryadh_square.jpg" />
+  
+
+
+  <!-- Twitter summary cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@" />
+  <meta name="twitter:creator" content="@" />
+
+  
+  <meta name="twitter:title" content="Comment canaliser le tsunami de données massives" />
+  
+
+  
+  <meta name="twitter:description" content="La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique. Inopportunément, l’Algérie — à l’instar d’autres pays technologiquement sous-développés du continent africain — reste en marge de cette mutation digitale. À l’ère de l’économie digitalisée, la performance...">
+  
+
+  
+  <meta name="twitter:image" content="http://0.0.0.0:4000/img/ryadh_square.jpg" />
+  
+
+  
+
+  
+
+</head>
+
+
+  <body>
+
+    
+
+  
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+        <a class="navbar-brand" href="http://0.0.0.0:4000">Ryadh's blog</a>
+      
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="blog/aboutme">About Me</a>
+
+          </li>
+        
+        
+        
+          <li>
+            
+
+
+
+
+
+
+<a href="http://www.ryadh.net">Author's home</a>
+
+          </li>
+        
+        
+      </ul>
+    </div>
+
+	
+	<div class="avatar-container">
+	  <div class="avatar-img-border">
+	    <a href="http://0.0.0.0:4000">
+	      <img class="avatar-img" src="blog/img/el-watan-logo.png" />
+		</a>
+	  </div>
+	</div>
+	
+
+  </div>
+</nav>
+
+
+    <!-- TODO this file has become a mess, refactor it -->
+
+
+
+
+
+<header class="header-section ">
+
+<div class="intro-header no-img">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-heading">
+          <h1>Comment canaliser le tsunami de données massives</h1>
+		  
+		  
+		  
+		  <span class="post-meta">Posted on March 23, 2016</span>
+		  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      
+
+      <article role="main" class="blog-post">
+        <p>La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique. Inopportunément, l’Algérie — à l’instar d’autres pays technologiquement sous-développés du continent africain — reste en marge de cette mutation digitale.</p>
+
+<p>À l’ère de l’économie digitalisée, la performance des entreprises se mesure à leur capacité à collecter et à analyser en temps réel de grands volumes de données : celles communiquées par les entreprises et les administrations, les données générées par les machines et les capteurs, données provenant d’internet, des médias sociaux…</p>
+
+<p>Les big data — grosses données massives traitées par de gros calculateurs — sont à présent considérées comme un enjeu majeur dans l’industrie, le commerce et les services. Ces nouveaux outils sont également intégrés de façon sensible par les gouvernements et les politiciens à des fins électorales ou, moins pernicieusement, dans le domaine de la santé ou pour l’administration électronique des collectivités. Plus controversé encore, leur usage pour des considérations sécuritaires par les services de renseignement et de sécurité prête à des débats polémiques autour des aspects éthiques de l’exploitation des informations relevant de la sphère privée.</p>
+
+<p>Dans un élan de vulgarisation de ces nouveaux enjeux modernes, la startup Sylabs, incubateur spécialisé dans le networking des technologues, a organisé une journée d’étude, samedi dernier, portant sur les aspects techniques des big data et les carrières professionnelles liées à ce business.</p>
+
+<p>S’inscrivant dans le cycle de conférences mensuelles programmés autour des thèmes liés à la transformation digitale dirigées par Abdellah Mallek, fondateur du Sylabs, la première édition des «Innovation Algiers», sponsorisée par GE, a été animée par deux jeunes informaticiens – le premier, docteur en informatique spécialisé en banques de données, venu de France, et le deuxième est étudiant à l’Ecole supérieure d’informatique (ESI) d’Alger. La rencontre scientifique s’est tenue dans une ambiance bon enfant, devant un auditoire composé d’étudiants et de professionnels issus de divers secteurs d’activité.</p>
+
+<h2 id="si-hamlet-métait-compté">Si Hamlet m’était «compté»…</h2>
+
+<p>Après avoir initié les présents, de manière didactique, au concept et aux applications des big data, Ryadh Dahimene a évoqué – dans le jargon indécryptable pour les profanes en informatique — la problématique de l’intégration de données aussi massives devant les contraintes liées aux capacités limitées des espaces d’archivage et comment de nouvelles approches, dites «réductrices», permettent de les indexer avec pertinence sans devoir pour autant stocker la totalité des informations.</p>
+
+<p>En guise d’illustration devant les participants, Ryadh Dahimene a fait lire à sa machine, en une fraction de seconde, La Tragique histoire d’Hamlet, prince de Danemark, célèbre pièce de William Shakespeare. Puis, en quelques lignes de programmation, tapées en direct sur son clavier — en langage java sur le logiciel Spark —, l’informaticien a codé l’œuvre intégrale en indexant les références les plus pertinentes tout en écartant les répétions de mots. Telle est donc la question de l’approche dite «Reduce» : être ou ne pas être enregistré dans une base de données !</p>
+
+<p>Le deuxième intervenant, Younès Sennadj, étudiant à l’ESI, a pour sa part présenté son projet de fin d’études portant sur les entreprises de télécoms et les réseaux sociaux.</p>
+
+<p>A noter que les entreprises locales qui font usage de ce genre d’outils (big data analysis) pour optimiser leurs investissements exploitent des programmes développés par des sociétés de logiciel établis dans la sphère de recherche et d’investissement Nord. Un marché dont l’essor connaît un boom impressionnant en Europe, en Amérique et en Asie, et dont les capitaux se comptent en milliards d’euros.</p>
+
+<p>Inopportunément, l’Algérie, à l’instar du continent africain et d’autres pays technologiquement sous-développés, reste en marge de cette mutation radicale de l’économie digitalisée.</p>
+
+<p>Ainsi, les participants à la rencontre du Sylabs ont eu un aperçu de la thèse de Younès Sennadj, qui porte sur les outils interactifs d’aide à l’administration d’un réseau social par une entreprise de télécoms. L’étudiant travaille sur les méthodes les plus pratiques de collecte, d’analyse et d’interaction automatique avec le gros volume de données générées en continu par les internautes.</p>
+
+<p>Ces approches permettent, entre autres exploitations de données générées par les clients potentiels, d’analyser le comportement des particuliers pour optimiser les démarches promotionnelles et les dispositifs de communication. Durant la communication, plusieurs notions relatives aux dernières technologies en matière d’outils d’analyse big data à des échelles largement plus étendues ainsi que les progrès de l’intelligence artificielle ont été vulgarisés pour les présents.</p>
+
+<h2 id="big-data-big-dada-brother">Big data, Big Dada (broTher)</h2>
+
+<p>Quelques jeunes étudiants présents se sont interrogés sur l’aspect éthique et déontologique de l’exploitation de données massives, notamment celles qui relèvent de la sphère privée. D’autres ont voulu en savoir davantage sur les manœuvres de communication et les «stratégies de sociabilisation assistées par ordinateur».</p>
+
+<p>En effet, les velléités de façonner «des marques communautaires» sont exprimées désormais de manière obsessionnelle dans l’élaboration des politiques stratégiques d’entreprise, notamment par une surveillance à la limite inquisitrice des réseaux facebook et Tweeter. Et si certains exploitent les big data dans l’intention légitime d’avoir une meilleure compréhension du marché ou pour la noble cause de la recherche scientifique, d’autres, plus sournois, n’hésitent pas à en faire un moins honorable usage.</p>
+
+<p>Car effectivement, les outils de big data se trouvent également mal exploités par des entreprises qui, prétextant le développement d’«offres personnalisées» à leurs clients, abusent de leurs confiance : pour proposer des produits suivant les affinités de chacun, les requêtes des internautes sur les moteurs de recherche sont «espionnées» tout comme pour présenter certains services particuliers selon leurs position géographique. Les «clients connectés» sont géolocalisés avec leur assentiment ou contre leur gré.</p>
+
+<p>Ce profilage peut s’avérer d’autant plus invasif en s’appropriant pour analyse tout message ou commentaire émis sur la Toile. Ces questions d’ordre juridique ou éthique n’ont malheureusement pu être débattues durant cette rencontre par manque de temps et faute de participation de sociologues ou autres spécialistes en anthropologie politique, pas encore habitués, manifestement, à fréquenter les conclaves de technologues.</p>
+
+<p>MOHAMED STAIFI</p>
+
+<p class="box-note"><strong>Note:</strong>  Repris ici, cet article est originellement paru sur: <a href="https://www.elwatan.com/pages-hebdo/etudiant/comment-canaliser-le-tsunami-de-donnees-massives-23-03-2016">https://www.elwatan.com/pages-hebdo/etudiant/comment-canaliser-le-tsunami-de-donnees-massives-23-03-2016</a></p>
+
+      </article>
+
+      
+        <div class="blog-tags">
+          Tags:
+          
+          
+            <a href="blog/tags#data">data</a>
+          
+            <a href="blog/tags#press">press</a>
+          
+          
+        </div>
+      
+
+      
+        <!-- Check if any share-links are active -->
+
+
+
+
+<section id = "social-share-section">
+  <span class="sr-only">Share: </span>
+
+  
+  <!--- Share on Twitter -->
+    <a href="https://twitter.com/intent/tweet?text=Comment+canaliser+le+tsunami+de+donn%C3%A9es+massives+http://0.0.0.0:4000/2016-03-23-elwatan/"
+      class="btn btn-social-icon btn-twitter" title="Share on Twitter">
+      <span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
+      <span class="sr-only">Twitter</span>
+    </a>
+  
+
+  
+  <!--- Share on Facebook -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://0.0.0.0:4000/2016-03-23-elwatan/"
+      class="btn btn-social-icon btn-facebook" title="Share on Facebook">
+      <span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
+      <span class="sr-only">Facebook</span>
+    </a>
+  
+
+  
+
+  
+
+</section>
+
+
+
+      
+
+      <ul class="pager blog-pager">
+        
+        <li class="previous">
+          <a href="blog/2016-02-12-jdn/" data-toggle="tooltip" data-placement="top" title="Comment le Big Data entre dans l'ère du temps réel">&larr; Previous Post</a>
+        </li>
+        
+        
+        <li class="next">
+          <a href="blog/2017-02-21-cdv/" data-toggle="tooltip" data-placement="top" title="Valorisez-vous vos données ?">Next Post &rarr;</a>
+        </li>
+        
+      </ul>
+
+      
+    </div>
+  </div>
+</div>
+
+
+    <footer>
+  <div class="container beautiful-jekyll-footer">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links"><li><a href="blog/feed.xml" title="RSS"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">RSS</span>
+              </a>
+            </li><li><a href="mailto:dahimene.ryadh@gmail.com" title="Email me"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Email me</span>
+              </a>
+            </li><li><a href="https://github.com/ryado" title="GitHub"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">GitHub</span>
+              </a>
+            </li><li><a href="https://twitter.com/ryadhdotnet" title="Twitter"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li><li><a href="https://linkedin.com/in/ryadh" title="LinkedIn"><span class="fa-stack fa-lg" aria-hidden="true">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="sr-only">LinkedIn</span>
+              </a>
+            </li></ul>
+      <p class="copyright text-muted">
+      Ryadh Dahimene
+      &nbsp;&bull;&nbsp;
+      2019
+
+      
+
+      
+      </p>
+          <!-- Please don't remove this, keep my open source work credited :) -->
+    <p class="theme-by text-muted">
+      Theme by
+      <a href="https://deanattali.com/beautiful-jekyll/">beautiful-jekyll</a>
+    </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+    
+
+
+
+
+
+
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+      <script>
+      	if (typeof jQuery == 'undefined') {
+      	  document.write('<script src="blog/js/jquery-1.11.2.min.js"></scr' + 'ipt>');
+      	}
+      </script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="blog/js/bootstrap.min.js"></script>
+    
+  
+    <!-- doing something a bit funky here because I want to be careful not to include JQuery twice! -->
+    
+	<script src="blog/js/main.js"></script>
+    
+  
+
+
+  
+  </body>
+</html>

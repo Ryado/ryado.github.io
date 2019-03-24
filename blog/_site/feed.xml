@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ryadh's blog</title>
+    <description>a personal blog</description>
+    <link>http://0.0.0.0:4000</link>
+    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>L’équation Algérienne</title>
+        <description>
+          Une somme de forces vives - 
+          Note: Je tiens à préciser au lecteur que ce texte ne reflète que mon analyse et opinion personnelle sur les événements récents en Algérie. Je n’ai en aucun cas la prétention de parler au nom de qui que ce soit, ni celle d’apporter des solutions. Une révolution du sourire Ce...
+        </description>
+        <pubDate>Sat, 23 Mar 2019 00:00:00 -0700</pubDate>
+        <link>http://0.0.0.0:4000/2019-03-23-algerie-equation/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2019-03-23-algerie-equation/</guid>
+      </item>
+    
+      <item>
+        <title>Valorisez-vous vos données ?</title>
+        <description>
+          Comprendre et actioner la chaine de valeur data - 
+          Pendant longtemps, les données et leur exploitation sont restées la chasse gardée des entreprises dites « Data Centric » où le business dépend directement de la capacité à analyser et exploiter les données collectées. Avec l’avènement du désormais old-school « Web 2.0 », l’exploitation intelligente de la donnée a permis...
+        </description>
+        <pubDate>Tue, 21 Feb 2017 00:00:00 -0800</pubDate>
+        <link>http://0.0.0.0:4000/2017-02-21-cdv/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2017-02-21-cdv/</guid>
+      </item>
+    
+      <item>
+        <title>Comment canaliser le tsunami de données massives</title>
+        <description>
+          
+          La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique. Inopportunément, l’Algérie — à l’instar d’autres pays technologiquement sous-développés du continent africain — reste en marge de cette mutation digitale. À l’ère de l’économie digitalisée, la performance...
+        </description>
+        <pubDate>Wed, 23 Mar 2016 00:00:00 -0700</pubDate>
+        <link>http://0.0.0.0:4000/2016-03-23-elwatan/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2016-03-23-elwatan/</guid>
+      </item>
+    
+      <item>
+        <title>Comment le Big Data entre dans l'ère du temps réel</title>
+        <description>
+          
+          Banques, distributeurs, e-commerçants… De plus en plus d’acteurs intègrent la composante temps réel dans les projets de Big Data. Si des briques open source comme Spark, Storm ou Flink sont arrivées à maturité, il reste des défis à relever. Le Big Data gagne en vitesse pour devenir le “fast data”....
+        </description>
+        <pubDate>Fri, 12 Feb 2016 00:00:00 -0800</pubDate>
+        <link>http://0.0.0.0:4000/2016-02-12-jdn/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2016-02-12-jdn/</guid>
+      </item>
+    
+      <item>
+        <title>Jibli co-suitcasing</title>
+        <description>
+          
+          Riyadh Dahimene is a doctor in computer science and management; he is specialized in social network data. At the age of 27, he is the manager and co-founder of the website Jib.li which literally means “bring it to me” in Algerian popular Arabic. Based in France, this online platform is...
+        </description>
+        <pubDate>Sun, 21 Jun 2015 00:00:00 -0700</pubDate>
+        <link>http://0.0.0.0:4000/2015-06-21-jibli/</link>
+        <guid isPermaLink="true">http://0.0.0.0:4000/2015-06-21-jibli/</guid>
+      </item>
+    
+  </channel>
+</rss>

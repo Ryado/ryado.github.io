@@ -11,8 +11,19 @@
         
         data: {
 
-        DZA: {fillKey: 'gt50' },
+  DZA: {fillKey: 'gt50' },
+  BEL: {fillKey: 'gt50' },
+  LKA: {fillKey: 'gt50' },
+  IND: {fillKey: 'gt50' },
+  IRL: {fillKey: 'gt50' },
+  LUX: {fillKey: 'gt50' },
+  NLD: {fillKey: 'gt50' },
+  MDV: {fillKey: 'gt50' },
 	BRA: {fillKey: 'gt50' },
+  POL: {fillKey: 'gt50' },
+  GBR: {fillKey: 'gt50' },
+  IMN: {fillKey: 'gt50' },
+  SGP: {fillKey: 'gt50' },
 	TUN: {fillKey: 'gt50' },
 	MAR: {fillKey: 'gt50' },
 	EGY: {fillKey: 'gt50' },
