@@ -35,7 +35,7 @@ Professional Experience
 
 
 
-####[2015–Nowadays] Big Data & Data Insights Manager, Ysance (consulting services, 150+ employees), *Paris*.
+####[2015–2017] Big Data & Data Insights Manager, Ysance (consulting services, 150+ employees), *Paris*.
 
 
 
