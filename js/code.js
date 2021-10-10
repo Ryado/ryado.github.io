@@ -37,7 +37,8 @@
 	CHE: {fillKey: 'gt50' },
 	CZE: {fillKey: 'gt50' },
 	DEU: {fillKey: 'gt50' },
-	
+	CAN: {fillKey: 'gt50' },
+  HUN: {fillKey: 'gt50' }
        }
       }) 
 

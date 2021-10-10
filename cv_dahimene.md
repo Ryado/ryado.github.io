@@ -2,20 +2,37 @@ Ryadh Dahimene, Ph.D
 ====================
 
 > Data enthusiast & Challenges addict, fascinated by Data in all its forms. 
-Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, banking, luxury and e-commerce. The list of clients he worked for include major worldwide companies.
+Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, finance, luxury and e-commerce. The list of clients he worked for include major worldwide companies.
 
 London, UK
 
 email: dahimene.ryadh@gmail.com   
 [website](http://www.ryadh.net)   
+[blog](http://www.ryadh.net/blog)  
 [linkedin](http://www.linkedin.com/in/ryadh)   
 [twitter](https://twitter.com/ryadhdotnet)   
-31 years old
+33 years old
 
 Professional Experience
 -----------------------
 
-####[2017–Nowadays] Consulting Architect, Elastic.co, *London/Distributed*.
+####[2019–Nowadays] Senior Services Delivery Manager, Elastic.co, *London/Distributed*.
+
+
+
+
+##### Manager of the UKMEA Elastic professional services team
+
+* Involved in all stages of the services offerings delivery. From pre-sales to post-sales
+* Successfully led a team of up to 10 (talented!) consultants and instructors delivering expert services
+* Led various data-driven initiatives to expand the business value proposition outside of the technical realm
+* Engaged a partnership with the Sales function to position Services in strategic deals
+* Heavily involved in the pre-sales phase
+* Management tasks including escalation management, hiring senior and junior consultants, coaching, performance reviews and goal setting
+* Represented Elastic and the services team at various conferences and meetups
+
+
+####[2017–2019] Consulting Architect, Elastic.co, *London/Distributed*.
 
 
 
@@ -182,8 +199,7 @@ Interests
 
 
 ####Travel 
-* Italy, Brazil, USA, Spain, Egypt, Tunisia, Morocco, Sweden, Switzerland, Dubai, Czech republic,
-Greece, Germany, Belgium, Netherlands
+* Algeria, Belgium, Brazil, Canada, Sri Lanka, Czech Republic, France, Germany, Greece, Hungary, India, Ireland, Italy, Luxembourg, Maldives, Morocco, Netherlands, Poland, Singapore, Spain, Sweden, Switzerland, United Arab Emirates, Tunisia, Egypt, United Kingdom, Isle of Man, United States
 
 
 Academic Publications
@@ -198,12 +214,16 @@ Finding Users of Interest in Micro-blogging Systems. International Conference on
 * **Ryadh Dahimene**, Cédric du Mouza:
 Filtering Structures for Microblogging Content. International Journal of Intelligent Information Technologies, Volume 11(1): 30-51 (2015)
 
+* **Ryadh Dahimene**:
+Filtrage et Recommandation sur les Réseaux Sociaux. (Filtering and Recommendation in Social Networks). Conservatoire national des arts et métiers, Paris, France, 2014
+
 * **Ryadh Dahimene**, Camélia Constantin and Cédric du Mouza.RecLand: A Recommender System for Social Networks.
 In International Conference on Conference on Information and Knowledge Management, November 2014, pp.2063-2065, Shanghai, China
 
 * **Ryadh Dahimene** and Cédric du Mouza. Microfilter: real time filtering of microblogging content.
 In *3rd Workshop on Making Sense of MicroPosts/World Wide Web Conference (WWW’13)*, pages
 633–634, 2013.
+
 * **Ryadh Dahimene** and Cédric du Mouza. Microfilter: Scalable real-time filtering of micro-blogging
 content. *In Base de Données Avancées (BDA’13)*, pages 633–634, 2013.
 
