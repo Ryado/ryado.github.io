@@ -4,19 +4,29 @@ Ryadh Dahimene, Ph.D
 > Data enthusiast & Challenges addict, fascinated by Data in all its forms. 
 Ryadh is a skilled professional with a strong academic/technical background as well as a business focused mindset. Ryadh worked with data at scale in various domains including social networking, retail, insurance, finance, luxury and e-commerce. The list of clients he worked for include major worldwide companies.
 
-London, UK
+Catalonia, Spain
 
 email: dahimene.ryadh@gmail.com   
 [website](http://www.ryadh.net)   
 [blog](http://www.ryadh.net/blog)  
 [linkedin](http://www.linkedin.com/in/ryadh)   
 [twitter](https://twitter.com/ryadhdotnet)   
-33 years old
+34 years old
 
 Professional Experience
 -----------------------
 
-####[2019–Nowadays] Senior Services Delivery Manager, Elastic.co, *London/Distributed*.
+####[2022] Product Manager - Integrations, ClickHouse, *Spain/Distributed*.
+
+
+
+
+####[2022] Consulting Architect, ClickHouse, *Spain/Distributed*.
+
+
+
+
+####[2019–2021] Senior Services Delivery Manager, Elastic.co, *London/Distributed*.
 
 
 
