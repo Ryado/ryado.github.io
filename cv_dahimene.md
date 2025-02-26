@@ -10,15 +10,19 @@ email: dahimene.ryadh@gmail.com
 [website](http://www.ryadh.net)   
 [blog](http://www.ryadh.net/blog)  
 [linkedin](http://www.linkedin.com/in/ryadh)   
-[twitter](https://twitter.com/ryadhdotnet)   
-34 years old
+
+37 years old
 
 Professional Experience
 -----------------------
 
+####[2024] Director of Product Management - Integrations, ClickHouse, *Spain/Distributed*.
+
+
+####[2023] Senior Product Manager - Integrations, ClickHouse, *Spain/Distributed*.
+
+
 ####[2022] Product Manager - Integrations, ClickHouse, *Spain/Distributed*.
-
-
 
 
 ####[2022] Consulting Architect, ClickHouse, *Spain/Distributed*.
@@ -27,8 +31,6 @@ Professional Experience
 
 
 ####[2019–2021] Senior Services Delivery Manager, Elastic.co, *London/Distributed*.
-
-
 
 
 ##### Manager of the UKMEA Elastic professional services team
@@ -214,6 +216,8 @@ Interests
 
 Academic Publications
 ---------------------
+
+* Robert Schulze, Tom Schreiber, Ilya Yatsishin, **Ryadh Dahimene**, Alexey Milovidov: ClickHouse - Lightning Fast Analytics for Everyone. Proc. VLDB Endow. 17(12): 3731-3744 (2024)
 
 * Camélia Constantin, **Ryadh Dahimene**, Cédric du Mouza, Quentin Grossetti:
 Recommandation contextuelle d'utilisateurs pour les plateformes de micro-blogging. Ingénierie des Systèmes d'Information 21(3): 93-118 (2016)
