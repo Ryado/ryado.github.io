@@ -1,6 +1,6 @@
 ---
 title: ClickPipes for Kafka - ClickHouse Cloud Managed Ingestion Service
-date: '2023-07-14'
+date: '2023-07-18'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service
 coauthors: []
@@ -8,7 +8,7 @@ tags:
 - product
 summary: We are pleased to announce the availability of ClickPipes in private preview, allowing ClickHouse Cloud users to insert data from Kafka using a fully managed ingestion service.
 reading_time: 4
-content_hash: 6d4eea78a97eb05f
+content_hash: 82b13010fccfda97
 ---
 
 Today at ClickHouse, we are delighted to announce the release of ClickPipes for Kafka.
@@ -60,5 +60,3 @@ You can find more information in the following pages:
 - [ClickPipes Website](https://clickhouse.com/cloud/clickpipes)
 - [Video demonstration](https://www.youtube.com/watch?v=rSUHqyqdRuk)
 - [Documentation](https://clickhouse.com/docs/en/integrations/clickpipes)
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-footer&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. At the end of your 30-day trial, continue with a pay-as-you-go plan, or [contact us](/company/contact?loc=blog-cta-footer) to learn more about our volume-based discounts. Visit our [pricing page](/pricing?loc=blog-cta-header) for details.

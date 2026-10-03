@@ -1,6 +1,6 @@
 ---
 title: 'ClickHouse welcomes Langfuse: The future of open-source LLM observability'
-date: '2026-07-14'
+date: '2026-01-16'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/clickhouse-acquires-langfuse-open-source-llm-observability
 coauthors:
@@ -11,7 +11,7 @@ tags:
 - company-and-culture
 summary: We are thrilled to announce that ClickHouse has acquired Langfuse, the leading open-source platform for LLM observability, evaluations, and prompt management.
 reading_time: 7
-content_hash: 2472b4119b474f87
+content_hash: f5412c619315ac03
 ---
 
 We are thrilled to announce that ClickHouse has acquired [Langfuse](https://github.com/langfuse/langfuse), the leading open-source platform for LLM observability, evaluations, and prompt management. We couldn't be more excited to welcome Marc Klingen, Max Deichmann, Clemens Rawert, and the entire Langfuse team and community into the ClickHouse family.
@@ -38,7 +38,7 @@ Traditional observability tools can tell you if your service is up, fast, and er
 
 This is why we believe "AI quality monitoring" is the right framing—it focuses directly on the outcome that matters: how well is your AI actually performing for users?
 
-As always at ClickHouse, we evaluate the solutions on our internal systems first. We've been using Langfuse internally to monitor [DWAINE](/blog/ai-first-data-warehouse), our internal data warehouse AI agent. Having proper observability into our LLM interactions has been invaluable for understanding where our agents succeed and where they need improvement.
+As always at ClickHouse, we evaluate the solutions on our internal systems first. We've been using Langfuse internally to monitor [DWAINE](https://clickhouse.com/blog/ai-first-data-warehouse), our internal data warehouse AI agent. Having proper observability into our LLM interactions has been invaluable for understanding where our agents succeed and where they need improvement.
 
 ![langfuse-screenshot-2.png](/writing/clickhouse-acquires-langfuse-open-source-llm-observability/langfuse_screenshot_2_ae975a0ccc.png)
 
@@ -74,7 +74,7 @@ Check out the [Langfuse Wrapped 2025](https://langfuse.com/wrapped) for a great 
 
 ## The synergy
 
-This acquisition follows the same playbook we've used successfully with [PeerDB](/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database) (for Postgres CDC) and [HyperDX](/blog/clickhouse-acquires-hyperdx-the-future-of-open-source-observability) (for infrastructure observability). We join forces with category-leading open-source projects that are already built on ClickHouse and share our commitment to developer experience and community-first development.
+This acquisition follows the same playbook we've used successfully with [PeerDB](https://clickhouse.com/blog/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database) (for Postgres CDC) and [HyperDX](https://clickhouse.com/blog/clickhouse-acquires-hyperdx-the-future-of-open-source-observability) (for infrastructure observability). We join forces with category-leading open-source projects that are already built on ClickHouse and share our commitment to developer experience and community-first development.
 
 With Langfuse, we're doing the same for AI observability:
 
@@ -90,7 +90,7 @@ The tighter integration between Langfuse and ClickHouse means we can optimize th
 
 ## What this means for the Agentic Data Stack
 
-The [Agentic Data Stack](/ai) (our vision for AI-powered applications built on ClickHouse and LibreChat) now gains a critical new capability: the ability to monitor, evaluate, and continuously improve the AI components themselves.
+The [Agentic Data Stack](https://clickhouse.com/ai) (our vision for AI-powered applications built on ClickHouse and LibreChat) now gains a critical new capability: the ability to monitor, evaluate, and continuously improve the AI components themselves.
 
 For data analysts and administrators using LibreChat to query their data warehouses, Langfuse provides visibility into how well the agents are performing. For developers building custom agentic workflows with our APIs and MCP servers, Langfuse offers the debugging and optimization tools they need to ship with confidence.
 
@@ -104,7 +104,7 @@ The three main personas of agentic analytics—data professionals operating data
 
 **For ClickHouse users:** Over the coming months, we'll be releasing deeper integrations that make LLM observability a native part of the agentic data stack experience. Expect seamless connections between your AI workloads and the tools to understand them.
 
-**For everyone:** Join the communities on [Slack](/slack) to stay connected as we build the future of AI observability together.
+**For everyone:** Join the communities on [Slack](https://clickhouse.com/slack) to stay connected as we build the future of AI observability together.
 
 ## Get started
 
@@ -114,4 +114,4 @@ The three main personas of agentic analytics—data professionals operating data
 
 **For everyone else:** The AI quality monitoring space is only going to become more important as AI becomes more central to how software works. Now is the time to get serious about understanding your AI systems.
 
-As always, the ClickHouse team would be honored to partner with you on your AI journey. Whether you're using Langfuse today or are just starting to think about LLM observability, please [contact us](/company/contact).
+As always, the ClickHouse team would be honored to partner with you on your AI journey. Whether you're using Langfuse today or are just starting to think about LLM observability, please [contact us](https://clickhouse.com/company/contact).

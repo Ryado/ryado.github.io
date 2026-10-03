@@ -9,7 +9,7 @@ tags:
 - engineering
 summary: We’re now officially supporting OpenTelemetry logging and tracing capabilities, advancing the exporters to beta status.
 reading_time: 10
-content_hash: d51062f82f5d85b9
+content_hash: b56287d54e883782
 ---
 
 Earlier this year, the team at ClickHouse decided to start officially supporting and contributing to the OpenTelemetry exporter for ClickHouse, which has recently graduated to [beta](https://github.com/open-telemetry/opentelemetry-collector/blob/main/docs/component-stability.md#beta) for both the logging and tracing (the highest level in the OTel exporter ecosystem at the moment). In this post, we wanted to use this milestone as an opportunity to highlight the OpenTelemetry and ClickHouse integration, a key consideration when evaluating the [top OpenTelemetry-compatible platforms](https://clickhouse.com/engineering-resources/top-opentelemetry-compatible-platforms/).

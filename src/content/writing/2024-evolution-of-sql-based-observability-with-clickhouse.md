@@ -9,7 +9,7 @@ tags:
 - engineering
 summary: As 2024 comes to a close, explore the evolution of SQL-based observability and ClickHouse’s latest developments, including enhanced JSON support, OpenTelemetry integration, and powerful time series capabilities.
 reading_time: 16
-content_hash: 452f4a5ebc49b917
+content_hash: 37d5b571e9a65f21
 ---
 
 ## Introduction
@@ -24,13 +24,13 @@ In this post, we'll explore some of these new features as well as give a glimpse
 
 Our original post proposed that observability is just another data problem, to which SQL and [OLAP based systems](https://clickhouse.com/engineering-resources/oltp-vs-olap), such as ClickHouse, are well suited to addressing. We explored the history of centralized logging, and how solutions such as Splunk and the ELK stack had emerged from the both syslog and NoSQL era. Despite the popularization of the former, SQL’s unique strengths have sustained its relevance, making it the [third most widely adopted language](https://survey.stackoverflow.co/2023/#most-popular-technologies-language-prof) for structured data management, even amidst the NoSQL boom.
 
-By rethinking observability as a data problem, we can apply OLAP principles and SQL to the storage layer, avoiding the need for cost-saving measures like [aggressive log sampling](https://clickhouse.com/resources/engineering/managing-petabyte-scale-logs-without-sampling) that ultimately undermine visibility. This approach brings key benefits: efficient compression reduces storage demands, accelerated data ingestion and retrieval, and limitless storage enabled by the use of object storage. The versatility of SQL-based observability is amplified by interoperability, with ClickHouse, for instance, supporting a broad range of data formats and integration engines, simplifying its inclusion in diverse observability pipelines. SQL’s extensive functions offer unmatched analytical expressivity, and together, these features [lower the total cost of ownership (TCO) of observability data](/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures).
+By rethinking observability as a data problem, we can apply OLAP principles and SQL to the storage layer, avoiding the need for cost-saving measures like [aggressive log sampling](https://clickhouse.com/resources/engineering/managing-petabyte-scale-logs-without-sampling) that ultimately undermine visibility. This approach brings key benefits: efficient compression reduces storage demands, accelerated data ingestion and retrieval, and limitless storage enabled by the use of object storage. The versatility of SQL-based observability is amplified by interoperability, with ClickHouse, for instance, supporting a broad range of data formats and integration engines, simplifying its inclusion in diverse observability pipelines. SQL’s extensive functions offer unmatched analytical expressivity, and together, these features [lower the total cost of ownership (TCO) of observability data](https://clickhouse.com/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures).
 
 ![img08_9763861f2e](/writing/evolution-of-sql-based-observability-with-clickhouse/img08_9763861f2e.png)
 
 An important enabler of this shift has been OpenTelemetry, which standardized data collection across platforms and has turned data collection from a differentiator into a commodity. A year on we can confidently say [OTel](https://clickhouse.com/engineering-resources/opentelemetry-otel) is well on its way to winning the "collector wars."
 
-This industry-wide adoption has [reduced vendor lock-in](/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) and made it easier to integrate observability data with SQL-based storage solutions.
+This industry-wide adoption has [reduced vendor lock-in](https://clickhouse.com/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) and made it easier to integrate observability data with SQL-based storage solutions.
 
 ![img09_4566662115](/writing/evolution-of-sql-based-observability-with-clickhouse/img09_4566662115.png)
 
@@ -44,7 +44,7 @@ SQL-based observability is for you if:
 - You prefer adhering to open standards like OpenTelemetry to avoid lock-in and achieve extensibility.
 - You are willing to run an ecosystem fueled by open-source innovation from collection to storage and visualization.
 - You envision some growth to medium or large volumes of observability data under management (or even very large volumes)
-- You want to be in control of the TCO (total cost of ownership) and [break free from rising observability costs](/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) common with legacy, seat-based platforms.
+- You want to be in control of the TCO (total cost of ownership) and [break free from rising observability costs](https://clickhouse.com/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) common with legacy, seat-based platforms.
 - You can’t or don’t want to get stuck with small data retention periods for your observability data just to manage the costs.
 
 SQL-based observability may not be for you if:
@@ -399,5 +399,3 @@ In conclusion, have the recent developments changed the criteria as to whether C
 While users can still follow the decision-making process we outlined at the start of this blog, they can do so with greater confidence. The recent developments address the last criteria: “You prefer to wait for the ecosystem to mature more and SQL-based observability to get more turnkey.”
 
 With the addition of JSON support and increasingly robustness of OTel and usability of Grafana, we feel the ClickHouse observability story has been leveled up from both ends of the pipeline. These features, while not changing the fundamental decisions, ensure ClickHouse is more accessible, simpler to adopt and more robust than ever for observability workloads.
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-footer&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. At the end of your 30-day trial, continue with a pay-as-you-go plan, or [contact us](/company/contact?loc=blog-cta-footer) to learn more about our volume-based discounts. Visit our [pricing page](/pricing?loc=blog-cta-header) for details.

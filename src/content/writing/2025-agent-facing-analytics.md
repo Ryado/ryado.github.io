@@ -8,7 +8,7 @@ tags:
 - product
 summary: AI agents as an emerging user persona in real-time analytics
 reading_time: 14
-content_hash: c73d9afe669425d7
+content_hash: c6620cbedf570f7c
 ---
 
 You operate an analytics database, and suddenly you notice a cohort of users that seem to never sleep, never take breaks, and generate SQL queries like there's no tomorrow. You might ask: Are we getting DDoS’d again? The answer is no. It turns out that the company just deployed a fleet of autonomous AI agents that are tasked with monitoring and optimizing some business metrics.
@@ -20,7 +20,7 @@ AI agents are rapidly evolving, gaining reasoning abilities combined with connec
 ![image (8).png](/writing/agent-facing-analytics/image_8_5d12fd1281.png)
 *Google Trends Interest over time for “AI agents” in 2024*
 
-The next section will introduce definitions and background about the recent developments of AI. It will be useful in the rest of the post, but if you are already familiar with AI concepts (and have managed to keep up with the hype!), then I recommend skipping straight to the section [Real-time analytics for AI agents](/blog/agent-facing-analytics#real-time-analytics-for-ai-agents).
+The next section will introduce definitions and background about the recent developments of AI. It will be useful in the rest of the post, but if you are already familiar with AI concepts (and have managed to keep up with the hype!), then I recommend skipping straight to the section [Real-time analytics for AI agents](https://clickhouse.com/blog/agent-facing-analytics#real-time-analytics-for-ai-agents).
 
 ## AI concepts catch-up
 

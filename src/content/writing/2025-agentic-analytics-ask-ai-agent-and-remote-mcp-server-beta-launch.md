@@ -1,6 +1,6 @@
 ---
 title: 'One step closer to Agentic Analytics: Ask AI agent & Remote MCP server beta launch'
-date: '2026-07-28'
+date: '2025-09-25'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch
 coauthors: []
@@ -8,7 +8,7 @@ tags:
 - product
 summary: Announcing Ask AI beta and remote MCP server, powering faster agentic analytics in ClickHouse Cloud.
 reading_time: 4
-content_hash: ac0dce04ea0a3b9f
+content_hash: c94ecc04e0479ba6
 ---
 
 We've been talking about [agent-facing analytics](https://clickhouse.com/blog/agent-facing-analytics) for a while now. The idea is that AI agents would become primary consumers of analytics databases, running queries at machine speed and generating insights semi-autonomously. Well, today we're making that future more accessible by announcing the public beta release of two flagship features: the ClickHouse Ask AI agent and the remote MCP server for ClickHouse Cloud.

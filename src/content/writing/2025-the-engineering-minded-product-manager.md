@@ -12,7 +12,7 @@ tags:
 - technology
 summary: No, the title isn’t a spelling mistake.
 reading_time: 7
-content_hash: 641774d5a78e3787
+content_hash: 15ac25c2bef861c8
 ---
 
 No, the title isn’t a spelling mistake. I swapped the words on purpose.

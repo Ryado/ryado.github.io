@@ -1,14 +1,15 @@
 ---
 title: Cost-predictable logging at scale with ClickHouse, Grafana & WarpStream
-date: '2023-11-09'
+date: '2023-11-14'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack
-coauthors: []
+coauthors:
+- Dale McDiarmid
 tags:
 - engineering
 summary: Tired of paying thousands to store a few TiB of logs?
 reading_time: 21
-content_hash: e2f38220096cdbda
+content_hash: b6e710972347b91c
 ---
 
 ![cost-predictable-logging-hero.png](/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/cost_predictable_logging_hero_f9fb46c3e9.png)
@@ -23,7 +24,7 @@ As the initial [pillar of observability](https://clickhouse.com/engineering-reso
 
 The most important feature of any centralized log store is its ability to quickly aggregate, analyze, and search through vast amounts of log data from diverse sources. This centralization streamlines troubleshooting, making it easier to pinpoint the root causes of service disruptions. Look no further than Elastic, Datadog, and Splunk, who have leveraged this value proposition for huge success.
 
-**With users increasingly price-sensitive, the [high and unpredictable cost of out-of-the-box offerings](/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) forces many to resort to aggressive log sampling, a compromise that[an effective log management strategy can help avoid](https://clickhouse.com/resources/engineering/managing-petabyte-scale-logs-without-sampling).**
+**With users increasingly price-sensitive, the [high and unpredictable cost of out-of-the-box offerings](https://clickhouse.com/blog/breaking-free-from-rising-observability-costs-with-open-cost-efficient-architectures) forces many to resort to aggressive log sampling, a compromise that[an effective log management strategy can help avoid](https://clickhouse.com/resources/engineering/managing-petabyte-scale-logs-without-sampling).**
 
 In this post, we introduce the CGW Stack (ClickHouse, Grafana, WarpStream or “Can’t Go Wrong”) and demonstrate how this offers compression rates over 10x for typical log data, when coupled with separation of storage and compute, allows a ClickHouse Cloud [Development tier instance](https://clickhouse.com/pricing) to comfortably host over 1.5TiB of log data (around 5 billion rows assuming a similar number of columns to our sample data): compressing this down to under 100GiB. A fully parallelized query execution engine, coupled with low-level optimizations, ensures query performance remains under 1s for most typical SRE queries on these volumes as demonstrated by our benchmark.
 
@@ -122,7 +123,7 @@ wrote 50000 records in 4.000462s, rows/s: 12498.556286
 
 To consume this data from WarpStream, users can, in turn, use ClickPipes, ClickHouse Cloud's native ingestion tool, to insert this data into ClickHouse. We demonstrate this below.
 
-[![](/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/clickpipes_for_logs_11ec2bc51d.gif)](/uploads/clickpipes_for_logs_11ec2bc51d.gif)
+[![](/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/clickpipes_for_logs_11ec2bc51d.gif)](https://clickhouse.com/uploads/clickpipes_for_logs_11ec2bc51d.gif)
 
 For users looking to only perform testing of ClickHouse, sample data files can be loaded from the ClickHouse client with a single command, as shown below.
 
@@ -347,5 +348,3 @@ In addition to the cost efficiency, having access to a fully-fledged modern anal
 ## Conclusion
 
 In this post, we’ve presented the CGW stack, a logging solution based on ClickHouse Cloud, WarpStream, and Grafana. If using a ClickHouse Cloud Development service, this stack provides an efficient means of storing up to 14TiB of uncompressed data per month for less than $300. This is 23x more cost-efficient than the comparable Elastic Cloud deployment and up to 42x less expensive than DataDog for the same volume of data.
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-footer&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. At the end of your 30-day trial, continue with a pay-as-you-go plan, or [contact us](/company/contact?loc=blog-cta-footer) to learn more about our volume-based discounts. Visit our [pricing page](/pricing?loc=blog-cta-header) for details.

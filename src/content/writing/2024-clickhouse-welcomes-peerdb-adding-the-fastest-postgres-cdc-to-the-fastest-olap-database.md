@@ -9,7 +9,7 @@ tags:
 - product
 summary: We are thrilled to announce today that ClickHouse is joining forces with PeerDB, a Change Data Capture (CDC) provider focused on Postgres, and we’re happy to welcome the PeerDB team and community into the ClickHouse family.
 reading_time: 5
-content_hash: 8dc23ecd8e35c83f
+content_hash: 6956f224a91ed237
 ---
 
 ![peerdb_blog_cover.png](/writing/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database/peerdb_blog_cover_26a6c47078.png)

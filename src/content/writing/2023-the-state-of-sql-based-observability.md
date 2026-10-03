@@ -8,7 +8,7 @@ tags:
 - product
 summary: 'In the following blog post, we’ll look at the parallel backgrounds of two established paradigms: SQL and Observability.'
 reading_time: 17
-content_hash: e7b13739821757dc
+content_hash: d0d9433737629f4f
 ---
 
 ![hero.png](/writing/the-state-of-sql-based-observability/hero_1515705ca4.png)
@@ -26,7 +26,7 @@ If you take AI as an example, the democratization of self-driving cars directly 
 
 In the following blog post, we’ll look at the parallel backgrounds of two established paradigms: SQL and [Observability](https://clickhouse.com/resources/engineering/what-is-observability). We’ll explain how they have collided and together create a new array of opportunities in the field of Observability. Lastly, we provide the necessary elements for the reader to answer the question: **is SQL-based Observability applicable to my use case?**
 
-If you don’t have time to read the whole post (~10 mins), you’ll find the main takeaways in the [summary](/blog/the-state-of-sql-based-observability#is-sql-based-observability-applicable-to-my-use-case) section.
+If you don’t have time to read the whole post (~10 mins), you’ll find the main takeaways in the [summary](https://clickhouse.com/blog/the-state-of-sql-based-observability#is-sql-based-observability-applicable-to-my-use-case) section.
 
 ## Lingua Franca
 

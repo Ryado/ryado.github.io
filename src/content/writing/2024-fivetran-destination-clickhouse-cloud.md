@@ -8,7 +8,7 @@ tags:
 - engineering
 summary: We’re delighted to announce the availability of the Fivetran destination for ClickHouse Cloud.
 reading_time: 5
-content_hash: b0e33c54747444c6
+content_hash: a515878d4fbcfeb0
 ---
 
 We’re delighted to announce the availability of the [Fivetran](https://fivetran.com/) destination for ClickHouse Cloud. Thanks to Fivetran's comprehensive range of connectors, users can quickly load data from over 500 sources.

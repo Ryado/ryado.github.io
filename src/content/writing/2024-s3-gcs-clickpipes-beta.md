@@ -1,6 +1,6 @@
 ---
 title: 'ClickPipes for Batch Data Loading: Introducing S3 and GCS Support'
-date: '2024-04-17'
+date: '2024-04-18'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/s3-gcs-clickpipes-beta
 coauthors: []
@@ -8,7 +8,7 @@ tags:
 - product
 summary: We're thrilled to announce the introduction of new connectors for Amazon S3 and Google Cloud Storage (GCS), currently in beta.
 reading_time: 3
-content_hash: 489e5a945b29eb52
+content_hash: f97d68f9e222cbba
 ---
 
 ## Introduction
@@ -52,5 +52,3 @@ https://datasets-documentation.s3.eu-west-3.amazonaws.com/github/github-2022-fla
 ![6.png](/writing/s3-gcs-clickpipes-beta/6_07d27aaf60.png)
 
 The documentation and more details about how to get started can be found [here](https://clickhouse.com/docs/en/integrations/clickpipes). As always, we’d love to hear your feedback and suggestions ([contact us](https://clickhouse.com/company/contact?loc=clickpipes-s3-beta-blog)). Stay tuned for more updates and enhancements as we continue to evolve ClickPipes into the ultimate connectivity platform for ClickHouse Cloud.
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-footer&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. At the end of your 30-day trial, continue with a pay-as-you-go plan, or [contact us](/company/contact?loc=blog-cta-footer) to learn more about our volume-based discounts. Visit our [pricing page](/pricing?loc=blog-cta-header) for details.
