@@ -1,6 +1,6 @@
 ---
 title: ClickPipes for Amazon Kinesis
-date: '2024-05-09'
+date: '2024-05-13'
 source: clickhouse
 canonical_url: https://clickhouse.com/blog/clickpipes-amazon-kinesis
 coauthors: []
@@ -8,10 +8,8 @@ tags:
 - product
 summary: We’re excited to announce the beta release of our Amazon Kinesis connector for ClickPipes.
 reading_time: 3
-content_hash: 329c367c3d74372f
+content_hash: c9b2eab537109ff3
 ---
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-header&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. To learn more about our volume-based discounts, [contact us](/company/contact?loc=blog-cta-header) or visit our [pricing page](/pricing?loc=blog-cta-header).
 
 Welcome to [launch week](https://clickhouse.com/launch-week/may-2024)! We're going to be announcing a new feature of ClickHouse Cloud every day this week. So let's get to it.
 
@@ -54,5 +52,3 @@ It has been a busy quarter for the ClickPipes team. After adding Avro support fo
 - Improved observability and notification
 
 This is far from a representative list of what the next quarters will bring. As always, we encourage you to share your use cases and requirements to help shape our roadmap. Please feel free to reach out to us!
-
-[Get started](https://clickhouse.cloud/signUp?loc=blog-cta-footer&utm_source=clickhouse&utm_medium=web&utm_campaign=blog) with ClickHouse Cloud today and receive $300 in credits. At the end of your 30-day trial, continue with a pay-as-you-go plan, or [contact us](/company/contact?loc=blog-cta-footer) to learn more about our volume-based discounts. Visit our [pricing page](/pricing?loc=blog-cta-header) for details.
