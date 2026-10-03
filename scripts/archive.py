@@ -457,6 +457,12 @@ def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> Non
             if attr in img.attrs:
                 del img[attr]
         img["src"] = f"/writing/{slug}/{local}"
+        # A link whose only content is this image, pointing at an image file, is a
+        # "click to zoom" link: drop it (it has no accessible name).
+        a = img.parent
+        if (a is not None and a.name == "a" and not a.get_text(strip=True) and len(a.find_all(True)) == 1
+                and re.search(r"\.(png|jpe?g|gif|webp|svg)(\?|$)", a.get("href", ""), re.I)):
+            a.unwrap()
 
 
 # --------------------------------------------------------------------------- #
