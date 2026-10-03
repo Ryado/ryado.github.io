@@ -931,11 +931,16 @@ def prune_images(a: Article) -> None:
 # --------------------------------------------------------------------------- #
 
 
-def inspect(url: str) -> None:
+def inspect(url: str, context: str | None = None) -> None:
     """Print page-structure diagnostics for one URL (used to tune selectors)."""
     html = fetch(url)
     soup = BeautifulSoup(html, "lxml")
     log(f"\n######## INSPECT {url} ({len(html)} bytes)")
+    if context:
+        body = str(soup.find("article") or soup)
+        i = body.find(context)
+        log(f"raw HTML around {context!r}:", body[max(0, i - 300): i + 2500] if i >= 0 else "not found")
+        return
     for item in json_ld(soup):
         log("json-ld:", json.dumps(item, ensure_ascii=False)[:700])
     for m in soup.find_all("meta"):
@@ -978,13 +983,14 @@ def main() -> int:
     ap.add_argument("--debug", action="store_true")
     ap.add_argument("--playwright", action="store_true", help="always fetch HTML with a headless browser")
     ap.add_argument("--inspect", nargs="+", metavar="URL", help="print page-structure diagnostics and exit")
+    ap.add_argument("--context", help="with --inspect: print raw article HTML around this text")
     ap.add_argument("--skip", nargs="*", default=[], choices=["clickhouse", "medium", "ryadh.net"])
     args = ap.parse_args()
     DEBUG, FORCE_PLAYWRIGHT = args.debug, args.playwright
     if args.inspect:
         for u in args.inspect:
             try:
-                inspect(u)
+                inspect(u, args.context)
             except Exception as e:  # noqa: BLE001
                 log(f"inspect failed for {u}: {e}")
         return 0
