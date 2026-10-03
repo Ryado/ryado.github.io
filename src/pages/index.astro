@@ -1,0 +1,105 @@
+---
+import Base from "../layouts/Base.astro";
+import { allWriting } from "../lib";
+import { SITE, SOURCES, fmtDate } from "../site";
+
+const posts = await allWriting();
+const bySlug = new Map(posts.map((p) => [p.id, p]));
+
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = p.data.date.getUTCFullYear();
+  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+}
+
+// "From idea to product": each idea links to the articles where it was argued.
+const ideas = [
+  {
+    year: 2023,
+    title: "SQL-based observability",
+    text: "Argued that observability is just another data problem, one that SQL and OLAP databases like ClickHouse are well suited to. That line of work led to ClickStack and the acquisition of HyperDX.",
+    reads: [
+      "the-state-of-sql-based-observability",
+      "cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack",
+      "evolution-of-sql-based-observability-with-clickhouse",
+    ],
+  },
+  {
+    year: 2025,
+    title: "Agent-facing analytics",
+    text: "Argued that AI agents are a new category of database user, a user persona with its own workloads. That led to Ask AI, the remote MCP server and ClickHouse Agents.",
+    reads: [
+      "agent-facing-analytics",
+      "agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch",
+      "clickhouse-agents-beta",
+    ],
+  },
+].map((i) => ({ ...i, reads: i.reads.map((s) => bySlug.get(s)).filter((p) => p !== undefined) }));
+---
+
+<Base>
+  <section class="hero">
+    <h1>{SITE.headline}</h1>
+    <div class="bio">
+      <p>
+        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I built
+        ClickPipes and led the acquisitions of PeerDB, HyperDX, LibreChat and Langfuse.
+      </p>
+      <p>
+        I'm an <a href="/writing/the-engineering-minded-product-manager/">engineering-minded PM</a>: I started in
+        research (a <a href="/papers/">PhD in computer science</a>) and consulting, co-founded two startups early in my
+        career, and still like to understand how things work under the hood. I live in Barcelona and do some <a
+          href="/investing/">angel investing</a
+        >.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="ideas">
+    <h2 class="section-title" id="ideas">From idea to product</h2>
+    <ul class="ideas">
+      {
+        ideas.map((i) => (
+          <li>
+            <div class="idea-head">
+              <span class="year">{i.year}</span>
+              <h3>{i.title}</h3>
+            </div>
+            <p>{i.text}</p>
+            <p class="reads">
+              Read:{" "}
+              {i.reads.map((p, n) => (
+                <>
+                  {n > 0 && " · "}
+                  <a href={`/writing/${p.id}/`}>{p.data.title}</a>
+                </>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="writing">
+    <h2 class="section-title" id="writing">Writing</h2>
+    {
+      [...byYear].map(([year, list]) => (
+        <div class="year-group">
+          <h3>{year}</h3>
+          <ul class="post-list">
+            {list.map((p) => (
+              <li>
+                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
+                  {p.data.title}
+                </a>
+                <span class="tag">{SOURCES[p.data.source].label}</span>
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</Base>

@@ -665,6 +665,10 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
         block = a.find_parent(["p", "div", "li"])
         if block is not None and block is not content and len(block.get_text(" ", strip=True)) < 400:
             block.decompose()
+    for p in content.find_all(["p", "div"]):
+        text = p.get_text(" ", strip=True)
+        if text.startswith("Get started with ClickHouse Cloud today") and len(text) < 300:
+            p.decompose()
     absolutize_links(content, url)
     localize_images(content, url, slug, stats)
     body = html_to_markdown(content)

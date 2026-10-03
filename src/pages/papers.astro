@@ -1,0 +1,104 @@
+---
+import Base from "../layouts/Base.astro";
+
+// Publication list carried over from the previous ryadh.net homepage.
+type Pub = { authors: string; title: string; venue: string; year: number; url?: string; note?: string };
+
+const conferences: Pub[] = [
+  {
+    authors: "Robert Schulze, Tom Schreiber, Ilya Yatsishin, Ryadh Dahimene, Alexey Milovidov",
+    title: "ClickHouse — Lightning Fast Analytics for Everyone",
+    venue: "Proceedings of the VLDB Endowment 17(12): 3731–3744 (VLDB 2024)",
+    year: 2024,
+    url: "https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf",
+  },
+  {
+    authors: "Camélia Constantin, Ryadh Dahimene, Quentin Grossetti, Cédric du Mouza",
+    title: "Finding Users of Interest in Micro-blogging Systems",
+    venue: "International Conference on Extending Database Technology (EDBT 2016): 5–16",
+    year: 2016,
+  },
+  {
+    authors: "Ryadh Dahimene, Camélia Constantin, Cédric du Mouza",
+    title: "RecLand: A Recommender System for Social Networks",
+    venue: "ACM International Conference on Information and Knowledge Management (CIKM 2014): 2063–2065, Shanghai",
+    year: 2014,
+  },
+  {
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    title: "MicroFilter: Scalable Real-Time Filtering of Micro-blogging Content",
+    venue: "Bases de Données Avancées (BDA 2013), Nantes",
+    year: 2013,
+  },
+  {
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    title: "MicroFilter: Real Time Filtering of Microblogging Content",
+    venue: "3rd Workshop on Making Sense of Microposts, World Wide Web Conference (WWW 2013)",
+    year: 2013,
+  },
+  {
+    authors: "Ryadh Dahimene, Cédric du Mouza, Michel Scholl",
+    title: "Efficient Filtering in Micro-blogging Systems: We Won't Get Flooded Again",
+    venue: "International Conference on Scientific and Statistical Database Management (SSDBM 2012)",
+    year: 2012,
+  },
+];
+
+const journals: Pub[] = [
+  {
+    authors: "Camélia Constantin, Ryadh Dahimene, Cédric du Mouza, Quentin Grossetti",
+    title: "Recommandation contextuelle d'utilisateurs pour les plateformes de micro-blogging",
+    venue: "Ingénierie des Systèmes d'Information 21(3): 93–118 (2016)",
+    year: 2016,
+  },
+  {
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    title: "Filtering Structures for Microblogging Content",
+    venue: "International Journal of Intelligent Information Technologies 11(1): 30–51 (2015)",
+    year: 2015,
+  },
+];
+---
+
+<Base title="Papers" description="Academic publications by Ryadh Dahimene: VLDB, EDBT, CIKM, SSDBM, WWW workshops, journals and a PhD thesis.">
+  <h1>Papers</h1>
+  <p>
+    Before product, I did research on databases and information retrieval, mostly filtering and recommendation in
+    social networks, at the CNAM in Paris. More recently, I co-authored the ClickHouse VLDB paper.
+  </p>
+
+  <h2 class="section-title">Conferences and workshops</h2>
+  <ul class="plain-list pub">
+    {
+      conferences.map((p) => (
+        <li>
+          <span class="title">{p.url ? <a href={p.url}>{p.title}</a> : p.title}</span>
+          <span class="authors">{p.authors}</span>
+          <span class="venue">{p.venue}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2 class="section-title">Journals</h2>
+  <ul class="plain-list pub">
+    {
+      journals.map((p) => (
+        <li lang={p.title.startsWith("Recommandation") ? "fr" : undefined}>
+          <span class="title">{p.title}</span>
+          <span class="authors">{p.authors}</span>
+          <span class="venue">{p.venue}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <h2 class="section-title">Thesis</h2>
+  <ul class="plain-list pub">
+    <li>
+      <span class="title" lang="fr"><a href="/these_ryadh_dahimene.pdf">Filtrage et recommandation sur les réseaux sociaux</a></span>
+      <span class="authors">Ryadh Dahimene. Filtering and Recommendation in Social Networks.</span>
+      <span class="venue">PhD thesis, Conservatoire National des Arts et Métiers (CNAM), Paris, 2014 · PDF, 5 MB</span>
+    </li>
+  </ul>
+</Base>
