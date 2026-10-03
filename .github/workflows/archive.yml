@@ -1,0 +1,45 @@
+name: Archive writing
+
+# Re-runs scripts/archive.py and commits any new/updated articles.
+# Run it manually from the Actions tab, or let the weekly schedule pick up new posts.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+  push:
+    branches: ["claude/**"]
+    paths: ["scripts/archive.py", ".github/workflows/archive.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - name: Archive
+        run: python scripts/archive.py --debug
+      - name: Commit changes
+        if: always()
+        run: |
+          git add src/content/writing public/writing
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Archive: update writing"
+          git push
