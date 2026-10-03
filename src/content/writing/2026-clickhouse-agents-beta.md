@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/clickhouse-agents-beta
 coauthors: []
 tags:
 - product
-summary: text
+summary: The public beta of ClickHouse Agents, a fully managed, Claude-powered agentic analytics service in ClickHouse Cloud built on LibreChat.
 reading_time: 8
 content_hash: 86e716eee93e86c6
 ---

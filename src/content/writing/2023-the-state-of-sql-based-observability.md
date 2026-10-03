@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/the-state-of-sql-based-observability
 coauthors: []
 tags:
 - product
-summary: 'In the following blog post, we’ll look at the parallel backgrounds of two established paradigms: SQL and Observability.'
+summary: How SQL and observability, two paradigms with parallel histories, collided, and how to tell whether SQL-based observability fits your use case.
 reading_time: 17
 content_hash: d0d9433737629f4f
 ---

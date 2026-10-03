@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/s3-gcs-clickpipes-beta
 coauthors: []
 tags:
 - product
-summary: We're thrilled to announce the introduction of new connectors for Amazon S3 and Google Cloud Storage (GCS), currently in beta.
+summary: New ClickPipes connectors for Amazon S3 and Google Cloud Storage that load billions of rows into ClickHouse Cloud without interruptions leaving tables half-loaded.
 reading_time: 3
 content_hash: f97d68f9e222cbba
 ---

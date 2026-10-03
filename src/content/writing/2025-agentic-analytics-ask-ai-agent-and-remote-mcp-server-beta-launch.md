@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/agentic-analytics-ask-ai-agent-and-re
 coauthors: []
 tags:
 - product
-summary: Announcing Ask AI beta and remote MCP server, powering faster agentic analytics in ClickHouse Cloud.
+summary: The public beta of the Ask AI agent and the remote MCP server for ClickHouse Cloud, two steps towards agents as primary consumers of analytics databases.
 reading_time: 4
 content_hash: c94ecc04e0479ba6
 ---

@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/clickhouse-cloud-clickpipes-for-kafka
 coauthors: []
 tags:
 - product
-summary: We are pleased to announce the availability of ClickPipes in private preview, allowing ClickHouse Cloud users to insert data from Kafka using a fully managed ingestion service.
+summary: 'ClickPipes for Kafka arrives in private preview: a managed ingestion service that lets ClickHouse Cloud users connect to remote Kafka brokers and start ingesting data right away.'
 reading_time: 4
 content_hash: 82b13010fccfda97
 ---

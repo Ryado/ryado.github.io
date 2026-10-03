@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/agent-facing-analytics
 coauthors: []
 tags:
 - product
-summary: AI agents as an emerging user persona in real-time analytics
+summary: 'AI agents as a new user persona for real-time analytics databases: how they interact with data, their usage patterns, and what that means for database design.'
 reading_time: 14
 content_hash: c6620cbedf570f7c
 ---

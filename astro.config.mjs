@@ -2,6 +2,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import imageAttrs from "./integrations/image-attrs.mjs";
+import { accessibleTheme } from "./integrations/accessible-theme.mjs";
+import githubLight from "@shikijs/themes/github-light";
+import githubDarkDimmed from "@shikijs/themes/github-dark-dimmed";
 import { readdirSync, readFileSync } from "node:fs";
 
 // Old Jekyll blog lived at /blog/YYYY-MM-DD-slug/. Map each archived
@@ -27,7 +30,11 @@ export default defineConfig({
   },
   markdown: {
     shikiConfig: {
-      themes: { light: "github-light", dark: "github-dark-dimmed" },
+      // Backgrounds match --code-bg in global.css.
+      themes: {
+        light: accessibleTheme(githubLight, "#ffffff"),
+        dark: accessibleTheme(githubDarkDimmed, "#1d1c19"),
+      },
       wrap: false,
     },
   },

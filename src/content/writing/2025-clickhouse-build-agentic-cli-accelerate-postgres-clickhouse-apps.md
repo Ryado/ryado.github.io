@@ -8,7 +8,7 @@ coauthors:
 - Al Brown
 tags:
 - product
-summary: clickhouse.build is an open source, agentic CLI that accelerates the adoption of ClickHouse within your existing Postgres-backed TypeScript application.
+summary: An open-source agentic CLI that finds the analytical queries in a Postgres-backed TypeScript app, syncs the tables to ClickHouse Cloud and rewrites the code to use ClickHouse for analytics.
 reading_time: 10
 content_hash: 5c586c11e78f88de
 ---

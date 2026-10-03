@@ -7,7 +7,7 @@ coauthors:
 - Dale McDiarmid
 tags:
 - engineering
-summary: Tired of paying thousands to store a few TiB of logs?
+summary: A logging stack built on ClickHouse Cloud, WarpStream and Grafana that stores up to 14 TiB of uncompressed logs a month for under $300, up to 42x cheaper than Datadog for the same volume.
 reading_time: 21
 content_hash: b6e710972347b91c
 ---

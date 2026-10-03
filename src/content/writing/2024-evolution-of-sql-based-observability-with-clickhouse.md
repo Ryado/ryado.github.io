@@ -7,7 +7,7 @@ coauthors:
 - Dale McDiarmid
 tags:
 - engineering
-summary: As 2024 comes to a close, explore the evolution of SQL-based observability and ClickHouse’s latest developments, including enhanced JSON support, OpenTelemetry integration, and powerful time series capabilities.
+summary: 'A year after “The State of SQL-based Observability”: what changed in ClickHouse and its ecosystem, from JSON support to OpenTelemetry and time series.'
 reading_time: 16
 content_hash: 37d5b571e9a65f21
 ---

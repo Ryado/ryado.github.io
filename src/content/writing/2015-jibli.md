@@ -7,7 +7,7 @@ coauthors: []
 tags:
 - jib.li
 - press
-summary: Riyadh Dahimene is a doctor in computer science and management; he is specialized in social network data.
+summary: A press profile of Jib.li, the “co-suitcasing” platform co-founded in 2011 that connects people who need to send parcels with travellers who can carry them.
 reading_time: 4
 republished_from: http://impactjournalismday.com/story/jib-li/
 content_hash: bba4d5315c7a2949

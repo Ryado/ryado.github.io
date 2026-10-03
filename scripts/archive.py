@@ -304,8 +304,15 @@ class Converter(MarkdownConverter):
 
 
 def html_to_markdown(fragment: Tag) -> str:
-    # Replace code blocks with placeholders so markdownify can't mangle them.
+    # Replace code blocks and videos with placeholders so markdownify can't mangle them.
     blocks: list[str] = []
+    for video in fragment.find_all("video"):
+        src = video.get("data-local-src", "")
+        if src:
+            blocks.append(f'<video controls preload="none" playsinline src="{src}"></video>')
+            video.replace_with(BeautifulSoup(f"<p>CODEBLOCK{len(blocks) - 1}PLACEHOLDER</p>", "html.parser"))
+        else:
+            video.decompose()
     for pre in fragment.find_all("pre"):
         lang = code_language(pre)
         body = code_text(pre)
@@ -367,6 +374,42 @@ def absolutize_links(fragment: Tag, base_url: str) -> None:
         if href.startswith("#") or href.startswith("mailto:"):
             continue
         a["href"] = urljoin(base_url, href)
+
+
+MAX_VIDEO_BYTES = 25 * 1024 * 1024
+
+
+def localize_videos(fragment: Tag, base_url: str, slug: str, stats: dict) -> None:
+    """Download <video> files (small ones) next to the images; keep big ones remote."""
+    for video in fragment.find_all("video"):
+        src = video.get("src") or ""
+        if not src:
+            source = video.find("source", src=True)
+            src = source["src"] if source else ""
+        if not src:
+            a = video.find("a", href=True)
+            src = a["href"] if a else ""
+        if not src:
+            continue
+        url = urljoin(base_url, src)
+        name = re.sub(r"[^A-Za-z0-9._-]+", "-", Path(unquote(urlparse(url).path)).name)
+        target = IMAGE_DIR / slug / name
+        local = f"/writing/{slug}/{name}"
+        if not target.exists():
+            try:
+                data = fetch(url, binary=True, browser_ok=False)
+                if len(data) > MAX_VIDEO_BYTES:
+                    log(f"   - video kept remote ({len(data) // 2**20} MB): {url}")
+                    local = url
+                else:
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_bytes(data)
+                    stats["images"] += 1
+            except Exception as e:  # noqa: BLE001
+                log(f"   ! video failed: {url} ({e})")
+                stats["image_failures"].append(url)
+                local = url
+        video["data-local-src"] = local
 
 
 def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> None:
@@ -669,6 +712,7 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
         text = p.get_text(" ", strip=True)
         if text.startswith("Get started with ClickHouse Cloud today") and len(text) < 300:
             p.decompose()
+    localize_videos(content, url, slug, stats)
     absolutize_links(content, url)
     localize_images(content, url, slug, stats)
     body = html_to_markdown(content)

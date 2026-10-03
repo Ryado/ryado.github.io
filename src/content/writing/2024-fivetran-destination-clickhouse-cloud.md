@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/fivetran-destination-clickhouse-cloud
 coauthors: []
 tags:
 - engineering
-summary: We’re delighted to announce the availability of the Fivetran destination for ClickHouse Cloud.
+summary: An open-source Fivetran destination for ClickHouse Cloud, built on the Fivetran SDK, that loads data from more than 500 sources.
 reading_time: 5
 content_hash: a515878d4fbcfeb0
 ---

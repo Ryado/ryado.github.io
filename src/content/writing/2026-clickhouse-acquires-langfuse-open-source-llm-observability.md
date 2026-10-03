@@ -9,7 +9,7 @@ coauthors:
 - Clemens Rawert
 tags:
 - company-and-culture
-summary: We are thrilled to announce that ClickHouse has acquired Langfuse, the leading open-source platform for LLM observability, evaluations, and prompt management.
+summary: ClickHouse acquires Langfuse, the open-source platform for LLM observability, evaluations and prompt management.
 reading_time: 7
 content_hash: f5412c619315ac03
 ---

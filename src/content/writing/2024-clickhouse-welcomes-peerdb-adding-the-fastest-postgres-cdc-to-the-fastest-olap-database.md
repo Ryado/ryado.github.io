@@ -7,7 +7,7 @@ coauthors:
 - Aaron Katz
 tags:
 - product
-summary: We are thrilled to announce today that ClickHouse is joining forces with PeerDB, a Change Data Capture (CDC) provider focused on Postgres, and we’re happy to welcome the PeerDB team and community into the ClickHouse family.
+summary: ClickHouse joins forces with PeerDB, a change data capture provider focused on Postgres, to bridge transactional and analytical workloads between the two databases.
 reading_time: 5
 content_hash: 6956f224a91ed237
 ---

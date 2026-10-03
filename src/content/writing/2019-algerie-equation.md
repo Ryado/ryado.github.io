@@ -7,7 +7,7 @@ coauthors: []
 tags:
 - algérie
 - opinion
-summary: Une somme de forces vives
+summary: Une analyse personnelle du mouvement populaire algérien de 2019, vu comme une somme de forces vives qu’il s’agit de faire converger.
 reading_time: 5
 lang: fr
 content_hash: 4914714fb47f2da6

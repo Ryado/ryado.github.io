@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/clickhouse-cloud-compatible-with-mysq
 coauthors: []
 tags:
 - engineering
-summary: ClickHouse Cloud is now compatible with the MySQL protocol unlocking BI tools such as Looker Studio for our users
+summary: ClickHouse Cloud now supports the MySQL interface, so BI tools without a native ClickHouse connector, such as Looker Studio and Tableau Online, can query it.
 reading_time: 3
 content_hash: 095f9d18299feda9
 ---

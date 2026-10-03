@@ -7,7 +7,7 @@ coauthors:
 - Spencer Torres
 tags:
 - engineering
-summary: We’re now officially supporting OpenTelemetry logging and tracing capabilities, advancing the exporters to beta status.
+summary: ClickHouse now officially supports and contributes to the OpenTelemetry exporter, which has reached beta for logs and traces; an overview of the OTel and ClickHouse integration.
 reading_time: 10
 content_hash: b56287d54e883782
 ---

@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/clickpipes-is-generally-available
 coauthors: []
 tags:
 - product
-summary: Extracting valuable insights for real-time analytics applications often depends on the availability of fresh and clean data.
+summary: ClickPipes, the continuous data ingestion service for ClickHouse Cloud, is generally available, adding Confluent Cloud schema registry support, Amazon MSK and dedicated metrics.
 reading_time: 2
 content_hash: b2b2a1f6b9dd1451
 ---

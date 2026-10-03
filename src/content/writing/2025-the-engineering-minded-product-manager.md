@@ -10,7 +10,7 @@ tags:
 - software-engineering
 - product-management
 - technology
-summary: No, the title isn’t a spelling mistake.
+summary: 'The product-manager counterpart to the product-minded engineer: eight traits of a PM who meets engineering halfway, from technical curiosity to shared ownership of the product.'
 reading_time: 7
 content_hash: 15ac25c2bef861c8
 ---

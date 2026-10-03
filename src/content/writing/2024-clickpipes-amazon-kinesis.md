@@ -6,7 +6,7 @@ canonical_url: https://clickhouse.com/blog/clickpipes-amazon-kinesis
 coauthors: []
 tags:
 - product
-summary: We’re excited to announce the beta release of our Amazon Kinesis connector for ClickPipes.
+summary: The beta of the ClickPipes connector for Amazon Kinesis, a hassle-free way to ingest data from Kinesis Data Streams into ClickHouse Cloud.
 reading_time: 3
 content_hash: c9b2eab537109ff3
 ---
