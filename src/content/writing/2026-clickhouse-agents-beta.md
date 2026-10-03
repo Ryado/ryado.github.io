@@ -8,7 +8,7 @@ tags:
 - product
 summary: The public beta of ClickHouse Agents, a fully managed, Claude-powered agentic analytics service in ClickHouse Cloud built on LibreChat.
 reading_time: 8
-content_hash: 86e716eee93e86c6
+content_hash: 039bc8eb22f28509
 ---
 
 After running agentic analytics in production for more than a year at ClickHouse, at [Open House 2026](https://clickhouse.com/blog/open-house-2026-day-1) in San Francisco, we announced the public beta of [ClickHouse Agents](https://clickhouse.com/docs/cloud/features/ai-ml/agents), a fully managed agentic analytics service in ClickHouse Cloud, powered by Claude.
@@ -21,7 +21,7 @@ ClickHouse Agents is built on [LibreChat](https://github.com/danny-avila/LibreCh
 
 Loading video...
 
-[](/uploads/Ryadh_Keynote_Web_407d0cb26c.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-agents-beta/Ryadh_Keynote_Web_407d0cb26c.mp4"></video>
 
 What's included:
 

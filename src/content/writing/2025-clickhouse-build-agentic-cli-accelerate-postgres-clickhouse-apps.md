@@ -10,7 +10,7 @@ tags:
 - product
 summary: An open-source agentic CLI that finds the analytical queries in a Postgres-backed TypeScript app, syncs the tables to ClickHouse Cloud and rewrites the code to use ClickHouse for analytics.
 reading_time: 10
-content_hash: 5c586c11e78f88de
+content_hash: 5e83840011e8d1d9
 ---
 
 [clickhouse.build](https://github.com/ClickHouse/clickhouse.build) is an open source, agentic CLI that accelerates the adoption of ClickHouse within your existing Postgres-backed TypeScript application. The goal is not to replace Postgres, but to seamlessly combine it with ClickHouse for analytical workloads, using the strengths of each database together, within the same application.
@@ -60,7 +60,7 @@ When it finds queries, it will inspect them to determine whether the query is be
 
 Loading video...
 
-[](/uploads/scanner_agent_edited_9c0226e9f2.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-build-agentic-cli-accelerate-postgres-clickhouse-apps/scanner_agent_edited_9c0226e9f2.mp4"></video>
 
 *A demo of the scanner agent, called on its own outside of the all-in-one workflow*
 
@@ -70,7 +70,7 @@ The data migrator agent assists in syncing the necessary Postgres tables to Clic
 
 Loading video...
 
-[](/uploads/data_agent_edited_09657be342.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-build-agentic-cli-accelerate-postgres-clickhouse-apps/data_agent_edited_09657be342.mp4"></video>
 
 *A demo of the data migrator agent, called on its own outside of the all-in-one workflow*
 
@@ -86,7 +86,7 @@ The QA agent is a sub-agent of the code migrator, which validates any changes ma
 
 Loading video...
 
-[](/uploads/code_agent_edited_dcaa9e767e.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-build-agentic-cli-accelerate-postgres-clickhouse-apps/code_agent_edited_dcaa9e767e.mp4"></video>
 
 *A demo of the code migrator agent, called on its own outside of the all-in-one workflow*
 
@@ -112,7 +112,7 @@ Currently, **the ClickPipes configuration commands require some manual input**. 
 
 Loading video...
 
-[](/uploads/clickpipes_edited_5b36b1f53f.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-build-agentic-cli-accelerate-postgres-clickhouse-apps/clickpipes_edited_5b36b1f53f.mp4"></video>
 
 *A demo of running the ClickPipes configuration commands and validating the running ClickPipes service in ClickHouse Cloud*
 
@@ -130,7 +130,7 @@ You can run your application as normal, and it should continue to use your exist
 
 Loading video...
 
-[](/uploads/evaluate_poc_edited_1e0cd66401.mp4)
+<video controls preload="none" playsinline src="/writing/clickhouse-build-agentic-cli-accelerate-postgres-clickhouse-apps/evaluate_poc_edited_1e0cd66401.mp4"></video>
 
 *A demo of an application being switched between Postgres and ClickHouse backends, showing a 3x gain in performance.*
 
