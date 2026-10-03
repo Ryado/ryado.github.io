@@ -831,15 +831,63 @@ def write_article(a: Article, index: dict, report: dict) -> None:
 # --------------------------------------------------------------------------- #
 
 
+def inspect(url: str) -> None:
+    """Print page-structure diagnostics for one URL (used to tune selectors)."""
+    html = fetch(url)
+    soup = BeautifulSoup(html, "lxml")
+    log(f"\n######## INSPECT {url} ({len(html)} bytes)")
+    for item in json_ld(soup):
+        log("json-ld:", json.dumps(item, ensure_ascii=False)[:700])
+    for m in soup.find_all("meta"):
+        k = m.get("property") or m.get("name")
+        if k and any(x in k for x in ("date", "time", "author", "description", "tag")):
+            log(f"meta {k} = {m.get('content', '')[:150]!r}")
+    log("date-like strings:", DATE_TEXT_RE.findall(soup.get_text(" "))[:12])
+    log("time tags:", [(t.get("datetime"), t.get_text(strip=True)) for t in soup.find_all("time")][:6])
+    log("next data:", bool(soup.find("script", id="__NEXT_DATA__")), "| flight chunks:", html.count("self.__next_f.push"))
+    for key in ("publishedAt", "published_at", "datePublished", "publishDate", "createdAt"):
+        i = html.find(key)
+        if i >= 0:
+            log(f"raw {key}: …{html[max(0, i - 80): i + 120]!r}")
+    h1 = soup.find("h1")
+    if h1:
+        log("h1:", h1.get_text(" ", strip=True)[:120])
+        log("h1 parent chain:", [f"{p.name}.{'.'.join(p.get('class') or [])[:60]}" for p in list(h1.parents)[:5]])
+        after = []
+        for el in h1.find_all_next(string=True, limit=60):
+            t = el.strip()
+            if t:
+                after.append(t)
+        log("text after h1:", " | ".join(after)[:900])
+    scored = sorted(((p_text_len(c), c) for c in soup.find_all(["article", "main", "div", "section"])),
+                    key=lambda x: -x[0])[:8]
+    for n, c in scored:
+        log(f"container {n:>6} <{c.name} id={c.get('id')} class={' '.join(c.get('class') or [])[:90]}> depth={len(list(c.parents))}")
+    links = [a["href"] for a in soup.find_all("a", href=True)]
+    log("author links:", [h for h in links if "author" in h][:20])
+    log("page links:", sorted({h for h in links if "page=" in h})[:20])
+    log("blog links:", len([h for h in links if "/blog/" in h]), [h for h in links if "/blog/" in h][:40])
+    for m in re.finditer(r"\d+\s+(?:articles|posts)", soup.get_text(" "), re.I):
+        log("count text:", soup.get_text(" ")[max(0, m.start() - 60): m.end() + 30])
+
+
 def main() -> int:
     global DEBUG, FORCE_PLAYWRIGHT
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--only", help="only process URLs containing this substring")
     ap.add_argument("--debug", action="store_true")
     ap.add_argument("--playwright", action="store_true", help="always fetch HTML with a headless browser")
+    ap.add_argument("--inspect", nargs="+", metavar="URL", help="print page-structure diagnostics and exit")
     ap.add_argument("--skip", nargs="*", default=[], choices=["clickhouse", "medium", "ryadh.net"])
     args = ap.parse_args()
     DEBUG, FORCE_PLAYWRIGHT = args.debug, args.playwright
+    if args.inspect:
+        for u in args.inspect:
+            try:
+                inspect(u)
+            except Exception as e:  # noqa: BLE001
+                log(f"inspect failed for {u}: {e}")
+        return 0
 
     report = {"found": [], "new": [], "updated": [], "unchanged": [], "failed": [], "skipped": []}
     stats = {"images": 0, "image_failures": []}
