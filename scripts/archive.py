@@ -577,6 +577,26 @@ def clickhouse_authors(soup: BeautifulSoup, content: Tag | None) -> list[str]:
     return dedupe([n.strip() for n in names if n and n.strip()])
 
 
+def clickhouse_body(soup: BeautifulSoup) -> Tag | None:
+    """The post body: the rich-text block(s) inside <article>.
+
+    Long posts are split into several rich-text blocks (with code or embeds in
+    between), so take the smallest element that contains all of them.
+    """
+    article = soup.find("article")
+    if article is None:
+        return find_main_content(soup)
+    blocks = [b for b in article.select("[class*=rich-text]") if b.get_text(strip=True)]
+    if not blocks:
+        return article
+    if len(blocks) == 1:
+        return blocks[0]
+    common = blocks[0]
+    while common is not article and not all(common in b.parents or common is b for b in blocks):
+        common = common.parent
+    return common
+
+
 def clickhouse_article(slug: str, stats: dict) -> Article | None:
     url = f"https://clickhouse.com/blog/{slug}"
     html = fetch(url)
@@ -595,8 +615,7 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
     title = title or meta(soup, "og:title") or (soup.h1.get_text(" ", strip=True) if soup.h1 else "")
     title = re.sub(r"\s*[|\-–]\s*ClickHouse\s*$", "", title).strip()
 
-    content = (soup.select_one("article .rich-text") or soup.select_one("article [class*=rich-text]")
-               or soup.find("article") or find_main_content(soup))
+    content = clickhouse_body(soup)
     authors = clickhouse_authors(soup, content)
     if authors and not any(is_me(a) for a in authors):
         log(f"   - skipping {slug}: authors are {authors}")
@@ -857,6 +876,7 @@ def write_article(a: Article, index: dict, report: dict) -> None:
     prev = index.get(key)
     if prev and prev[1].get("content_hash") == h:
         report["unchanged"].append(a.url)
+        prune_images(a)
         return
 
     fm = {
@@ -887,6 +907,19 @@ def write_article(a: Article, index: dict, report: dict) -> None:
     text = "---\n" + yaml.safe_dump(fm, allow_unicode=True, sort_keys=False, width=1000) + "---\n\n" + a.body
     path.write_text(text, encoding="utf-8")
     report["updated" if prev else "new"].append(a.url)
+    prune_images(a)
+
+
+def prune_images(a: Article) -> None:
+    """Delete downloaded images the article no longer references."""
+    folder = IMAGE_DIR / a.slug
+    if not folder.is_dir():
+        return
+    for f in folder.iterdir():
+        if f"/writing/{a.slug}/{f.name}" not in a.body:
+            f.unlink()
+    if not any(folder.iterdir()):
+        folder.rmdir()
 
 
 # --------------------------------------------------------------------------- #
