@@ -9,7 +9,8 @@ tags:
 - opinion
 summary: Une somme de forces vives
 reading_time: 5
-content_hash: 61ddb6c6df506b41
+lang: fr
+content_hash: 4914714fb47f2da6
 ---
 
 **Note:**  *Je tiens à préciser au lecteur que ce texte ne reflète que mon analyse et opinion personnelle sur les événements récents en Algérie. Je n’ai en aucun cas la prétention de parler au nom de qui que ce soit, ni celle d’apporter des solutions.*

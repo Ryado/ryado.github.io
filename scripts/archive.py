@@ -154,6 +154,7 @@ class Article:
     summary: str = ""
     body: str = ""  # Markdown
     republished_from: str = ""
+    lang: str = "en"
 
 
 # --------------------------------------------------------------------------- #
@@ -209,6 +210,13 @@ def reading_time(md: str) -> int:
     words = len(re.findall(r"\w+", markdown_to_text(md)))
     code_lines = sum(b.count("\n") for b in re.findall(r"```.*?```", md, flags=re.S))
     return max(1, math.ceil((words + code_lines * 3) / WORDS_PER_MINUTE))
+
+
+def detect_lang(text: str) -> str:
+    words = re.findall(r"[a-zà-ÿ’']+", text.lower())
+    fr = sum(w in {"le", "la", "les", "des", "est", "une", "et", "du", "pour", "que", "dans"} for w in words)
+    en = sum(w in {"the", "and", "is", "of", "to", "a", "in", "for", "that", "with"} for w in words)
+    return "fr" if fr > en else "en"
 
 
 def titlecase_slug(s: str) -> str:
@@ -352,6 +360,15 @@ def pick_src(img: Tag) -> str:
     return ""
 
 
+def absolutize_links(fragment: Tag, base_url: str) -> None:
+    """Make relative links point at the original site (they would 404 here)."""
+    for a in fragment.find_all("a", href=True):
+        href = a["href"].strip()
+        if href.startswith("#") or href.startswith("mailto:"):
+            continue
+        a["href"] = urljoin(base_url, href)
+
+
 def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> None:
     dest = IMAGE_DIR / slug
     used: dict[str, str] = {}
@@ -481,7 +498,7 @@ def meta(soup: BeautifulSoup, *names: str) -> str:
 # ClickHouse
 # --------------------------------------------------------------------------- #
 
-CH_POST_RE = re.compile(r"^(?:https://clickhouse\.com)?/blog/([a-z0-9][a-z0-9-]+)/?$")
+CH_POST_RE = re.compile(r"^(?:https://clickhouse\.com)?/blog/([A-Za-z0-9][A-Za-z0-9._-]+)/?$")
 CH_NON_POSTS = {"tag", "category", "author", "authors", "page", "rss.xml"}
 
 
@@ -494,7 +511,7 @@ def clickhouse_listing(url: str) -> tuple[list[str], int | None, str]:
         if m and m.group(1) not in CH_NON_POSTS:
             slugs.append(m.group(1))
     # Next.js flight data may carry slugs not present as anchors.
-    for m in re.finditer(r'\\?"slug\\?"\s*:\s*\\?"([a-z0-9-]+)\\?"', html):
+    for m in re.finditer(r'\\?"slug\\?"\s*:\s*\\?"([A-Za-z0-9._-]+)\\?"', html):
         slugs.append(m.group(1))
     count = None
     m = re.search(r"(\d+)\s+(?:articles|posts|blog posts)", soup.get_text(" "), re.I)
@@ -503,8 +520,37 @@ def clickhouse_listing(url: str) -> tuple[list[str], int | None, str]:
     return dedupe(slugs), count, html
 
 
+def clickhouse_byline(soup: BeautifulSoup) -> tuple[list[str], str]:
+    """Authors and date from the byline under the title: "A, B and C  Jan 16, 2026 · 8 minutes read"."""
+    h1 = soup.find("h1")
+    if not h1:
+        return [], ""
+    parts = []
+    for el in h1.find_all_next(string=True, limit=40):
+        t = el.strip()
+        if not t:
+            continue
+        parts.append(t)
+        if DATE_TEXT_RE.search(t):
+            break
+    text = " ".join(parts)
+    title = h1.get_text(" ", strip=True)
+    if text.startswith(title):
+        text = text[len(title):]
+    m = DATE_TEXT_RE.search(text)
+    if not m:
+        return [], ""
+    date = norm_date(m.group(0).replace(".", "").replace("Sept", "Sep"))
+    who = re.sub(r"\s+", " ", text[: m.start()]).strip(" ,·|")
+    names = [n.strip(" ,") for n in re.split(r"\s*,\s*|\s+and\s+|\s*&\s*", who)]
+    names = [n for n in names if 2 < len(n) < 50 and not re.search(r"\d", n)]
+    return dedupe(names), date
+
+
 def clickhouse_authors(soup: BeautifulSoup, content: Tag | None) -> list[str]:
-    names: list[str] = []
+    names, _ = clickhouse_byline(soup)
+    if names:
+        return names
     for item in json_ld(soup):
         a = item.get("author")
         for x in a if isinstance(a, list) else [a] if a else []:
@@ -549,7 +595,8 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
     title = title or meta(soup, "og:title") or (soup.h1.get_text(" ", strip=True) if soup.h1 else "")
     title = re.sub(r"\s*[|\-–]\s*ClickHouse\s*$", "", title).strip()
 
-    content = find_main_content(soup)
+    content = (soup.select_one("article .rich-text") or soup.select_one("article [class*=rich-text]")
+               or soup.find("article") or find_main_content(soup))
     authors = clickhouse_authors(soup, content)
     if authors and not any(is_me(a) for a in authors):
         log(f"   - skipping {slug}: authors are {authors}")
@@ -559,6 +606,10 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
         return None
 
     date = ""
+    m = re.search(r'\\?"slug\\?"\s*:\s*\\?"' + re.escape(slug) + r'\\?"\s*,\s*\\?"date\\?"\s*:\s*\\?"(\d{4}-\d{2}-\d{2})', html)
+    if m:
+        date = m.group(1)
+    date = date or clickhouse_byline(soup)[1]
     for item in ld:
         date = date or norm_date(item.get("datePublished", ""))
     date = date or norm_date(meta(soup, "article:published_time", "date", "publish_date"))
@@ -591,9 +642,17 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
     else:
         debug(f"{slug}: content container <{content.name} class={content.get('class')}>")
     content = clean_fragment(content, title)
+    for a in content.select('a[href*="loc=blog-cta"], a[href*="clickhouse.cloud/signUp"]'):
+        block = a.find_parent(["p", "div", "li"])
+        if block is not None and block is not content and len(block.get_text(" ", strip=True)) < 400:
+            block.decompose()
+    absolutize_links(content, url)
     localize_images(content, url, slug, stats)
     body = html_to_markdown(content)
 
+    description = meta(soup, "description", "og:description")
+    if len(description) < 40:
+        description = markdown_to_text(body)
     return Article(
         url=url,
         source="clickhouse",
@@ -602,7 +661,7 @@ def clickhouse_article(slug: str, stats: dict) -> Article | None:
         date=date,
         coauthors=[a for a in authors if not is_me(a)],
         tags=dedupe([t.lower() for t in tags if t])[:6],
-        summary=first_sentence(meta(soup, "description", "og:description") or markdown_to_text(body)),
+        summary=first_sentence(description),
         body=body,
     )
 
@@ -638,6 +697,7 @@ def medium_article(url: str, feed_items: dict, stats: dict) -> Article:
         tags = []
         content = soup.find("article") or readability_content(html)
     content = clean_fragment(content, title)
+    absolutize_links(content, url)
     # Medium repeats the title/subtitle at the top of the body.
     for h in content.find_all(["h3", "h4"], limit=1):
         if h.get_text(strip=True) == title:
@@ -764,6 +824,7 @@ def ryadh_blog_article(post_id: str, stats: dict) -> Article:
         summary=summary,
         body=body,
         republished_from=republished,
+        lang=detect_lang(text),
     )
 
 
@@ -786,7 +847,7 @@ def existing_index() -> dict[str, tuple[Path, dict, str]]:
 
 
 def content_hash(a: Article) -> str:
-    payload = json.dumps([a.title, a.date, a.coauthors, a.body, a.republished_from], ensure_ascii=False)
+    payload = json.dumps([a.title, a.date, a.coauthors, a.body, a.republished_from, a.lang], ensure_ascii=False)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
 
 
@@ -810,6 +871,8 @@ def write_article(a: Article, index: dict, report: dict) -> None:
     }
     if a.republished_from:
         fm["republished_from"] = a.republished_from
+    if a.lang != "en":
+        fm["lang"] = a.lang
     if prev:  # keep hand-edited fields
         for k in ("summary", "tags", "title_override"):
             if prev[1].get(k):

@@ -10,7 +10,8 @@ tags:
 summary: La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique.
 reading_time: 5
 republished_from: https://www.elwatan.com/pages-hebdo/etudiant/comment-canaliser-le-tsunami-de-donnees-massives-23-03-2016
-content_hash: 24cf822365971bb1
+lang: fr
+content_hash: 2f69c9f154021250
 ---
 
 La maîtrise des big data (données massives) est désormais le nerf de la guerre de l’économie moderne et une redoutable arme d’hégémonie politique. Inopportunément, l’Algérie — à l’instar d’autres pays technologiquement sous-développés du continent africain — reste en marge de cette mutation digitale.

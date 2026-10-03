@@ -10,7 +10,7 @@ tags:
 summary: Riyadh Dahimene is a doctor in computer science and management; he is specialized in social network data.
 reading_time: 4
 republished_from: http://impactjournalismday.com/story/jib-li/
-content_hash: b1a6e0950afc6422
+content_hash: bba4d5315c7a2949
 ---
 
 Riyadh Dahimene is a doctor in computer science and management; he is specialized in social network data. At the age of 27, he is the manager and co-founder of the website Jib.li which literally means "bring it to me" in Algerian popular Arabic. Based in France, this online platform is unique; it offers its users an innovative, fast and cheap service for transporting their packages around the world. "Algerian travelers very often carry packages for other people. There's always someone in our neighborhood who needs to send a medicine from here (France) or bring back a document from there (Algeria)", says Riyadh, adding: "Starting from a very simple observation, my friend Chakib Benziane and I came up with the idea of creating Jib.li in 2011".
