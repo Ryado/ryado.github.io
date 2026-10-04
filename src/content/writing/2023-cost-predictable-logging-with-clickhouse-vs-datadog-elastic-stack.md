@@ -9,7 +9,7 @@ tags:
 - engineering
 summary: A logging stack built on ClickHouse Cloud, WarpStream and Grafana that stores up to 14 TiB of uncompressed logs a month for under $300, up to 42x cheaper than Datadog for the same volume.
 reading_time: 21
-content_hash: 25deb53f90d35084
+content_hash: 00e21ac1a8920885
 ---
 
 ![cost-predictable-logging-hero.png](/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/cost_predictable_logging_hero_f9fb46c3e9.png)
@@ -123,7 +123,7 @@ wrote 50000 records in 4.000462s, rows/s: 12498.556286
 
 To consume this data from WarpStream, users can, in turn, use ClickPipes, ClickHouse Cloud's native ingestion tool, to insert this data into ClickHouse. We demonstrate this below.
 
-![](/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/clickpipes_for_logs_11ec2bc51d.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack/clickpipes_for_logs_11ec2bc51d.mp4" aria-label=""></video>
 
 For users looking to only perform testing of ClickHouse, sample data files can be loaded from the ClickHouse client with a single command, as shown below.
 

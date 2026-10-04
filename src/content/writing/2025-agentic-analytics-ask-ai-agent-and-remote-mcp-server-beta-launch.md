@@ -8,7 +8,7 @@ tags:
 - product
 summary: The public beta of the Ask AI agent and the remote MCP server for ClickHouse Cloud, two steps towards agents as primary consumers of analytics databases.
 reading_time: 4
-content_hash: c94ecc04e0479ba6
+content_hash: 795a413b594de402
 ---
 
 We've been talking about [agent-facing analytics](https://clickhouse.com/blog/agent-facing-analytics) for a while now. The idea is that AI agents would become primary consumers of analytics databases, running queries at machine speed and generating insights semi-autonomously. Well, today we're making that future more accessible by announcing the public beta release of two flagship features: the ClickHouse Ask AI agent and the remote MCP server for ClickHouse Cloud.
@@ -17,7 +17,7 @@ We've been talking about [agent-facing analytics](https://clickhouse.com/blog/ag
 
 The “Ask AI” agent is a turn-key experience that allows users to trigger complex analysis tasks on top of the data hosted in their ClickHouse Cloud service. Instead of writing SQL or navigating dashboards, users can describe what they are looking for in natural language. The assistant responds with generated queries, visualizations, or summaries, and can incorporate context like active tabs, saved queries, schema details, and dashboards to improve accuracy. It’s designed to work as an embedded assistant, helping users move quickly from questions to insights, and from prompts to working dashboards or APIs.
 
-![ask_ai.gif](/writing/agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch/ask_ai_d57107b308.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch/ask_ai_d57107b308.mp4" aria-label="ask_ai.gif"></video>
 
 The experience also embeds a "Docs AI" sub-agent that can be used to ask specific questions about the ClickHouse documentation straight from the console. Instead of searching through hundreds of pages, users can ask direct questions like "How do I configure materialized views?" or "What's the difference between ReplacingMergeTree and AggregatingMergeTree?" and receive precise answers with relevant code examples and links to source documentation.
 
@@ -33,7 +33,7 @@ The new remote MCP server capability in ClickHouse Cloud addresses this by expos
 
 This makes it easier for agentic tools to plug into ClickHouse and retrieve the data they need, whether for analysis, summarization, code generation, or exploration.
 
-![mcp_cursor.gif](/writing/agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch/mcp_cursor_125691e256.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch/mcp_cursor_125691e256.mp4" aria-label="mcp_cursor.gif"></video>
 
 Note that we also provide a “traditional” MCP Server for ClickHouse, which can be used in self-managed setups and installed via PyPI. At the time of writing, it has been downloaded more [than 220k times](https://clickpy.clickhouse.com/dashboard/mcp-clickhouse).
 

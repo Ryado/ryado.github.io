@@ -8,7 +8,7 @@ tags:
 - product
 summary: 'ClickPipes for Kafka arrives in private preview: a managed ingestion service that lets ClickHouse Cloud users connect to remote Kafka brokers and start ingesting data right away.'
 reading_time: 4
-content_hash: 82b13010fccfda97
+content_hash: 6fab23276c8c1fad
 ---
 
 Today at ClickHouse, we are delighted to announce the release of ClickPipes for Kafka.
@@ -34,7 +34,7 @@ With Clickhouse, users can rely on a [vibrant ecosystem of integrations](https:/
 
 With ClickPipes, we abstract this complexity away by providing a turnkey data ingestion experience. Setting-up a continuous ingestion job with ClickPipes takes less than a minute.
 
-![clickpipes_1mn.gif](/writing/clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service/clickpipes_1mn_88c2bc30a1.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service/clickpipes_1mn_88c2bc30a1.mp4" aria-label="clickpipes_1mn.gif"></video>
 
 The main advantages of ClickPipes are:
 

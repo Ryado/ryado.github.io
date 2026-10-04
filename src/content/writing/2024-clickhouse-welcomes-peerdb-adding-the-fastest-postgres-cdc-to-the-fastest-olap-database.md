@@ -9,7 +9,7 @@ tags:
 - product
 summary: ClickHouse joins forces with PeerDB, a change data capture provider focused on Postgres, to bridge transactional and analytical workloads between the two databases.
 reading_time: 5
-content_hash: 6956f224a91ed237
+content_hash: 5fd5fb2b7f175316
 ---
 
 ![peerdb_blog_cover.png](/writing/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database/peerdb_blog_cover_26a6c47078.png)
@@ -55,7 +55,7 @@ We understand that data-engineering changes can take time to implement. For this
 
 No, you can already sign up to the PeerDB Cloud offering as of today and connect your Postgres database to ClickHouse Cloud. We plan to continue offering this service on its existing terms for users who want to start onboarding straight away. This includes a one-month free trial.
 
-![peerdb_demo.gif](/writing/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database/peerdb_demo_b642a3ae51.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database/peerdb_demo_b642a3ae51.mp4" aria-label="peerdb_demo.gif"></video>
 
 Once an equivalent Postgres CDC connector for ClickPipes is generally available, we’ll allow some time for the PeerDB Cloud users to stop their legacy pipelines and declare them again in ClickPipes for Postgres CDC, where they can benefit from the full eco-system of connectors and ClickHouse Cloud features.
 

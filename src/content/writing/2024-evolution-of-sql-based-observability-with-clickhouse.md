@@ -9,7 +9,7 @@ tags:
 - engineering
 summary: 'A year after “The State of SQL-based Observability”: what changed in ClickHouse and its ecosystem, from JSON support to OpenTelemetry and time series.'
 reading_time: 16
-content_hash: 37d5b571e9a65f21
+content_hash: 8486b4ac0b1dd95c
 ---
 
 ## Introduction
@@ -297,7 +297,7 @@ This level of maturity is now consistent with other exporters such as Elasticsea
 
 Since the initial release of the ClickHouse plugin for Grafana in May 2022, both platforms have matured significantly. In a [blog post earlier in the year](https://staging.clickhouse.com/blog/clickhouse-grafana-plugin-4-0), we recognized the challenges of using SQL in observability for new users. In response, the release of version 4 introduced a new query builder experience where logs and traces are treated as first-class citizens. This reimagined interface reduces the need for manual SQL writing, making SQL-based observability more accessible for SREs and engineers.
 
-![traces_to_logs_f56012eeed](/writing/evolution-of-sql-based-observability-with-clickhouse/traces_to_logs_f56012eeed.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/evolution-of-sql-based-observability-with-clickhouse/traces_to_logs_f56012eeed.mp4" aria-label="traces_to_logs_f56012eeed"></video>
 
 Additionally, version 4.0 emphasizes OpenTelemetry, allowing users to specify logs and trace configurations that align with OTel standards. With this shift, the new plugin offers a more streamlined, intuitive experience for Otel adopters.
 

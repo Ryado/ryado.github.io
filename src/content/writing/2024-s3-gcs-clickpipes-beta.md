@@ -8,7 +8,7 @@ tags:
 - product
 summary: New ClickPipes connectors for Amazon S3 and Google Cloud Storage that load billions of rows into ClickHouse Cloud without interruptions leaving tables half-loaded.
 reading_time: 3
-content_hash: f97d68f9e222cbba
+content_hash: 05274db578d3a042
 ---
 
 ## Introduction
@@ -29,7 +29,7 @@ The key behind the resiliency of these data loading tasks resides in the smart a
 
 In the beta phase, the ClickPipes connectors for S3 and GCS will offer the capability of bulk data loading. An ingest task will load all the files matched by a [pattern](https://clickhouse.com/docs/en/integrations/clickpipes#s3--gcs-clickpipe-limations) from a specific remote bucket into the ClickHouse destination table. Note that ClickPipes will skip files larger than 1 GB for efficiency reasons, we recommend splitting larger files into 1 GB chunks.
 
-![s3_CP.gif](/writing/s3-gcs-clickpipes-beta/s3_CP_ad92afc7ab.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/s3-gcs-clickpipes-beta/s3_CP_ad92afc7ab.mp4" aria-label="s3_CP.gif"></video>
 
 Once all the data is successfully inserted in the destination table, the ClickPipe object storage connector will reach a “completed” state. In the GA release, we will enable the “continuous mode,” where the ClickPipes job will be running constantly, ingesting matching files that get added into the remote object storage bucket as they arrive. This will allow users to turn any object storage bucket into into a fully fledged staging area for ingesting data into ClickHouse Cloud.
 

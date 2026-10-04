@@ -8,7 +8,7 @@ tags:
 - product
 summary: The beta of the ClickPipes connector for Amazon Kinesis, a hassle-free way to ingest data from Kinesis Data Streams into ClickHouse Cloud.
 reading_time: 3
-content_hash: c9b2eab537109ff3
+content_hash: fe018aa48e0ec609
 ---
 
 Welcome to [launch week](https://clickhouse.com/launch-week/may-2024)! We're going to be announcing a new feature of ClickHouse Cloud every day this week. So let's get to it.
@@ -26,7 +26,7 @@ The Amazon Web Services (AWS) cloud ecosystem offers powerful building blocks fo
 
 For example, we recently announced the batch data loading connector for Amazon S3, which allows users to reliably load large data batches and historical uploads. Today, with the Amazon Kinesis connector for ClickPipes, AWS users can complete the picture with near real-time data streaming capabilities, unlocking event-based use cases and pipelines while keeping their architectural footprint minimal.
 
-![kinesis.gif](/writing/clickpipes-amazon-kinesis/kinesis_dd7e924579.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/clickpipes-amazon-kinesis/kinesis_dd7e924579.mp4" aria-label="kinesis.gif"></video>
 
 ## Lambda, Kappa architectures? Fewer Greek letters, more insights
 

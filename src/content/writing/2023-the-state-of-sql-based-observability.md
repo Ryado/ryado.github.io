@@ -8,7 +8,7 @@ tags:
 - product
 summary: How SQL and observability, two paradigms with parallel histories, collided, and how to tell whether SQL-based observability fits your use case.
 reading_time: 17
-content_hash: d0d9433737629f4f
+content_hash: 466430b26d477590
 ---
 
 ![hero.png](/writing/the-state-of-sql-based-observability/hero_1515705ca4.png)
@@ -142,7 +142,7 @@ Another important aspect of exposing the observability data in a SQL database li
 
 Finally, even if the learning curve for SQL is often short, the democratization of Generative AI applied to code generation makes it easier than ever to [simply generate SQL queries](https://clickhouse.com/blog/announcing-genai-powered-query-suggestions-clickhouse-cloud) from natural language inputs instead of writing queries. This renders the SQL learning curve argument less relevant. Users of ClickHouse Cloud can already write queries as natural language questions and leave it to the console to convert these to SQL queries based on the context of the available tables. The same approach is used to fix user queries on the fly automatically.
 
-![img07.gif](/writing/the-state-of-sql-based-observability/img07_184c41aba9.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/the-state-of-sql-based-observability/img07_184c41aba9.mp4" aria-label="img07.gif"></video>
 
 ### The SQL-based Observability Pipeline
 

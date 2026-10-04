@@ -8,7 +8,7 @@ tags:
 - product
 summary: ClickPipes, the continuous data ingestion service for ClickHouse Cloud, is generally available, adding Confluent Cloud schema registry support, Amazon MSK and dedicated metrics.
 reading_time: 2
-content_hash: b2b2a1f6b9dd1451
+content_hash: b28be41130261cab
 ---
 
 Extracting valuable insights for real-time analytics applications often depends on the availability of fresh and clean data. Streamlined access to this data is a game changer for data-driven decision making.
@@ -25,7 +25,7 @@ For GA, we added the following features to ClickPipes:
 - Support for more data types including FixedString, Date, DateTime, Tuple and Array, JSON
 - UI/UX and reliability improvements
 
-![clickpipes_1mn-min.gif](/writing/clickpipes-is-generally-available/clickpipes_1mn_min_0c61fc05dc.gif)
+<video autoplay loop muted playsinline preload="metadata" src="/writing/clickpipes-is-generally-available/clickpipes_1mn_min_0c61fc05dc.mp4" aria-label="clickpipes_1mn-min.gif"></video>
 
 Key ClickPipes features include:
 
