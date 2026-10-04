@@ -29,6 +29,8 @@ jobs:
           cache-dependency-path: scripts/requirements.txt
       - run: pip install -r scripts/requirements.txt
       - run: python -m playwright install --with-deps chromium
+      - name: Ensure ffmpeg (GIF to MP4 conversion)
+        run: ffmpeg -version >/dev/null 2>&1 || (sudo apt-get update && sudo apt-get install -y ffmpeg)
       - name: Archive
         run: python scripts/archive.py --debug
       - name: Commit changes

@@ -11,6 +11,7 @@ npm run build    # static output in dist/
 ## Writing archive
 
 Every article lives in `src/content/writing/<yyyy>-<slug>.md`, with images in `public/writing/<slug>/`.
+Animated GIFs over 300 KB are converted to looping MP4s (needs `ffmpeg`).
 They are produced by `scripts/archive.py`, which pulls posts from the ClickHouse blog, Medium and the old
 ryadh.net/blog, and is safe to re-run (unchanged posts are skipped; hand-edited `summary` and `tags` are kept).
 
@@ -21,7 +22,10 @@ python scripts/archive.py --only kinesis
 python scripts/archive.py --inspect <url>   # debug page structure
 ```
 
-The **Archive writing** workflow runs it weekly (and on demand from the Actions tab) and commits any changes.
+The **Archive writing** workflow runs it weekly (and on demand from the Actions tab), commits any changes,
+and the deploy workflow then republishes the site.
+
+Posts listed under *Essays* are named in `ESSAYS` in `src/site.ts`; everything else is listed under *Launches*.
 
 ## Deploying
 

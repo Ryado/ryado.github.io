@@ -5,6 +5,12 @@ on:
     branches: ["**"]
   pull_request:
   workflow_dispatch:
+  # Commits made by the archive job use GITHUB_TOKEN, which does not trigger
+  # push workflows, so redeploy whenever an archive run on master finishes.
+  workflow_run:
+    workflows: ["Archive writing"]
+    types: [completed]
+    branches: [master]
 
 permissions:
   contents: read

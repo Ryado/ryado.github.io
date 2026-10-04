@@ -28,6 +28,8 @@ import json
 import math
 import os
 import re
+import shutil
+import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -308,7 +310,12 @@ def html_to_markdown(fragment: Tag) -> str:
     blocks: list[str] = []
     for video in fragment.find_all("video"):
         src = video.get("data-local-src", "")
-        if src:
+        if src and video.get("data-loop"):
+            # Former animated GIF: loops silently like the original.
+            label = htmlmod.escape(video.get("data-label", ""), quote=True)
+            blocks.append(f'<video autoplay loop muted playsinline preload="metadata" src="{src}" aria-label="{label}"></video>')
+            video.replace_with(BeautifulSoup(f"<p>CODEBLOCK{len(blocks) - 1}PLACEHOLDER</p>", "html.parser"))
+        elif src:
             blocks.append(f'<video controls preload="none" playsinline src="{src}"></video>')
             video.replace_with(BeautifulSoup(f"<p>CODEBLOCK{len(blocks) - 1}PLACEHOLDER</p>", "html.parser"))
         else:
@@ -439,12 +446,17 @@ def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> Non
                 n += 1
                 name = f"{stem[:80]}-{n}{ext.lower()}"
             target = dest / name
-            if not target.exists() or target.stat().st_size == 0:
+            as_video = target.with_suffix(".mp4")
+            if target.suffix == ".gif" and as_video.exists():
+                name = as_video.name  # converted on an earlier run
+            elif not target.exists() or target.stat().st_size == 0:
                 try:
                     data = fetch(url, binary=True, browser_ok=False)
                     dest.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(data)
                     stats["images"] += 1
+                    if gif_to_mp4(target):
+                        name = as_video.name
                 except Exception as e:  # noqa: BLE001
                     log(f"   ! image failed: {url} ({e})")
                     stats["image_failures"].append(url)
@@ -463,6 +475,35 @@ def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> Non
         if (a is not None and not a.get_text(strip=True) and len(a.find_all("img")) == 1
                 and re.search(r"\.(png|jpe?g|gif|webp|svg)(\?|$)", a.get("href", ""), re.I)):
             a.unwrap()
+        if local.endswith(".mp4"):  # an animated GIF converted to video
+            video = BeautifulSoup("<video></video>", "html.parser").video
+            video["data-local-src"] = img["src"]
+            video["data-loop"] = "1"
+            video["data-label"] = img.get("alt", "")
+            img.replace_with(video)
+
+
+GIF_TO_VIDEO_MIN_BYTES = 300 * 1024
+
+
+def gif_to_mp4(gif: Path) -> bool:
+    """Replace a large animated GIF with an H.264 MP4 (typically 10-20x smaller).
+
+    Returns True when the GIF was converted (and deleted). Needs ffmpeg on PATH;
+    without it, GIFs are kept as they are.
+    """
+    if gif.suffix != ".gif" or gif.stat().st_size < GIF_TO_VIDEO_MIN_BYTES or not shutil.which("ffmpeg"):
+        return False
+    out = gif.with_suffix(".mp4")
+    cmd = ["ffmpeg", "-loglevel", "error", "-y", "-i", str(gif), "-movflags", "+faststart",
+           "-pix_fmt", "yuv420p", "-c:v", "libx264", "-crf", "28", "-an",
+           "-vf", "scale='min(1600,iw)':-2", str(out)]
+    if subprocess.run(cmd).returncode != 0 or not out.exists():
+        out.unlink(missing_ok=True)
+        return False
+    log(f"   - {gif.name}: {gif.stat().st_size // 1024} KB GIF -> {out.stat().st_size // 1024} KB MP4")
+    gif.unlink()
+    return True
 
 
 # --------------------------------------------------------------------------- #
