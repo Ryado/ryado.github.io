@@ -13,13 +13,12 @@ for (const p of posts.filter((p) => !ESSAYS.has(p.id))) {
   launchesByYear.set(y, [...(launchesByYear.get(y) ?? []), p]);
 }
 
-// Product Thesis: each idea, what it became, and the essays where it was argued.
+// Product Thesis: each idea and the posts where it was argued.
 const theses = [
   {
     year: 2023,
-    title: "Managed ingestion",
+    title: "Managed ingestion (ClickPipes)",
     text: "Real-time analytics needs fresh data, so getting data in should be part of the database.",
-    outcome: "ClickPipes: Kafka, object storage, Kinesis, and Postgres CDC with PeerDB",
     reads: [
       "clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service",
       "clickpipes-is-generally-available",
@@ -31,7 +30,6 @@ const theses = [
     year: 2023,
     title: "SQL-based observability",
     text: "Observability is just another data problem, and SQL on an OLAP database suits it.",
-    outcome: "ClickStack and the HyperDX acquisition",
     reads: [
       "the-state-of-sql-based-observability",
       "cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack",
@@ -42,11 +40,11 @@ const theses = [
     year: 2025,
     title: "Agent-facing analytics",
     text: "AI agents are a new category of database user, with their own workloads.",
-    outcome: "Ask AI, the remote MCP server and ClickHouse Agents",
     reads: [
       "agent-facing-analytics",
       "agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch",
       "clickhouse-agents-beta",
+      "clickhouse-acquires-langfuse-open-source-llm-observability",
     ],
   },
 ].map((i) => ({ ...i, reads: i.reads.map((s) => bySlug.get(s)).filter((p) => p !== undefined) }));
@@ -111,11 +109,11 @@ const papers: Paper[] = [
     <h1>{SITE.headline}</h1>
     <div class="bio">
       <p>
-        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I've also
-        worked on integrations, including ClickPipes, and on the acquisitions of PeerDB, HyperDX, LibreChat and
-        Langfuse. I started in research, with a <a href="#papers">PhD in computer science</a>, then worked in
-        consulting and at Elastic, and co-founded two startups early on. I live in Barcelona and make a few angel
-        investments.
+        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I've worked
+        previously on integrations, including ClickPipes, and on the acquisitions of PeerDB, HyperDX, LibreChat and
+        Langfuse. I started in <a href="#papers">research</a>, then worked in big data consulting, at Elastic where I
+        led the UKMEA services delivery, and co-founded two startups early on. I live in Barcelona and make a few
+        angel investments.
       </p>
     </div>
   </section>
@@ -131,7 +129,6 @@ const papers: Paper[] = [
               <h3>{i.title}</h3>
             </div>
             <p>{i.text}</p>
-            <p class="outcome">→ {i.outcome}</p>
             <p class="reads">
               Read:{" "}
               {i.reads.map((p, n) => (
