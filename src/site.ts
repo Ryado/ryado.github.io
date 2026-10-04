@@ -33,13 +33,12 @@ export const SOURCES = {
 
 export type Source = keyof typeof SOURCES;
 
-/** Posts whose list tag differs from their source label. */
-const TAG_OVERRIDES: Record<string, string> = {
-  jibli: "Press", // a journalist's profile of Jib.li, republished on the old blog
-};
-
-export function tagFor(post: { id: string; data: { source: Source } }) {
-  return TAG_OVERRIDES[post.id] ?? SOURCES[post.data.source].label;
+/**
+ * List tag for a post: "Press" when it first appeared in a newspaper or another
+ * publication and was republished on the old blog, otherwise its source label.
+ */
+export function tagFor(post: { data: { source: Source; republished_from?: string } }) {
+  return post.data.republished_from ? "Press" : SOURCES[post.data.source].label;
 }
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
