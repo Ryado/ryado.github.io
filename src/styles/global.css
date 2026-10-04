@@ -8,13 +8,13 @@
   --sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
 
-  --bg: #fbfaf7;
-  --bg-soft: #f2f0ea;
-  --text: #1d1c1a;
-  --muted: #5f5b53;
-  --rule: #e2ded4;
-  --accent: #b2361a;          /* 5.9:1 on --bg */
-  --accent-soft: #b2361a1f;
+  --bg: #fafafa;
+  --bg-soft: #f0f1f3;
+  --text: #18191c;
+  --muted: #5a5e66;
+  --rule: #e2e4e8;
+  --accent: #2343c4;          /* cobalt ink, 7.5:1 on --bg */
+  --accent-soft: #2343c41f;
   --code-bg: #ffffff;
 
   --measure: 65ch;
@@ -29,26 +29,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #151412;
-    --bg-soft: #1f1d1a;
-    --text: #e9e6df;
-    --muted: #a49e93;
-    --rule: #33302b;
-    --accent: #ff8f6b;        /* 7.7:1 on --bg */
-    --accent-soft: #ff8f6b26;
-    --code-bg: #1d1c19;
+    --bg: #121316;
+    --bg-soft: #1b1d21;
+    --text: #e7e8eb;
+    --muted: #a0a4ad;
+    --rule: #2c2f35;
+    --accent: #9db0ff;        /* 8.9:1 on --bg */
+    --accent-soft: #9db0ff26;
+    --code-bg: #18191d;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #151412;
-  --bg-soft: #1f1d1a;
-  --text: #e9e6df;
-  --muted: #a49e93;
-  --rule: #33302b;
-  --accent: #ff8f6b;
-  --accent-soft: #ff8f6b26;
-  --code-bg: #1d1c19;
+  --bg: #121316;
+  --bg-soft: #1b1d21;
+  --text: #e7e8eb;
+  --muted: #a0a4ad;
+  --rule: #2c2f35;
+  --accent: #9db0ff;        /* 8.9:1 on --bg */
+  --accent-soft: #9db0ff26;
+  --code-bg: #18191d;
   color-scheme: dark;
 }
 
@@ -468,9 +468,11 @@ main { padding-block: 3.5rem 2rem; }
 /* --------------------------------------------------------- simple lists */
 .plain-list { list-style: none; padding: 0; margin: 0; }
 .plain-list > li { margin: 0 0 1.25rem; }
-.pub .venue { font-family: var(--sans); font-size: var(--step--1); color: var(--muted); display: block; margin-top: 0.15rem; }
-.pub .title { font-weight: 600; }
-.pub .authors { display: block; }
+.pub > li { margin-bottom: 1rem; line-height: 1.45; }
+.pub .title { font-weight: 500; }
+.pub .authors,
+.pub .venue { display: block; font-family: var(--sans); font-size: var(--step--1); color: var(--muted); margin-top: 0.15rem; }
+.pub .venue { margin-top: 0; }
 .placeholder { color: var(--muted); font-style: italic; }
 
 @media (prefers-reduced-motion: reduce) {

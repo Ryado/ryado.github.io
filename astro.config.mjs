@@ -24,7 +24,7 @@ export default defineConfig({
   integrations: [sitemap({ filter: (page) => !page.includes("/blog/") }), imageAttrs()],
   redirects: {
     "/blog": "/#writing",
-    "/blog/aboutme": "/about/",
+    "/blog/aboutme": "/",
     "/blog/tags": "/#writing",
     ...oldBlogRedirects,
   },
@@ -33,7 +33,7 @@ export default defineConfig({
       // Backgrounds match --code-bg in global.css.
       themes: {
         light: accessibleTheme(githubLight, "#ffffff"),
-        dark: accessibleTheme(githubDarkDimmed, "#1d1c19"),
+        dark: accessibleTheme(githubDarkDimmed, "#18191d"),
       },
       wrap: false,
     },

@@ -15,9 +15,9 @@ const pageTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · ${SITE.h
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
+  { href: "/#thesis", label: "Thesis", match: "/#thesis" },
+  { href: "/#papers", label: "Papers", match: "/#papers" },
   { href: "/#writing", label: "Writing", match: "/writing" },
-  { href: "/papers/", label: "Papers", match: "/papers" },
-  { href: "/about/", label: "About", match: "/about" },
 ];
 ---
 
@@ -31,8 +31,8 @@ const nav = [
     <link rel="canonical" href={canonicalUrl} />
     <meta name="author" content={SITE.name} />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#151412" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121316" media="(prefers-color-scheme: dark)" />
     <meta property="og:type" content={type} />
     <meta property="og:title" content={title ?? SITE.name} />
     <meta property="og:description" content={description} />
