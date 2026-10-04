@@ -170,27 +170,34 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
   text-underline-offset: 0.35em;
 }
 
+/* Footer theme switch: shows the mode you would switch to. */
 .theme-toggle {
-  display: inline-grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
   background: transparent;
   color: var(--muted);
+  font: inherit;
   cursor: pointer;
-  padding: 0;
+  padding: 0.25rem 0;
 }
-.theme-toggle:hover { color: var(--text); border-color: var(--muted); }
-.theme-toggle svg { width: 1rem; height: 1rem; }
-.theme-toggle .moon { display: none; }
-:root[data-theme="dark"] .theme-toggle .sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .moon { display: block; }
+.theme-toggle:hover { color: var(--accent); }
+.theme-toggle svg { width: 0.95rem; height: 0.95rem; }
+.theme-toggle .sun, .theme-toggle .to-light { display: none; }
+:root[data-theme="dark"] .theme-toggle .moon,
+:root[data-theme="dark"] .theme-toggle .to-dark { display: none; }
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .to-light { display: inline; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .moon { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .moon,
+  :root:not([data-theme="light"]) .theme-toggle .to-dark { display: none; }
+  :root:not([data-theme="light"]) .theme-toggle .sun { display: block; }
+  :root:not([data-theme="light"]) .theme-toggle .to-light { display: inline; }
 }
+
+.site-header nav a.external { display: inline-flex; align-items: center; gap: 0.2rem; }
+.site-header nav a.external svg { width: 0.62rem; height: 0.62rem; opacity: 0.8; }
 
 @media (max-width: 34rem) {
   .site-header { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
@@ -207,6 +214,7 @@ main { padding-block: 3.5rem 2rem; }
   font-size: var(--step--1);
   color: var(--muted);
 }
+.site-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.75rem 1.5rem; }
 .site-footer ul {
   display: flex;
   flex-wrap: wrap;
@@ -482,6 +490,6 @@ main { padding-block: 3.5rem 2rem; }
 }
 
 @media print {
-  .site-header nav, .theme-toggle, .site-footer, .pager, .toc { display: none; }
+  .site-header nav, .site-footer, .pager, .toc { display: none; }
   body { background: #fff; color: #000; }
 }
