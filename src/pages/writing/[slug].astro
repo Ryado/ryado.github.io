@@ -1,0 +1,123 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { allWriting, originalUrl, type Post } from "../../lib";
+import { ESSAYS, SITE, SOURCES, fmtDate, tagFor } from "../../site";
+
+export async function getStaticPaths() {
+  const posts = await allWriting();
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    // posts are newest-first: "previous" is older, "next" is newer
+    props: { post, older: posts[i + 1], newer: posts[i - 1] },
+  }));
+}
+
+interface Props {
+  post: Post;
+  older?: Post;
+  newer?: Post;
+}
+
+const { post, older, newer } = Astro.props;
+const { Content, headings } = await render(post);
+const d = post.data;
+const original = originalUrl(post);
+const pageUrl = new URL(`/writing/${post.id}/`, Astro.site).href;
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+const showToc = d.reading_time >= 8 && headings.filter((h) => h.depth === 2).length >= 4;
+const lang = d.lang ?? "en";
+const isoDate = d.date.toISOString().slice(0, 10);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: d.title,
+  datePublished: isoDate,
+  author: [
+    { "@type": "Person", name: SITE.name, url: "https://www.ryadh.net/" },
+    ...d.coauthors.map((name) => ({ "@type": "Person", name })),
+  ],
+  description: d.summary,
+  mainEntityOfPage: original ?? pageUrl,
+  inLanguage: lang,
+};
+---
+
+<Base title={d.title} description={d.summary} canonical={original ?? pageUrl} type="article" section={ESSAYS.has(post.id) ? "essays" : "launches"}>
+  <Fragment slot="head">
+    <meta property="article:published_time" content={isoDate} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <article lang={lang}>
+    <header class="article-header">
+      <h1>{d.title}</h1>
+      <div class="meta" lang="en">
+        <time datetime={isoDate}>{fmtDate(d.date, true)}</time>
+        <span>{d.reading_time} min read</span>
+        {d.coauthors.length > 0 && <span>With {d.coauthors.join(", ").replace(/, ([^,]*)$/, " and $1")}</span>}
+      </div>
+    </header>
+
+    {
+      original && (
+        <aside class="origin" aria-label="Original publication" lang="en">
+          <span class="tag">{tagFor(post)}</span>
+          <span>
+            Originally published on <a href={original}>{SOURCES[d.source].long} →</a>
+          </span>
+        </aside>
+      )
+    }
+    {
+      !original && d.republished_from && (
+        <aside class="origin" aria-label="Original publication" lang="en">
+          <span class="tag">Press</span>
+          <span>
+            First appeared in{" "}
+            <a href={d.republished_from}>{new URL(d.republished_from).hostname.replace(/^www\./, "")} →</a>
+          </span>
+        </aside>
+      )
+    }
+
+    {
+      showToc && (
+        <details class="toc">
+          <summary>Contents</summary>
+          <ol>
+            {toc.map((h) => (
+              <li class={`depth-${h.depth}`}>
+                <a href={`#${h.slug}`}>{h.text}</a>
+              </li>
+            ))}
+          </ol>
+        </details>
+      )
+    }
+
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+
+  <nav class="pager" aria-label="More writing">
+    {
+      older && (
+        <a class="prev" href={`/writing/${older.id}/`} rel="prev">
+          <span class="label">← Previous</span>
+          <span class="title">{older.data.title}</span>
+        </a>
+      )
+    }
+    {
+      newer && (
+        <a class="next" href={`/writing/${newer.id}/`} rel="next">
+          <span class="label">Next →</span>
+          <span class="title">{newer.data.title}</span>
+        </a>
+      )
+    }
+  </nav>
+</Base>

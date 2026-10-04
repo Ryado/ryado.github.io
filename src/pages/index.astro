@@ -1,0 +1,199 @@
+---
+import Base from "../layouts/Base.astro";
+import { allWriting } from "../lib";
+import { ESSAYS, SITE, fmtDate, tagFor } from "../site";
+
+const posts = await allWriting();
+const bySlug = new Map(posts.map((p) => [p.id, p]));
+
+const essays = posts.filter((p) => ESSAYS.has(p.id));
+const launchesByYear = new Map<number, typeof posts>();
+for (const p of posts.filter((p) => !ESSAYS.has(p.id))) {
+  const y = p.data.date.getUTCFullYear();
+  launchesByYear.set(y, [...(launchesByYear.get(y) ?? []), p]);
+}
+
+// Product Thesis: each idea and the posts where it was argued.
+const theses = [
+  {
+    year: 2023,
+    title: "Managed ingestion (ClickPipes)",
+    text: "Real-time analytics needs fresh data, so getting data in should be part of the platform.",
+    reads: [
+      "clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service",
+      "clickpipes-is-generally-available",
+      "s3-gcs-clickpipes-beta",
+      "clickhouse-welcomes-peerdb-adding-the-fastest-postgres-cdc-to-the-fastest-olap-database",
+    ],
+  },
+  {
+    year: 2023,
+    title: "SQL-based observability",
+    text: "Observability is just another data problem, and SQL on an OLAP database suits it.",
+    reads: [
+      "the-state-of-sql-based-observability",
+      "cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack",
+      "evolution-of-sql-based-observability-with-clickhouse",
+    ],
+  },
+  {
+    year: 2025,
+    title: "Agent-facing analytics",
+    text: "AI agents are a new category of database user, with their own workloads.",
+    reads: [
+      "agent-facing-analytics",
+      "agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch",
+      "clickhouse-agents-beta",
+      "clickhouse-acquires-langfuse-open-source-llm-observability",
+    ],
+  },
+].map((i) => ({ ...i, reads: i.reads.map((s) => bySlug.get(s)).filter((p) => p !== undefined) }));
+
+// Academic publications, carried over from the previous ryadh.net homepage.
+type Paper = { title: string; authors: string; venue: string; url?: string; lang?: string };
+const papers: Paper[] = [
+  {
+    title: "ClickHouse — Lightning Fast Analytics for Everyone",
+    authors: "Robert Schulze, Tom Schreiber, Ilya Yatsishin, Ryadh Dahimene, Alexey Milovidov",
+    venue: "VLDB 2024 · Proceedings of the VLDB Endowment 17(12)",
+    url: "https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf",
+  },
+  {
+    title: "Finding Users of Interest in Micro-blogging Systems",
+    authors: "Camélia Constantin, Ryadh Dahimene, Quentin Grossetti, Cédric du Mouza",
+    venue: "EDBT 2016",
+  },
+  {
+    title: "Recommandation contextuelle d'utilisateurs pour les plateformes de micro-blogging",
+    authors: "Camélia Constantin, Ryadh Dahimene, Cédric du Mouza, Quentin Grossetti",
+    venue: "Ingénierie des Systèmes d'Information 21(3), 2016",
+    lang: "fr",
+  },
+  {
+    title: "Filtering Structures for Microblogging Content",
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    venue: "International Journal of Intelligent Information Technologies 11(1), 2015",
+  },
+  {
+    title: "Filtrage et recommandation sur les réseaux sociaux",
+    authors: "Ryadh Dahimene",
+    venue: "PhD thesis, CNAM Paris, 2014 · PDF",
+    url: "/these_ryadh_dahimene.pdf",
+    lang: "fr",
+  },
+  {
+    title: "RecLand: A Recommender System for Social Networks",
+    authors: "Ryadh Dahimene, Camélia Constantin, Cédric du Mouza",
+    venue: "CIKM 2014",
+  },
+  {
+    title: "MicroFilter: Scalable Real-Time Filtering of Micro-blogging Content",
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    venue: "BDA 2013",
+  },
+  {
+    title: "MicroFilter: Real Time Filtering of Microblogging Content",
+    authors: "Ryadh Dahimene, Cédric du Mouza",
+    venue: "Making Sense of Microposts workshop, WWW 2013",
+  },
+  {
+    title: "Efficient Filtering in Micro-blogging Systems: We Won't Get Flooded Again",
+    authors: "Ryadh Dahimene, Cédric du Mouza, Michel Scholl",
+    venue: "SSDBM 2012",
+  },
+];
+---
+
+<Base>
+  <section class="hero">
+    <h1>{SITE.headline}</h1>
+    <div class="bio">
+      <p>
+        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I previously
+        worked on integrations, including ClickPipes, and on the acquisitions of PeerDB, HyperDX, LibreChat and Langfuse.
+        I started in <a href="#papers">research</a>, then worked in big data consulting, at Elastic, where I led the UKMEA
+        services delivery, and co-founded two startups early on. I live in Barcelona and make a few angel investments.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="thesis">
+    <h2 class="section-title" id="thesis">Product Thesis</h2>
+    <ul class="ideas">
+      {
+        theses.map((i) => (
+          <li>
+            <div class="idea-head">
+              <span class="year">{i.year}</span>
+              <h3>{i.title}</h3>
+            </div>
+            <p>{i.text}</p>
+            <p class="reads">
+              Read:{" "}
+              {i.reads.map((p, n) => (
+                <>
+                  {n > 0 && " · "}
+                  <a href={`/writing/${p.id}/`}>{p.data.title}</a>
+                </>
+              ))}
+            </p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="essays">
+    <h2 class="section-title" id="essays">Essays</h2>
+    <ul class="post-list">
+      {
+        essays.map((p) => (
+              <li>
+                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
+                  {p.data.title}
+                </a>
+                <span class="tag">{tagFor(p)}</span>
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date, "month")}</time>
+              </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="launches">
+    <h2 class="section-title" id="launches">Launches</h2>
+    {
+      [...launchesByYear].map(([year, list]) => (
+        <div class="year-group">
+          <h3>{year}</h3>
+          <ul class="post-list compact">
+            {list.map((p) => (
+              <li>
+                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
+                  {p.data.title}
+                </a>
+                <span class="tag">{tagFor(p)}</span>
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+
+  <section aria-labelledby="papers">
+    <h2 class="section-title" id="papers">Papers</h2>
+    <ul class="plain-list pub">
+      {
+        papers.map((p) => (
+          <li lang={p.lang}>
+            <span class="title">{p.url ? <a href={p.url}>{p.title}</a> : p.title}</span>
+            <span class="authors">{p.authors}</span>
+            <span class="venue" lang="en">{p.venue}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
