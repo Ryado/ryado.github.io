@@ -163,8 +163,8 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 .site-header nav li + li { margin: 0; }
 .site-header nav a { text-decoration: none; color: var(--muted); }
 .site-header nav a:hover,
-.site-header nav a[aria-current="page"] { color: var(--text); }
-.site-header nav a[aria-current="page"] {
+.site-header nav a[aria-current] { color: var(--text); }
+.site-header nav a[aria-current] {
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 0.35em;

@@ -1,7 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { allWriting } from "../lib";
-import { ESSAYS, SITE, SOURCES, fmtDate } from "../site";
+import { ESSAYS, SITE, fmtDate, tagFor } from "../site";
 
 const posts = await allWriting();
 const bySlug = new Map(posts.map((p) => [p.id, p]));
@@ -109,11 +109,10 @@ const papers: Paper[] = [
     <h1>{SITE.headline}</h1>
     <div class="bio">
       <p>
-        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I've worked
-        previously on integrations, including ClickPipes, and on the acquisitions of PeerDB, HyperDX, LibreChat and
-        Langfuse. I started in <a href="#papers">research</a>, then worked in big data consulting, at Elastic where I
-        led the UKMEA services delivery, and co-founded two startups early on. I live in Barcelona and make a few
-        angel investments.
+        I'm Ryadh Dahimene. I lead AI/ML product at <a href="https://clickhouse.com">ClickHouse</a>, where I previously
+        worked on integrations, including ClickPipes, and on the acquisitions of PeerDB, HyperDX, LibreChat and Langfuse.
+        I started in <a href="#papers">research</a>, then worked in big data consulting, at Elastic, where I led the UKMEA
+        services delivery, and co-founded two startups early on. I live in Barcelona and make a few angel investments.
       </p>
     </div>
   </section>
@@ -153,7 +152,7 @@ const papers: Paper[] = [
                 <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
                   {p.data.title}
                 </a>
-                <span class="tag">{SOURCES[p.data.source].label}</span>
+                <span class="tag">{tagFor(p)}</span>
                 <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date, "month")}</time>
               </li>
         ))
@@ -173,7 +172,7 @@ const papers: Paper[] = [
                 <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
                   {p.data.title}
                 </a>
-                <span class="tag">{SOURCES[p.data.source].label}</span>
+                <span class="tag">{tagFor(p)}</span>
                 <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
               </li>
             ))}

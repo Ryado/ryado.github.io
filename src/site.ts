@@ -33,6 +33,15 @@ export const SOURCES = {
 
 export type Source = keyof typeof SOURCES;
 
+/** Posts whose list tag differs from their source label. */
+const TAG_OVERRIDES: Record<string, string> = {
+  jibli: "Press", // a journalist's profile of Jib.li, republished on the old blog
+};
+
+export function tagFor(post: { id: string; data: { source: Source } }) {
+  return TAG_OVERRIDES[post.id] ?? SOURCES[post.data.source].label;
+}
+
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const MONTHS_LONG = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 

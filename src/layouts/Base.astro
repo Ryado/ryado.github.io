@@ -4,21 +4,23 @@ import serifFont from "@fontsource-variable/source-serif-4/files/source-serif-4-
 import { SITE } from "../site";
 
 interface Props {
+  /** Home-page section this page belongs to, highlighted in the menu. */
+  section?: "essays" | "launches";
   title?: string;
   description?: string;
   canonical?: string;
   type?: "website" | "article";
 }
 
-const { title, description = SITE.description, canonical, type = "website" } = Astro.props;
+const { title, description = SITE.description, canonical, type = "website", section } = Astro.props;
 const pageTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · ${SITE.headline}`;
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
-  { href: "/#thesis", label: "Product Thesis", match: "/#thesis" },
-  { href: "/#essays", label: "Essays", match: "/writing" },
-  { href: "/#launches", label: "Launches", match: "/#launches" },
-  { href: "/#papers", label: "Papers", match: "/#papers" },
+  { href: "/#thesis", label: "Product Thesis", id: "thesis" },
+  { href: "/#essays", label: "Essays", id: "essays" },
+  { href: "/#launches", label: "Launches", id: "launches" },
+  { href: "/#papers", label: "Papers", id: "papers" },
 ];
 ---
 
@@ -41,7 +43,7 @@ const nav = [
     <meta property="og:site_name" content={SITE.name} />
     <meta name="twitter:card" content="summary" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.name} — Writing`} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: essays and launches`} href="/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="preload" href={serifFont} as="font" type="font/woff2" crossorigin />
     <slot name="head" />
@@ -63,7 +65,7 @@ const nav = [
             {
               nav.map((n) => (
                 <li>
-                  <a href={n.href} aria-current={path.startsWith(n.match) ? "page" : undefined}>
+                  <a href={n.href} aria-current={section === n.id ? "location" : undefined}>
                     {n.label}
                   </a>
                 </li>
