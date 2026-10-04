@@ -1,15 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
 import { allWriting } from "../lib";
-import { SITE, SOURCES, fmtDate } from "../site";
+import { ESSAYS, SITE, SOURCES, fmtDate } from "../site";
 
 const posts = await allWriting();
 const bySlug = new Map(posts.map((p) => [p.id, p]));
 
-const byYear = new Map<number, typeof posts>();
-for (const p of posts) {
+const essays = posts.filter((p) => ESSAYS.has(p.id));
+const launchesByYear = new Map<number, typeof posts>();
+for (const p of posts.filter((p) => !ESSAYS.has(p.id))) {
   const y = p.data.date.getUTCFullYear();
-  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+  launchesByYear.set(y, [...(launchesByYear.get(y) ?? []), p]);
 }
 
 // Product Thesis: each idea, what it became, and the essays where it was argued.
@@ -17,7 +18,8 @@ const theses = [
   {
     year: 2023,
     title: "Managed ingestion",
-    text: "Argued that real-time analytics depends on fresh data, so getting data in should be a native part of the database. That became ClickPipes: Kafka first, then object storage, Kinesis and, with the PeerDB acquisition, Postgres CDC.",
+    text: "Real-time analytics needs fresh data, so getting data in should be part of the database.",
+    outcome: "ClickPipes: Kafka, object storage, Kinesis, and Postgres CDC with PeerDB",
     reads: [
       "clickhouse-cloud-clickpipes-for-kafka-managed-ingestion-service",
       "clickpipes-is-generally-available",
@@ -28,7 +30,8 @@ const theses = [
   {
     year: 2023,
     title: "SQL-based observability",
-    text: "Argued that observability is just another data problem, one that SQL and OLAP databases like ClickHouse are well suited to. That line of work led to ClickStack and the acquisition of HyperDX.",
+    text: "Observability is just another data problem, and SQL on an OLAP database suits it.",
+    outcome: "ClickStack and the HyperDX acquisition",
     reads: [
       "the-state-of-sql-based-observability",
       "cost-predictable-logging-with-clickhouse-vs-datadog-elastic-stack",
@@ -38,7 +41,8 @@ const theses = [
   {
     year: 2025,
     title: "Agent-facing analytics",
-    text: "Argued that AI agents are a new category of database user, a user persona with its own workloads. That led to Ask AI, the remote MCP server and ClickHouse Agents.",
+    text: "AI agents are a new category of database user, with their own workloads.",
+    outcome: "Ask AI, the remote MCP server and ClickHouse Agents",
     reads: [
       "agent-facing-analytics",
       "agentic-analytics-ask-ai-agent-and-remote-mcp-server-beta-launch",
@@ -127,8 +131,9 @@ const papers: Paper[] = [
               <h3>{i.title}</h3>
             </div>
             <p>{i.text}</p>
+            <p class="outcome">→ {i.outcome}</p>
             <p class="reads">
-              Essays:{" "}
+              Read:{" "}
               {i.reads.map((p, n) => (
                 <>
                   {n > 0 && " · "}
@@ -140,6 +145,45 @@ const papers: Paper[] = [
         ))
       }
     </ul>
+  </section>
+
+  <section aria-labelledby="essays">
+    <h2 class="section-title" id="essays">Essays</h2>
+    <ul class="post-list">
+      {
+        essays.map((p) => (
+              <li>
+                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
+                  {p.data.title}
+                </a>
+                <span class="tag">{SOURCES[p.data.source].label}</span>
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date, "month")}</time>
+              </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section aria-labelledby="launches">
+    <h2 class="section-title" id="launches">Launches</h2>
+    {
+      [...launchesByYear].map(([year, list]) => (
+        <div class="year-group">
+          <h3>{year}</h3>
+          <ul class="post-list compact">
+            {list.map((p) => (
+              <li>
+                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
+                  {p.data.title}
+                </a>
+                <span class="tag">{SOURCES[p.data.source].label}</span>
+                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </section>
 
   <section aria-labelledby="papers">
@@ -155,27 +199,5 @@ const papers: Paper[] = [
         ))
       }
     </ul>
-  </section>
-
-  <section aria-labelledby="writing">
-    <h2 class="section-title" id="writing">Writing</h2>
-    {
-      [...byYear].map(([year, list]) => (
-        <div class="year-group">
-          <h3>{year}</h3>
-          <ul class="post-list">
-            {list.map((p) => (
-              <li>
-                <a href={`/writing/${p.id}/`} lang={p.data.lang ?? "en"}>
-                  {p.data.title}
-                </a>
-                <span class="tag">{SOURCES[p.data.source].label}</span>
-                <time datetime={p.data.date.toISOString().slice(0, 10)}>{fmtDate(p.data.date)}</time>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
   </section>
 </Base>

@@ -23,9 +23,9 @@ export default defineConfig({
   trailingSlash: "ignore",
   integrations: [sitemap({ filter: (page) => !page.includes("/blog/") }), imageAttrs()],
   redirects: {
-    "/blog": "/#writing",
+    "/blog": "/#essays",
     "/blog/aboutme": "/",
-    "/blog/tags": "/#writing",
+    "/blog/tags": "/#essays",
     ...oldBlogRedirects,
   },
   markdown: {

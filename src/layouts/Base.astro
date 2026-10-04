@@ -16,8 +16,9 @@ const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
   { href: "/#thesis", label: "Thesis", match: "/#thesis" },
+  { href: "/#essays", label: "Essays", match: "/writing" },
+  { href: "/#launches", label: "Launches", match: "/#launches" },
   { href: "/#papers", label: "Papers", match: "/#papers" },
-  { href: "/#writing", label: "Writing", match: "/writing" },
 ];
 ---
 
