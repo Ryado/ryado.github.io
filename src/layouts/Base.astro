@@ -15,7 +15,7 @@ const pageTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · ${SITE.h
 const canonicalUrl = canonical ?? new URL(Astro.url.pathname, Astro.site).href;
 const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 const nav = [
-  { href: "/#thesis", label: "Thesis", match: "/#thesis" },
+  { href: "/#thesis", label: "Product Thesis", match: "/#thesis" },
   { href: "/#essays", label: "Essays", match: "/writing" },
   { href: "/#launches", label: "Launches", match: "/#launches" },
   { href: "/#papers", label: "Papers", match: "/#papers" },
@@ -85,9 +85,7 @@ const nav = [
 
       <footer class="site-footer">
         <ul>
-          <li><a href={`mailto:${SITE.email}`}>Email</a></li>
           <li><a href={SITE.linkedin} rel="me">LinkedIn</a></li>
-          <li><a href={SITE.github} rel="me">GitHub</a></li>
           <li><a href="/rss.xml">RSS</a></li>
         </ul>
       </footer>
