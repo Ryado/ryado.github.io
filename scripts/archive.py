@@ -455,13 +455,13 @@ def localize_images(fragment: Tag, base_url: str, slug: str, stats: dict) -> Non
                     dest.mkdir(parents=True, exist_ok=True)
                     target.write_bytes(data)
                     stats["images"] += 1
-                    if gif_to_mp4(target):
-                        name = as_video.name
                 except Exception as e:  # noqa: BLE001
                     log(f"   ! image failed: {url} ({e})")
                     stats["image_failures"].append(url)
                     img["src"] = url  # keep remote link rather than dropping it
                     continue
+            if target.exists() and gif_to_mp4(target):
+                name = as_video.name
             local = name
             used[url] = local
         for attr in ("srcset", "data-src", "data-srcset", "sizes", "width", "height",
